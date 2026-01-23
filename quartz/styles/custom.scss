@@ -1,1 +1,7 @@
 @use "./base.scss";
+
+// Pretendard 폰트로 덮어씌우기
+:root {
+  --headerFont: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --bodyFont: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
