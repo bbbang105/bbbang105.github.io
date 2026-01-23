@@ -41,6 +41,13 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   left: [
     Component.PageTitle(),
+    Component.SocialLinks({
+      rss: true,
+      email: "2018111366@dgu.ac.kr",
+      github: "https://github.com/bbbang105",
+      linkedin: "https://www.linkedin.com/in/sangho105/",
+      instagram: "https://www.instagram.com/bbang_105/",
+    }),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
@@ -66,6 +73,13 @@ export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
     Component.PageTitle(),
+    Component.SocialLinks({
+      rss: true,
+      email: "2018111366@dgu.ac.kr",
+      github: "https://github.com/bbbang105",
+      linkedin: "https://www.linkedin.com/in/sangho105/",
+      instagram: "https://www.instagram.com/bbang_105/",
+    }),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
