@@ -1,1 +1,21 @@
 @use "./base.scss";
+
+// 코드 블록 반응형 개선
+pre {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+code {
+  word-break: break-word;
+}
+
+@media (max-width: 800px) {
+  pre {
+    font-size: 0.85rem;
+  }
+
+  pre code {
+    white-space: pre;
+  }
+}
