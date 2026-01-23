@@ -9,7 +9,7 @@ export const sharedPageComponents: SharedLayout = {
     Component.Comments({
       provider: "giscus",
       options: {
-        repo: "bbbang105/obsidian-quartz-blog",
+        repo: "bbbang105/bbbang105.github.io",
         repoId: "R_kgDOQ_hv4g",
         category: "General",
         categoryId: "DIC_kwDOQ_hv4s4C1USj",
