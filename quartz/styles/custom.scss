@@ -19,3 +19,21 @@ code {
     white-space: pre;
   }
 }
+
+// 글 제목 링크 색상
+.section h3 a {
+  color: var(--dark);
+  background: none;
+  &:hover {
+    color: var(--secondary);
+    background: none;
+  }
+}
+
+// 탐색기 링크 색상
+.explorer ul li a {
+  color: var(--dark);
+  &:hover {
+    color: var(--secondary);
+  }
+}

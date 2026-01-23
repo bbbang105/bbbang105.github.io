@@ -11,7 +11,7 @@ const config: QuartzConfig = {
     pageTitle: "bbang_dev",
     pageTitleSuffix: " | bbang_dev",
     enableSPA: true,
-    enablePopovers: true,
+    enablePopovers: false,
     analytics: {
       provider: "google",
       tagId: "",
@@ -19,7 +19,7 @@ const config: QuartzConfig = {
     locale: "ko-KR",
     baseUrl: "bbbang105.github.io",
     ignorePatterns: ["private", "templates", ".obsidian"],
-    defaultDateType: "modified",
+    defaultDateType: "published",
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
@@ -72,6 +72,7 @@ const config: QuartzConfig = {
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
+      Plugin.CoverImage(),
       Plugin.Latex({ renderEngine: "katex" }),
     ],
     filters: [Plugin.RemoveDrafts()],
