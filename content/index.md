@@ -1,8 +1,8 @@
 ---
-title: bbbang.dev
+title: bbang_dev
 ---
 
-# bbbang.dev
+# bbang_dev
 
 백엔드 개발자 한상호의 기술 블로그입니다.
 
