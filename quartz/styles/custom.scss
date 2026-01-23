@@ -44,6 +44,13 @@ code {
   }
 }
 
+// 현재 읽고 있는 글 하이라이트
+.explorer ul li a.active {
+  color: var(--secondary) !important;
+  font-weight: 600;
+  opacity: 1 !important;
+}
+
 // 다크모드 가독성 개선
 :root[saved-theme="dark"] {
   // 구분선 더 밝게
@@ -53,6 +60,11 @@ code {
 :root[saved-theme="dark"] .explorer ul li a {
   color: #e2e8f0 !important;
   opacity: 1 !important;
+}
+
+:root[saved-theme="dark"] .explorer ul li a.active {
+  color: var(--secondary) !important;
+  font-weight: 600;
 }
 
 :root[saved-theme="dark"] .explorer ul li {
@@ -78,6 +90,10 @@ code {
 :root[saved-theme="dark"] hr {
   border-color: #4a5568 !important;
   background-color: #4a5568 !important;
+}
+
+:root[saved-theme="dark"] pre {
+  border: 1px solid #4a5568 !important;
 }
 
 // Categories 제목 숨기기

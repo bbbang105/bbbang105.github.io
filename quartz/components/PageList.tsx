@@ -45,10 +45,10 @@ export function byDateAndAlphabeticalFolderFirst(cfg: GlobalConfiguration): Sort
       return 1
     }
 
-    // otherwise, sort lexographically by title
-    const f1Title = f1.frontmatter?.title.toLowerCase() ?? ""
-    const f2Title = f2.frontmatter?.title.toLowerCase() ?? ""
-    return f1Title.localeCompare(f2Title)
+    // 한국어 가나다순 정렬 (이모지 제거 후)
+    const f1Title = (f1.frontmatter?.title ?? "").replace(/^[^\p{L}\p{N}]+/u, "")
+    const f2Title = (f2.frontmatter?.title ?? "").replace(/^[^\p{L}\p{N}]+/u, "")
+    return f1Title.localeCompare(f2Title, "ko", { numeric: true, sensitivity: "base" })
   }
 }
 

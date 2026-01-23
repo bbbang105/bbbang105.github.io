@@ -31,18 +31,20 @@ const defaultOptions: Options = {
   },
   sortFn: (a, b) => {
     // Sort order: folders first, then files. Sort alphabetically (가나다순)
-    if ((!a.isFolder && !b.isFolder) || (a.isFolder && b.isFolder)) {
-      return a.displayName.localeCompare(b.displayName, "ko", {
-        numeric: true,
-        sensitivity: "base",
-      })
-    }
-
     if (!a.isFolder && b.isFolder) {
       return 1
-    } else {
+    }
+    if (a.isFolder && !b.isFolder) {
       return -1
     }
+
+    // 폴더/파일 모두 displayName 기준 가나다순 정렬
+    const aName = a.displayName.replace(/^[^\p{L}\p{N}]+/u, "")
+    const bName = b.displayName.replace(/^[^\p{L}\p{N}]+/u, "")
+    return aName.localeCompare(bName, "ko", {
+      numeric: true,
+      sensitivity: "base",
+    })
   },
   filterFn: (node) => node.slugSegment !== "tags",
   order: ["filter", "map", "sort"],
