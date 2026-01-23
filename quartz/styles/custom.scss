@@ -1,5 +1,11 @@
 @use "./base.scss";
 
+// Pretendard 폰트 적용
+:root {
+  --headerFont: "Pretendard Variable", "Noto Sans KR", sans-serif;
+  --bodyFont: "Pretendard Variable", "Noto Sans KR", sans-serif;
+}
+
 // 코드 블록 반응형 개선
 pre {
   overflow-x: auto;
@@ -37,3 +43,82 @@ code {
     color: var(--secondary);
   }
 }
+
+// 다크모드 가독성 개선
+:root[saved-theme="dark"] {
+  // 구분선 더 밝게
+  --lightgray: #4a5568;
+}
+
+:root[saved-theme="dark"] .explorer ul li a {
+  color: #e2e8f0 !important;
+  opacity: 1 !important;
+}
+
+:root[saved-theme="dark"] .explorer ul li {
+  border-color: #4a5568 !important;
+}
+
+:root[saved-theme="dark"] .section-li {
+  border-color: #4a5568 !important;
+}
+
+:root[saved-theme="dark"] .section .meta {
+  color: #a0aec0 !important;
+}
+
+:root[saved-theme="dark"] .tags a {
+  color: #a0aec0 !important;
+}
+
+:root[saved-theme="dark"] .folder-count {
+  color: #a0aec0 !important;
+}
+
+:root[saved-theme="dark"] hr {
+  border-color: #4a5568 !important;
+  background-color: #4a5568 !important;
+}
+
+// Categories 제목 숨기기
+.explorer .desktop-explorer {
+  display: none !important;
+}
+
+// 모바일 사이드바 - 닫혔을 때만 콘텐츠 숨기기
+@media (max-width: 800px) {
+  .explorer.collapsed > .explorer-content {
+    transform: translateX(-100vw) !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  // 모바일 태그 가로 배치 + 크기 축소
+  .tags {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.3rem !important;
+    max-width: 100% !important;
+    width: 100% !important;
+
+    a {
+      font-size: 0.75rem !important;
+      padding: 0.2rem 0.5rem !important;
+    }
+  }
+
+  // 모바일 글 목록 레이아웃 - 태그 전체 너비 사용
+  .section-li {
+    .section {
+      flex-wrap: wrap !important;
+    }
+
+    .tags {
+      flex-basis: 100% !important;
+      margin-top: 0.5rem !important;
+    }
+  }
+}
+
+
+

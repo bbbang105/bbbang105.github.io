@@ -4,6 +4,22 @@ import { ContentDetails } from "../../plugins/emitters/contentIndex"
 
 type MaybeHTMLElement = HTMLElement | undefined
 
+// 이모지와 앞쪽 특수문자 제거, 하이픈을 공백으로 변환
+function cleanDisplayName(name: string): string {
+  return name.replace(/^[^\p{L}\p{N}]+/u, "").replace(/-/g, " ")
+}
+
+// 폴더 내 파일 개수 재귀적으로 계산
+function countFiles(node: FileTrieNode): number {
+  let count = node.children.filter(child => !child.isFolder).length
+  for (const child of node.children) {
+    if (child.isFolder) {
+      count += countFiles(child)
+    }
+  }
+  return count
+}
+
 interface ParsedOptions {
   folderClickBehavior: "collapse" | "link"
   folderDefaultState: "collapsed" | "open"
@@ -86,7 +102,7 @@ function createFileNode(currentSlug: FullSlug, node: FileTrieNode): HTMLLIElemen
   const a = li.querySelector("a") as HTMLAnchorElement
   a.href = resolveRelative(currentSlug, node.slug)
   a.dataset.for = node.slug
-  a.textContent = node.displayName
+  a.textContent = cleanDisplayName(node.displayName)
 
   if (currentSlug === node.slug) {
     a.classList.add("active")
@@ -115,6 +131,10 @@ function createFolderNode(
     folderContainer.classList.add("active")
   }
 
+  // 폴더 내 파일 개수 계산
+  const fileCount = node.children.filter(child => !child.isFolder).length +
+    node.children.filter(child => child.isFolder).reduce((acc, child) => acc + countFiles(child), 0)
+
   if (opts.folderClickBehavior === "link") {
     // Replace button with link for link behavior
     const button = titleContainer.querySelector(".folder-button") as HTMLElement
@@ -122,11 +142,11 @@ function createFolderNode(
     a.href = resolveRelative(currentSlug, folderPath)
     a.dataset.for = folderPath
     a.className = "folder-title"
-    a.textContent = node.displayName
+    a.innerHTML = `${cleanDisplayName(node.displayName)} <span class="folder-count">(${fileCount})</span>`
     button.replaceWith(a)
   } else {
     const span = titleContainer.querySelector(".folder-title") as HTMLElement
-    span.textContent = node.displayName
+    span.innerHTML = `${cleanDisplayName(node.displayName)} <span class="folder-count">(${fileCount})</span>`
   }
 
   // if the saved state is collapsed or the default state is collapsed

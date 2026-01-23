@@ -136,6 +136,21 @@ button.desktop-explorer {
         color: var(--tertiary);
       }
     }
+
+    // 파일 목록 구분선
+    & li:not(:last-child) {
+      border-bottom: 1px solid var(--lightgray);
+      padding-bottom: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+  }
+
+  // 폴더 개수 스타일
+  .folder-count {
+    color: var(--gray);
+    font-size: 0.8rem;
+    font-weight: normal;
+    margin-left: 0.3rem;
   }
 
   .folder-outer {

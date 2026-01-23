@@ -1,18 +1,10 @@
 ---
-title: bbang_dev
+title: Introduction.
 ---
 
-# bbang_dev
+## About Me
+> **Hi, I'm Sangho Han, a Backend Engineer driven by relentless growth 🚀**
 
-백엔드 개발자 한상호의 기술 블로그입니다.
-
-## 카테고리
-
-- [[트러블슈팅]] - 개발 중 마주친 문제 해결 기록
-- [[큐시즘]] - IT 학회 활동 및 프로젝트 회고
-- [[데보션영]] - SKT 데보션 영 활동
-- [[자료구조]] - 자료구조 학습 정리
-- [[컨퍼런스 & 네트워킹]] - 컨퍼런스 및 밋업 후기
-- [[알고리즘]] - 알고리즘 학습
-- [[독서]] - 개발 서적 정리
-- [[자격증]] - 자격증 취득 후기
+- I believe the essence of development is understanding user pain points and proactively solving them.
+- Currently building and operating a service with 20,000+ users and 2,000+ MAU — [⏰ OneTime](https://www.onetime-with-members.com/ko/landing)
+- I believe in the power of documentation and the knowledge sharing it inspires.

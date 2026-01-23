@@ -240,23 +240,36 @@ a.section-folder {
   font-size: 1.1rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .section {
-    flex-direction: column;
+    display: block;
   }
 
   .section .thumbnail {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
+    display: none;
   }
 
-  .section .thumbnail img {
+  .section .content {
     width: 100%;
-    height: 100%;
+  }
+
+  .section .content h3 {
+    white-space: normal;
+  }
+
+  .section .content .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+  }
+
+  .section .content .tags li {
+    margin: 0;
   }
 
   .section-folder {
+    display: flex;
     flex-direction: row;
   }
 }

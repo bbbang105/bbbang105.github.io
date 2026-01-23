@@ -8,8 +8,8 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "bbang_dev",
-    pageTitleSuffix: " | bbang_dev",
+    pageTitle: "bbang.dev",
+    pageTitleSuffix: " | bbang.dev",
     enableSPA: true,
     enablePopovers: false,
     analytics: {
@@ -90,16 +90,17 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      Plugin.CustomOgImages({
-        colorScheme: "darkMode",
-        fonts: [
-          {
-            name: "Noto Sans KR",
-            weight: 700,
-            style: "normal",
-          },
-        ],
-      }),
+      // OG 이미지 플러그인 비활성화 (이모지 폴더명 호환 문제)
+      // Plugin.CustomOgImages({
+      //   colorScheme: "darkMode",
+      //   fonts: [
+      //     {
+      //       name: "Noto Sans KR",
+      //       weight: 700,
+      //       style: "normal",
+      //     },
+      //   ],
+      // }),
     ],
   },
 }

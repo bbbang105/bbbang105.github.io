@@ -33,7 +33,7 @@ export default {
       title: "리더 모드",
     },
     explorer: {
-      title: "탐색기",
+      title: "Categories",
     },
     footer: {
       createdWith: "Created with",
@@ -54,7 +54,7 @@ export default {
       searchBarPlaceholder: "검색어를 입력하세요",
     },
     tableOfContents: {
-      title: "목차",
+      title: "Table of Contents",
     },
     contentMeta: {
       readingTime: ({ minutes }) => `${minutes} min read`,
@@ -71,7 +71,7 @@ export default {
       home: "홈페이지로 돌아가기",
     },
     folderContent: {
-      folder: "폴더",
+      folder: "",
       itemsUnderFolder: ({ count }) => `${count}건의 항목`,
     },
     tagContent: {
