@@ -89,8 +89,16 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
-      // CustomOgImages disabled - Pretendard 폰트 호환 문제
-      // Plugin.CustomOgImages(),
+      Plugin.CustomOgImages({
+        colorScheme: "darkMode",
+        fonts: [
+          {
+            name: "Noto Sans KR",
+            weight: 700,
+            style: "normal",
+          },
+        ],
+      }),
     ],
   },
 }
