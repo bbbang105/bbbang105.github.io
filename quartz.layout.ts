@@ -5,11 +5,23 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+    Component.Comments({
+      provider: "giscus",
+      options: {
+        repo: "bbbang105/obsidian-quartz-blog",
+        repoId: "R_kgDOQ_hv4g",
+        category: "General",
+        categoryId: "DIC_kwDOQ_hv4s4C1USj",
+        mapping: "pathname",
+        reactionsEnabled: true,
+        inputPosition: "top",
+      },
+    }),
+  ],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
+      GitHub: "https://github.com/bbbang105",
     },
   }),
 }
