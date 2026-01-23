@@ -93,9 +93,16 @@ const config: QuartzConfig = {
         colorScheme: "darkMode",
         fonts: [
           {
-            name: "Noto Sans KR",
+            name: "Pretendard",
             weight: 700,
             style: "normal",
+            source: "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/public/static/Pretendard-Bold.otf",
+          },
+          {
+            name: "Pretendard",
+            weight: 400,
+            style: "normal",
+            source: "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/public/static/Pretendard-Regular.otf",
           },
         ],
       }),
