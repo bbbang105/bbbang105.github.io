@@ -85,6 +85,12 @@ export default ((opts?: SocialLinksOptions) => {
     color: var(--light);
     transform: translateY(-2px);
   }
+
+  @media (max-width: 800px) {
+    .social-links {
+      display: none;
+    }
+  }
   `
 
   return SocialLinks
