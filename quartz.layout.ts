@@ -43,7 +43,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.PageTitle(),
     Component.SocialLinks({
       rss: true,
-      email: "2018111366@dgu.ac.kr",
+      email: "hchsa77@gmail.com",
       github: "https://github.com/bbbang105",
       linkedin: "https://www.linkedin.com/in/sangho105/",
       instagram: "https://www.instagram.com/bbang_105/",
@@ -75,7 +75,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.PageTitle(),
     Component.SocialLinks({
       rss: true,
-      email: "2018111366@dgu.ac.kr",
+      email: "hchsa77@gmail.com",
       github: "https://github.com/bbbang105",
       linkedin: "https://www.linkedin.com/in/sangho105/",
       instagram: "https://www.instagram.com/bbang_105/",
