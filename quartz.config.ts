@@ -17,7 +17,7 @@ const config: QuartzConfig = {
       tagId: "",
     },
     locale: "ko-KR",
-    baseUrl: "bbbang105.github.io/obsidian-quartz-blog",
+    baseUrl: "bbbang105.github.io",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
