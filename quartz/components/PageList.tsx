@@ -1,6 +1,6 @@
 import { FullSlug, isFolderPath, resolveRelative } from "../util/path"
 import { QuartzPluginData } from "../plugins/vfile"
-import { Date, getDate } from "./Date"
+import { Date as DateComponent, getDate } from "./Date"
 import { QuartzComponent, QuartzComponentProps } from "./types"
 import { GlobalConfiguration } from "../cfg"
 
@@ -8,20 +8,30 @@ export type SortFn = (f1: QuartzPluginData, f2: QuartzPluginData) => number
 
 export function byDateAndAlphabetical(cfg: GlobalConfiguration): SortFn {
   return (f1, f2) => {
-    // Sort by date/alphabetical
-    if (f1.dates && f2.dates) {
-      // sort descending
-      return getDate(cfg, f2)!.getTime() - getDate(cfg, f1)!.getTime()
-    } else if (f1.dates && !f2.dates) {
-      // prioritize files with dates
+    // frontmatter.date 기준 최신순 정렬
+    const getDateValue = (f: QuartzPluginData): number => {
+      const dateStr = f.frontmatter?.date
+      if (dateStr && typeof dateStr === 'string') {
+        const d = new Date(dateStr)
+        return isNaN(d.getTime()) ? 0 : d.getTime()
+      }
+      return 0
+    }
+
+    const f1Time = getDateValue(f1)
+    const f2Time = getDateValue(f2)
+
+    if (f1Time && f2Time) {
+      return f2Time - f1Time
+    } else if (f1Time && !f2Time) {
       return -1
-    } else if (!f1.dates && f2.dates) {
+    } else if (!f1Time && f2Time) {
       return 1
     }
 
-    // otherwise, sort lexographically by title
-    const f1Title = f1.frontmatter?.title.toLowerCase() ?? ""
-    const f2Title = f2.frontmatter?.title.toLowerCase() ?? ""
+    // 날짜 없으면 가나다순
+    const f1Title = f1.frontmatter?.title?.toLowerCase() ?? ""
+    const f2Title = f2.frontmatter?.title?.toLowerCase() ?? ""
     return f1Title.localeCompare(f2Title)
   }
 }
@@ -34,18 +44,28 @@ export function byDateAndAlphabeticalFolderFirst(cfg: GlobalConfiguration): Sort
     if (f1IsFolder && !f2IsFolder) return -1
     if (!f1IsFolder && f2IsFolder) return 1
 
-    // If both are folders or both are files, sort by date/alphabetical
-    if (f1.dates && f2.dates) {
-      // sort descending
-      return getDate(cfg, f2)!.getTime() - getDate(cfg, f1)!.getTime()
-    } else if (f1.dates && !f2.dates) {
-      // prioritize files with dates
+    // frontmatter.date 기준 최신순 정렬
+    const getDateValue = (f: QuartzPluginData): number => {
+      const dateStr = f.frontmatter?.date
+      if (dateStr && typeof dateStr === 'string') {
+        const d = new Date(dateStr)
+        return isNaN(d.getTime()) ? 0 : d.getTime()
+      }
+      return 0
+    }
+
+    const f1Time = getDateValue(f1)
+    const f2Time = getDateValue(f2)
+
+    if (f1Time && f2Time) {
+      return f2Time - f1Time
+    } else if (f1Time && !f2Time) {
       return -1
-    } else if (!f1.dates && f2.dates) {
+    } else if (!f1Time && f2Time) {
       return 1
     }
 
-    // 한국어 가나다순 정렬 (이모지 제거 후)
+    // 날짜 없으면 가나다순
     const f1Title = (f1.frontmatter?.title ?? "").replace(/^[^\p{L}\p{N}]+/u, "")
     const f2Title = (f2.frontmatter?.title ?? "").replace(/^[^\p{L}\p{N}]+/u, "")
     return f1Title.localeCompare(f2Title, "ko", { numeric: true, sensitivity: "base" })
@@ -82,10 +102,10 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
             ) : (
             <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal post-card">
               <div class="post-meta">
-                {page.dates && <Date date={getDate(cfg, page)!} locale={cfg.locale} />}
+                {getDate(cfg, page) && <DateComponent date={getDate(cfg, page)!} locale={cfg.locale} />}
                 {tags.length > 0 && (
                   <span class="post-tags">
-                    {tags.slice(0, 2).map((tag) => (
+                    {tags.map((tag) => (
                       <span class="tag">{tag}</span>
                     ))}
                   </span>
@@ -112,21 +132,27 @@ PageList.css = `
   margin-bottom: 0;
 }
 
-/* 포스트 카드 - 미니멀 스타일 */
+/* 포스트 카드 - 구분선 스타일 */
 .post-card {
   display: block;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--lightgray);
+  padding: 1rem 0 3rem 0;
+  background-color: transparent !important;
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid var(--lightgray);
 }
 
 .post-card:hover {
-  opacity: 0.7;
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.section-li:first-child .post-card {
+  padding-top: 0;
 }
 
 .section-li:last-child .post-card {
   border-bottom: none;
+  padding-bottom: 0;
 }
 
 .post-meta {
@@ -157,7 +183,7 @@ PageList.css = `
 }
 
 .post-title {
-  margin: 0;
+  margin-bottom: 1rem;
   font-size: 1.1rem;
   font-weight: 500;
   color: var(--dark);

@@ -36,7 +36,12 @@ export const defaultContentPageLayout: PageLayout = {
       condition: (page) => page.fileData.slug !== "index",
     }),
     Component.ArticleTitle(),
-    Component.ContentMeta(),
+    Component.Flex({
+      components: [
+        { Component: Component.ContentMeta(), grow: true },
+        { Component: Component.ShareButton() },
+      ],
+    }),
     Component.TagList(),
   ],
   left: [

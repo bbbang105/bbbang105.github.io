@@ -1,0 +1,56 @@
+.share-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  color: var(--darkgray);
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.75rem;
+  vertical-align: middle;
+
+  &:hover {
+    color: var(--secondary);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+:root[saved-theme="dark"] .share-button {
+  color: rgba(255, 255, 255, 0.7);
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.share-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--dark);
+  color: var(--light);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999;
+  pointer-events: none;
+
+  &.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+:root[saved-theme="dark"] .share-toast {
+  background: var(--secondary);
+  color: #fff;
+}

@@ -30,7 +30,7 @@ const defaultOptions: Options = {
     return node
   },
   sortFn: (a, b) => {
-    // Sort order: folders first, then files. Sort alphabetically (가나다순)
+    // Sort order: folders first, then files
     if (!a.isFolder && b.isFolder) {
       return 1
     }
@@ -38,7 +38,36 @@ const defaultOptions: Options = {
       return -1
     }
 
-    // 폴더/파일 모두 displayName 기준 가나다순 정렬
+    // 폴더는 영어 먼저, 한글 나중 (각각 알파벳순/가나다순)
+    if (a.isFolder && b.isFolder) {
+      const aName = a.displayName.replace(/^[^\p{L}\p{N}]+/u, "")
+      const bName = b.displayName.replace(/^[^\p{L}\p{N}]+/u, "")
+      const aIsEnglish = /^[a-zA-Z]/.test(aName)
+      const bIsEnglish = /^[a-zA-Z]/.test(bName)
+
+      if (aIsEnglish && !bIsEnglish) return -1
+      if (!aIsEnglish && bIsEnglish) return 1
+
+      return aName.localeCompare(bName, aIsEnglish ? "en" : "ko", {
+        numeric: true,
+        sensitivity: "base",
+      })
+    }
+
+    // 파일은 날짜순 (최신순) - JSON에서 date는 문자열로 저장됨
+    const aDateStr = a.data?.date
+    const bDateStr = b.data?.date
+    const aDate = aDateStr ? new Date(aDateStr) : null
+    const bDate = bDateStr ? new Date(bDateStr) : null
+    if (aDate && bDate) {
+      return bDate.getTime() - aDate.getTime()
+    } else if (aDate && !bDate) {
+      return -1
+    } else if (!aDate && bDate) {
+      return 1
+    }
+
+    // 날짜 없으면 가나다순
     const aName = a.displayName.replace(/^[^\p{L}\p{N}]+/u, "")
     const bName = b.displayName.replace(/^[^\p{L}\p{N}]+/u, "")
     return aName.localeCompare(bName, "ko", {

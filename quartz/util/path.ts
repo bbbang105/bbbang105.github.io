@@ -59,11 +59,14 @@ function sluggify(s: string): string {
     .split("/")
     .map((segment) =>
       segment
+        .replace(/\p{Extended_Pictographic}/gu, "") // 이모지 제거
+        .trim()
         .replace(/\s/g, "-")
         .replace(/&/g, "-and-")
         .replace(/%/g, "-percent")
         .replace(/\?/g, "")
-        .replace(/#/g, ""),
+        .replace(/#/g, "")
+        .replace(/^-+/, ""), // 앞의 하이픈 제거
     )
     .join("/") // always use / as sep
     .replace(/\/$/, "")

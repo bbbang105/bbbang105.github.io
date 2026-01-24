@@ -95,7 +95,12 @@ code {
 
   // 포스트 카드
   .post-card {
+    background-color: transparent !important;
     border-color: #30363d !important;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.06) !important;
+    }
   }
 
   .post-title {
@@ -122,8 +127,8 @@ code {
 
   // 구분선
   hr {
-    border-color: #30363d !important;
-    background-color: #30363d !important;
+    border-color: var(--secondary) !important;
+    background-color: var(--secondary) !important;
   }
 
   // 코드 블록
