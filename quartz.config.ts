@@ -21,11 +21,11 @@ const config: QuartzConfig = {
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "published",
     theme: {
-      fontOrigin: "googleFonts",
-      cdnCaching: true,
+      fontOrigin: "local",
+      cdnCaching: false,
       typography: {
-        header: "Noto Sans KR",
-        body: "Noto Sans KR",
+        header: "Pretendard Variable",
+        body: "Pretendard Variable",
         code: "JetBrains Mono",
       },
       colors: {
@@ -62,8 +62,8 @@ const config: QuartzConfig = {
       }),
       Plugin.SyntaxHighlighting({
         theme: {
-          light: "material-theme-darker",
-          dark: "material-theme-darker",
+          light: "tokyo-night",
+          dark: "tokyo-night",
         },
         keepBackground: false,
       }),

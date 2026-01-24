@@ -75,52 +75,24 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
         return (
           <li class="section-li">
             {isFolder ? (
-              <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal section section-folder">
-                <div class="folder-icon">
-                  <span>📁</span>
-                </div>
-                <div class="content">
-                  <div class="desc">
-                    <h3>{title}</h3>
-                  </div>
-                </div>
+              <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal section-folder">
+                <span class="folder-icon">📁</span>
+                <span class="folder-title">{title}</span>
               </a>
             ) : (
-            <div class="section">
-              <div class="thumbnail">
-                <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
-                  {coverImage ? (
-                    <img src={coverImage} alt={title} loading="lazy" />
-                  ) : (
-                    <span class="thumbnail-default">🧑🏻‍💻</span>
-                  )}
-                </a>
+            <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal post-card">
+              <div class="post-meta">
+                {page.dates && <Date date={getDate(cfg, page)!} locale={cfg.locale} />}
+                {tags.length > 0 && (
+                  <span class="post-tags">
+                    {tags.slice(0, 2).map((tag) => (
+                      <span class="tag">{tag}</span>
+                    ))}
+                  </span>
+                )}
               </div>
-              <div class="content">
-                <p class="meta">
-                  {page.dates && <Date date={getDate(cfg, page)!} locale={cfg.locale} />}
-                </p>
-                <div class="desc">
-                  <h3>
-                    <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
-                      {title}
-                    </a>
-                  </h3>
-                </div>
-                <ul class="tags">
-                  {tags.map((tag) => (
-                    <li>
-                      <a
-                        class="internal tag-link"
-                        href={resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)}
-                      >
-                        {tag}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+              <h3 class="post-title">{title}</h3>
+            </a>
             )}
           </li>
         )
@@ -130,147 +102,113 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
 }
 
 PageList.css = `
+.section-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .section-li {
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid var(--lightgray);
-}
-
-.section-li:last-child {
-  border-bottom: none;
   margin-bottom: 0;
-  padding-bottom: 0;
 }
 
-.section {
-  display: flex;
-  gap: 1.2rem;
-  align-items: flex-start;
-}
-
-.section h3 {
-  margin: 0;
-}
-
-.section > .tags {
-  margin: 0;
-}
-
-.section .thumbnail {
-  flex-shrink: 0;
-  width: 192px;
-  height: 108px;
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--lightgray);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.section .thumbnail img {
+/* 포스트 카드 - 미니멀 스타일 */
+.post-card {
   display: block;
-  width: 192px;
-  height: 108px;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 0.2s ease;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--lightgray);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
-.section .thumbnail a {
+.post-card:hover {
+  opacity: 0.7;
+}
+
+.section-li:last-child .post-card {
+  border-bottom: none;
+}
+
+.post-meta {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  line-height: 0;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--gray);
 }
 
-.section .thumbnail .thumbnail-default {
-  font-size: 3rem;
-  line-height: 1;
+.post-meta time {
+  color: var(--gray);
 }
 
-.section .thumbnail:hover img {
-  transform: scale(1.05);
+.post-tags {
+  display: flex;
+  gap: 0.4rem;
 }
 
-
-.section .content {
-  flex: 1;
-  min-width: 0;
+.post-tags .tag {
+  color: var(--secondary);
+  font-size: 0.8rem;
 }
 
-.section .content h3 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.post-tags .tag::before {
+  content: "#";
+}
+
+.post-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--dark);
+  line-height: 1.4;
 }
 
 /* 폴더 스타일 */
-a.section-folder {
-  text-decoration: none;
-  color: inherit;
-}
-
 .section-folder {
+  display: flex;
   align-items: center;
+  gap: 0.6rem;
   padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
   background: var(--lightgray);
   border-radius: 8px;
-  transition: background 0.2s ease;
-  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
 .section-folder:hover {
   background: var(--highlight);
+  transform: translateX(4px);
 }
 
 .section-folder .folder-icon {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 
-.section-folder .content h3 {
-  font-size: 1.1rem;
+.section-folder .folder-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--dark);
 }
 
-@media (max-width: 800px) {
-  .section {
-    display: block;
+/* 모바일 */
+@media (max-width: 650px) {
+  .post-card {
+    padding: 0.8rem 0;
   }
 
-  .section .thumbnail {
-    display: none;
+  .post-title {
+    font-size: 1rem;
   }
 
-  .section .content {
-    width: 100%;
-  }
-
-  .section .content h3 {
-    white-space: normal;
-  }
-
-  .section .content .tags {
-    display: flex;
+  .post-meta {
+    font-size: 0.8rem;
     flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 0.5rem;
-  }
-
-  .section .content .tags li {
-    margin: 0;
   }
 
   .section-folder {
-    display: flex;
-    flex-direction: row;
+    padding: 0.6rem 0.8rem;
   }
 }
 `
