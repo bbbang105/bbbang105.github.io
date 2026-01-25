@@ -311,12 +311,22 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
 })
 
 window.addEventListener("resize", function () {
-  // Desktop explorer opens by default, and it stays open when the window is resized
-  // to mobile screen size. Applies `no-scroll` to <html> in this edge case.
   const explorer = document.querySelector(".explorer")
-  if (explorer && !explorer.classList.contains("collapsed")) {
-    document.documentElement.classList.add("mobile-no-scroll")
+  if (!explorer) return
+
+  const mobileExplorer = explorer.querySelector(".mobile-explorer")
+  if (!mobileExplorer) return
+
+  // 데스크탑으로 전환 시 (모바일 버튼이 보이지 않으면) collapsed 클래스 제거
+  if (!mobileExplorer.checkVisibility()) {
+    explorer.classList.remove("collapsed")
+    document.documentElement.classList.remove("mobile-no-scroll")
     return
+  }
+
+  // 모바일로 전환 시 explorer가 열려있으면 no-scroll 적용
+  if (!explorer.classList.contains("collapsed")) {
+    document.documentElement.classList.add("mobile-no-scroll")
   }
 })
 
