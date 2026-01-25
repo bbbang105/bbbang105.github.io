@@ -39,6 +39,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Flex({
       components: [
         { Component: Component.ContentMeta(), grow: true },
+        { Component: Component.PageViews() },
         { Component: Component.ShareButton() },
       ],
     }),

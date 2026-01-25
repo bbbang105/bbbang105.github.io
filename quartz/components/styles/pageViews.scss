@@ -1,0 +1,15 @@
+.page-views {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--gray);
+  font-size: 0.9rem;
+
+  svg {
+    opacity: 0.8;
+  }
+
+  .view-count {
+    min-width: 1.5em;
+  }
+}
