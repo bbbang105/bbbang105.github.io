@@ -51,5 +51,3 @@ Trouble Shooting
 위처럼 패키지 삭제 후, mysql도 깔끔하게 삭제 후 재설치를 진행했다.
 
 그리고 `brew services start mysql`로 실행을 하며 MySQL을 켤 수 있었다.
-
-

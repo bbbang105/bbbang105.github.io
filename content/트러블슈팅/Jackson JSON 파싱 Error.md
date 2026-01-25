@@ -96,4 +96,3 @@ RAG API가 보낸 JSON 데이터의 13,051번째 글자쯤에, 이스케이프(`
 # 🔗 레퍼런스
 
 [Jackson JSON 파싱 오류 해결하기: JsonParseException](https://velog.io/@cosmoss/Jackson-JSON-%ED%8C%8C%EC%8B%B1-%EC%98%A4%EB%A5%98-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0-JsonParseException)
-

@@ -65,8 +65,3 @@ echo '<?xml version="1.0" encoding="UTF-8"?>
 ```bash
 s3cmd setcors cors.xml s3://dev-optigen-upload
 ```
-
----
-
-# 🔗 레퍼런스
-

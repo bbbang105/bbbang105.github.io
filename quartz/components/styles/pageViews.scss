@@ -2,14 +2,14 @@
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  color: var(--gray);
+  color: var(--dark);
   font-size: 0.9rem;
 
   svg {
-    opacity: 0.8;
+    stroke: var(--dark);
   }
 
   .view-count {
-    min-width: 1.5em;
+    min-width: 1em;
   }
 }

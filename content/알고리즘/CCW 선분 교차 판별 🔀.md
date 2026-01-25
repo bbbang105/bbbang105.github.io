@@ -119,6 +119,3 @@ def ccw(a,b):
         else:
             return False
 ```
-
-
-

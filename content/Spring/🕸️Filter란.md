@@ -394,4 +394,3 @@ public class SecurityConfig {
 2. `.cors(withDefaults())`가 이를 감지
 3. Spring Security 내부에서 `CorsFilter`를 생성
 4. `Security Filter Chain` 내에 `CorsFilter`가 자동으로 추가
-

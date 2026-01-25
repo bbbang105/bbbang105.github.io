@@ -274,4 +274,3 @@ public class Member extends BaseEntity {
 > 참고한 블로그
 
 1. https://dev-green.tistory.com/128
-

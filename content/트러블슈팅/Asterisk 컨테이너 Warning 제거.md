@@ -69,4 +69,3 @@ date: 2025-12-28
     # 터미널 명령어
     rm /home/socc/asterisk-docker/config/users.conf
     ```
----

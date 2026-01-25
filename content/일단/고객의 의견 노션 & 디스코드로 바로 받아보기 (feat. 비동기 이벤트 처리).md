@@ -684,4 +684,3 @@ public void sendCreateUserComment(CreateUserCommentEvent event) {
 ![](https://velog.velcdn.com/images/hsh111366/post/e2b04ca2-1a37-4119-89cf-9c24d312f59c/image.png)
 
 ![](https://velog.velcdn.com/images/hsh111366/post/d39da3d5-4a19-40e7-b10c-1ad985fd2676/image.png)
-

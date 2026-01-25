@@ -433,4 +433,3 @@ PM 및 프론트엔드 개발자 1명, 디자이너 2명, 백엔드 개발자 1�
 
 ![](https://velog.velcdn.com/images/hsh111366/post/08243d21-e487-41fa-979b-ccd70adf7f95/image.png)|![](https://velog.velcdn.com/images/hsh111366/post/bd51bc16-478e-45e6-8759-1b7c63d4809f/image.png)
 ---|---|
-

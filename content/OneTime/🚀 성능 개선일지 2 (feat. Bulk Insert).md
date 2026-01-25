@@ -263,4 +263,3 @@ Seconds       %       Task name
 2. 다량의 INSERT 문이 발생할 때에는, 앞으로도 `Bulk Insert`를 고려해 보아야겠다는 생각이 들었다.
 3. `Bulk Insert`를 사용하기 위해서는, `rewriteBatchedStatements=true` 옵션을 꼭 지정해주어야 한다.
 4. `StopWatch` 라는 성능 측정 툴을 알게 되었다. 앞으로도 세세하게 병목 지점을 찾아낼 때 활용해보아야겠다.
-
