@@ -11,4 +11,22 @@
       }
     }
   }
+
+  .page-views {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--dark);
+    position: relative;
+    top: 0.1rem;
+
+    svg {
+      stroke: var(--dark);
+      vertical-align: middle;
+    }
+
+    &::after {
+      content: "" !important;
+    }
+  }
 }
