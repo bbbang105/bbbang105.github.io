@@ -185,10 +185,53 @@ article {
     width: 100%;
     min-width: 100%;
     margin: 0;
+    table-layout: fixed;
 
     th, td {
       padding: 0.6rem 1rem;
-      white-space: nowrap;
+      white-space: normal;
+      word-wrap: break-word;
+
+      img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 0;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+// 모바일에서 이미지 테이블 처리
+@media (max-width: 650px) {
+  .table-container {
+    overflow-x: hidden !important;
+
+    & > table {
+      width: 100% !important;
+      min-width: 0 !important;
+      table-layout: fixed !important;
+
+      thead, tbody, tr {
+        display: block;
+        width: 100%;
+      }
+
+      th, td {
+        display: inline-block;
+        width: 50% !important;
+        box-sizing: border-box;
+        padding: 0.25rem !important;
+        vertical-align: top;
+
+        img {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
+          margin: 0 !important;
+        }
+      }
     }
   }
 }
