@@ -9,6 +9,20 @@ import { QuartzPluginData } from "../../plugins/vfile"
 import { ComponentChildren } from "preact"
 import { concatenateResources } from "../../util/resources"
 import { trieFromAllFiles } from "../../util/ctx"
+import { FileTrieNode } from "../../util/fileTrie"
+
+// 폴더 내 파일 개수 재귀 계산
+function countFilesInFolder(node: FileTrieNode): number {
+  let count = 0
+  for (const child of node.children) {
+    if (child.isFolder) {
+      count += countFilesInFolder(child)
+    } else {
+      count += 1
+    }
+  }
+  return count
+}
 
 interface FolderContentOptions {
   /**
@@ -84,6 +98,7 @@ export default ((opts?: Partial<FolderContentOptions>) => {
                 title: node.displayName,
                 tags: [],
               },
+              fileCount: countFilesInFolder(node),
             }
           }
         })

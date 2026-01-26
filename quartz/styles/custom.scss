@@ -112,17 +112,22 @@ code {
     color: #8b949e !important;
   }
 
-  // 폴더
+  // 폴더 - 포스트와 동일한 구분선 스타일
   .section-folder {
-    background: #21262d !important;
+    background: transparent !important;
+    border-color: #30363d !important;
 
     &:hover {
-      background: #30363d !important;
+      background: rgba(255, 255, 255, 0.06) !important;
     }
-  }
 
-  .folder-title {
-    color: #c9d1d9 !important;
+    .folder-title {
+      color: #c9d1d9 !important;
+    }
+
+    .folder-count {
+      color: #8b949e !important;
+    }
   }
 
   // 구분선
@@ -144,10 +149,14 @@ code {
     border-radius: 4px !important;
   }
 
-  // 폴더 카운트
-  .folder-count {
-    color: #8b949e !important;
-  }
+}
+
+// ========================================
+// 폴더 목록 간격
+// ========================================
+.section-folder {
+  margin-bottom: 1rem !important;
+  padding-bottom: 1rem !important;
 }
 
 // ========================================

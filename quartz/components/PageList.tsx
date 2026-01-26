@@ -91,13 +91,14 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
         const tags = page.frontmatter?.tags ?? []
         const coverImage = page.coverImage
         const isFolder = isFolderPath(page.slug ?? "")
+        const fileCount = (page as any).fileCount
 
         return (
           <li class="section-li">
             {isFolder ? (
               <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal section-folder">
-                <span class="folder-icon">📁</span>
-                <span class="folder-title">{title}</span>
+                <h3 class="folder-title">{title}</h3>
+                {fileCount !== undefined && <span class="folder-count">{fileCount}개의 글</span>}
               </a>
             ) : (
             <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal post-card">
@@ -129,7 +130,7 @@ PageList.css = `
 }
 
 .section-li {
-  margin-bottom: 0;
+  margin-bottom: 1.5rem;
 }
 
 /* 포스트 카드 - 구분선 스타일 */
@@ -190,32 +191,38 @@ PageList.css = `
   line-height: 1.4;
 }
 
-/* 폴더 스타일 */
+/* 폴더 스타일 - 포스트와 동일한 구분선 스타일 */
 .section-folder {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.8rem 1rem;
-  margin-bottom: 0.5rem;
-  background: var(--lightgray);
-  border-radius: 8px;
+  padding: 1.5rem 0 3.5rem 0;
+  background: transparent !important;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid var(--lightgray);
 }
 
 .section-folder:hover {
-  background: var(--highlight);
-  transform: translateX(4px);
+  background: rgba(0, 0, 0, 0.04) !important;
 }
 
-.section-folder .folder-icon {
-  font-size: 1.2rem;
+.section-li:last-child .section-folder {
+  border-bottom: none;
 }
 
 .section-folder .folder-title {
-  font-size: 1rem;
+  margin: 0;
+  font-size: 1.1rem;
   font-weight: 500;
   color: var(--dark);
+  line-height: 1.4;
+}
+
+.section-folder .folder-count {
+  font-size: 0.85rem;
+  color: var(--gray);
+  flex-shrink: 0;
 }
 
 /* 모바일 */
@@ -234,7 +241,11 @@ PageList.css = `
   }
 
   .section-folder {
-    padding: 0.6rem 0.8rem;
+    padding: 0.8rem 0;
+  }
+
+  .section-folder .folder-title {
+    font-size: 1rem;
   }
 }
 `

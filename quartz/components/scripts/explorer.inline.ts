@@ -324,9 +324,10 @@ window.addEventListener("resize", function () {
     return
   }
 
-  // 모바일로 전환 시 explorer가 열려있으면 no-scroll 적용
+  // 모바일로 전환 시 explorer가 열려있으면 자동으로 닫기
   if (!explorer.classList.contains("collapsed")) {
-    document.documentElement.classList.add("mobile-no-scroll")
+    explorer.classList.add("collapsed")
+    explorer.setAttribute("aria-expanded", "false")
   }
 })
 
