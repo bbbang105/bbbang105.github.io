@@ -147,10 +147,11 @@ button.desktop-explorer {
 
   // 폴더 개수 스타일
   .folder-count {
-    color: var(--gray);
+    color: var(--darkgray);
     font-size: 0.8rem;
     font-weight: normal;
     margin-left: 0.3rem;
+    opacity: 0.7;
   }
 
   .folder-outer {
