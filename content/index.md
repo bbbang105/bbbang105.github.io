@@ -369,7 +369,7 @@ title: Introduction.
 
 <div class="intro-text">
 I believe the essence of development is understanding user pain points and proactively solving them.<br>
-Currently building and operating a service with <strong>20,000+ users</strong> — <a href="https://www.onetime-with-members.com" target="_blank">OneTime</a>.
+Currently building and operating a service with <strong>20,000+ users</strong> — <a href="https://www.onetime-with-members.com/en/landing" target="_blank">OneTime</a>.
 </div>
 
 <div class="intro-text">
@@ -468,7 +468,7 @@ I believe in the power of documentation and human connections.<br>
 
 <div class="section-card">
   <div class="section-header">
-    <span class="company-name">OneTime <a href="https://www.onetime-with-members.com/ko/landing" target="_blank" class="company-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></span>
+    <span class="company-name">OneTime <a href="https://www.onetime-with-members.com/en/landing" target="_blank" class="company-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></span>
     <span class="period">2024.08 - Present</span>
   </div>
   <div class="role">Backend Engineer</div>
@@ -543,7 +543,7 @@ I believe in the power of documentation and human connections.<br>
     <span class="skill-category">Spring</span>
     <span>Filter vs Interceptor, OAuth2.0, Error Handling</span>
     <span class="skill-category">Database</span>
-    <span>Index Optimization, Transaction Isolation Levels</span>
+    <span>Index, Transaction Isolation Levels</span>
     <span class="skill-category">Infra</span>
     <span>Docker, Nginx, Fail2Ban, Load Balancing</span>
     <span class="skill-category">Troubleshooting</span>
@@ -618,7 +618,7 @@ I believe in the power of documentation and human connections.<br>
 
 <div class="intro-text">
 사용자가 겪는 불편함을 이해하고 주도적으로 해결해 나가는 것이 개발의 본질이라고 생각합니다.<br>
-<strong>2만 명 이상</strong>이 사용하는 서비스 <a href="https://www.onetime-with-members.com" target="_blank">OneTime</a>을 직접 기획·개발·운영하며 이를 실천하고 있습니다.
+<strong>2만 명 이상</strong>이 사용하는 서비스 <a href="https://www.onetime-with-members.com/ko/landing" target="_blank">OneTime</a>을 직접 기획·개발·운영하며 이를 실천하고 있습니다.
 </div>
 
 <div class="intro-text">
