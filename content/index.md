@@ -561,23 +561,14 @@ I believe in the power of documentation and human connections.<br>
 
 <div class="section-card">
   <div class="section-header">
-    <span class="company-name">KUSITMS</span>
+    <span class="company-name">KUSITMS <a href="https://www.kusitms.com/" target="_blank" class="company-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></span>
     <span class="period">2024</span>
   </div>
-  <p>IT Management Society - Collaborated with 70+ members on tech projects. Participated as backend developer in corporate project.</p>
+  <p>IT Management Society - Collaborated with 70+ members on tech projects.<br>Participated as backend developer in corporate project.</p>
 </div>
 
-<div class="section-card">
-  <div class="section-header">
-    <span class="company-name">SKT Devocean Young</span>
-    <span class="period">2024</span>
-  </div>
-  <p>Selected as outstanding participant</p>
-</div>
 
----
-
-## Skills
+<!-- ## Skills
 
 <div class="section-card">
   <div class="subsection-title">Backend</div>
@@ -592,6 +583,7 @@ I believe in the power of documentation and human connections.<br>
   <div class="subsection-title">Documentation</div>
   <p>Technical blog for learning documentation and sharing. Detailed PR descriptions with background, changes, and test methods. Infrastructure architecture and operation manual writing experience.</p>
 </div>
+-->
 
 ---
 
@@ -599,7 +591,7 @@ I believe in the power of documentation and human connections.<br>
 
 <div class="section-card">
   <div class="section-header">
-    <span class="company-name">Dongguk University</span>
+    <span class="company-name">Dongguk University <a href="https://www.linkedin.com/school/dongguk/" target="_blank" class="company-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></span>
     <span class="period">2018 - 2025</span>
   </div>
   <p>B.S. in Management Information Systems / Convergence Software (Double Major)</p>
@@ -792,12 +784,12 @@ I believe in the power of documentation and human connections.<br>
     <span class="company-name">기술 블로그</span>
     <span class="period">2023 - 현재</span>
   </div>
-  <p>2년간 250개 이상의 기술 포스트를 작성했습니다.</p>
+  <p>2년간 100개 이상의 기술 포스트를 작성했습니다.</p>
   <div class="skills-grid">
     <span class="skill-category">Spring</span>
     <span>Filter vs Interceptor, OAuth2.0, Error Handling</span>
     <span class="skill-category">Database</span>
-    <span>Index 최적화, Transaction Isolation Levels</span>
+    <span>Index, Transaction Isolation Levels</span>
     <span class="skill-category">Infra</span>
     <span>Docker, Nginx, Fail2Ban, Load Balancing</span>
     <span class="skill-category">Troubleshooting</span>
@@ -815,23 +807,14 @@ I believe in the power of documentation and human connections.<br>
 
 <div class="section-card">
   <div class="section-header">
-    <span class="company-name">KUSITMS</span>
+    <span class="company-name">KUSITMS (한국대학생IT경영학회) <a href="https://www.kusitms.com/" target="_blank" class="company-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></span>
     <span class="period">2024</span>
   </div>
-  <p>IT 경영학회 - 70명 이상의 학회원들과 함께 기술 프로젝트를 진행했습니다. 기업 프로젝트에 백엔드 개발자로 참여했습니다.</p>
+  <p>기업 프로젝트 및 기획 & 디자인 파트와의 협업 프로젝트에서 백엔드 개발자로 참여했습니다.<br>또한 30기 부학회장으로서 70명 이상의 학회원들을 이끌어 보는 경험도 하였습니다.</p>
 </div>
 
-<div class="section-card">
-  <div class="section-header">
-    <span class="company-name">SKT 데보션영</span>
-    <span class="period">2024</span>
-  </div>
-  <p>우수활동자로 선정되었습니다.</p>
-</div>
 
----
-
-## 기술
+<!-- ## 기술
 
 <div class="section-card">
   <div class="subsection-title">Backend</div>
@@ -846,6 +829,7 @@ I believe in the power of documentation and human connections.<br>
   <div class="subsection-title">Documentation</div>
   <p>기술 블로그 운영을 통해 배운 것을 정리하고 공유합니다. PR 작성 시 배경, 변경 사항, 테스트 방법을 상세히 기록합니다. 인프라 아키텍처와 운영 매뉴얼 작성 경험이 있습니다.</p>
 </div>
+-->
 
 ---
 
@@ -853,7 +837,7 @@ I believe in the power of documentation and human connections.<br>
 
 <div class="section-card">
   <div class="section-header">
-    <span class="company-name">동국대학교</span>
+    <span class="company-name">동국대학교 <a href="https://www.linkedin.com/school/dongguk/" target="_blank" class="company-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></span>
     <span class="period">2018 - 2025</span>
   </div>
   <p>경영정보학 / 융합소프트웨어 복수전공</p>
