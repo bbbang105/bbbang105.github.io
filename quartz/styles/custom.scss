@@ -149,6 +149,16 @@ code {
     border-radius: 4px !important;
   }
 
+  // 테이블 구분선 - 더 밝게
+  table {
+    tr {
+      border-bottom-color: #484f58 !important;
+    }
+    th {
+      border-bottom-color: #6e7681 !important;
+    }
+  }
+
 }
 
 // ========================================
