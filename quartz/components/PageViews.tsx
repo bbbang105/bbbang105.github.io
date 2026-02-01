@@ -29,14 +29,32 @@ PageViews.css = style
 
 PageViews.afterDOMLoaded = `
 const goatCounterCode = "bbangdev"
+const goatCounterEndpoint = 'https://' + goatCounterCode + '.goatcounter.com/count'
+
+// 페이지뷰 카운트 전송 함수
+function sendPageView() {
+  if (window.goatcounter && window.goatcounter.count) {
+    window.goatcounter.count({ path: location.pathname })
+  }
+}
 
 // GoatCounter 스크립트 로드
 if (!window.goatcounter) {
+  // 자동 카운트 비활성화
+  window.goatcounter = { no_onload: true }
+
   const script = document.createElement('script')
   script.src = '//gc.zgo.at/count.js'
   script.async = true
-  script.dataset.goatcounter = 'https://' + goatCounterCode + '.goatcounter.com/count'
+  script.dataset.goatcounter = goatCounterEndpoint
+  script.onload = () => {
+    // 스크립트 로드 완료 후 현재 페이지 카운트
+    sendPageView()
+  }
   document.head.appendChild(script)
+} else {
+  // 이미 로드된 경우 바로 카운트
+  sendPageView()
 }
 
 async function updatePageViews() {
@@ -73,10 +91,7 @@ updatePageViews()
 
 // SPA 네비게이션 시 실행
 document.addEventListener('nav', () => {
-  // 페이지뷰 카운트 전송
-  if (window.goatcounter && window.goatcounter.count) {
-    window.goatcounter.count({ path: location.pathname })
-  }
+  sendPageView()
   updatePageViews()
 })
 `
