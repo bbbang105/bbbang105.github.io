@@ -32,7 +32,7 @@ tags:
 
 # 전체 스케줄 조회 API
 
-이전에 [로깅을 개선](https://velog.io/@hsh111366/Spring-조악한-로깅-개선해-보기)하면서 각 API에 대한 처리 속도를 측정할 수 있게 되었다. 
+이전에 [로깅을 개선](https://bbbang105.github.io/Spring/%EC%A1%B0%EC%95%85%ED%95%9C-%EB%A1%9C%EA%B9%85-%EA%B0%9C%EC%84%A0%ED%95%B4-%EB%B3%B4%EA%B8%B0)하면서 각 API에 대한 처리 속도를 측정할 수 있게 되었다. 
 
 ```bash
 ✅ [GET] {엔드포인트} request completed - 7786ms | status=200
@@ -195,7 +195,7 @@ where
 
 # 🚨 문제 2 : 인덱스 미적용
 
-[DB 인덱스에 대해서는 최근에 공부](https://velog.io/@hsh111366/DB-Index)를 했기 때문에, 지금까지 적용을 해 본 적은 없었다.
+[DB 인덱스에 대해서는 최근에 공부](https://bbbang105.github.io/DB/%EF%B8%8F-Index%EB%9E%80)를 했기 때문에, 지금까지 적용을 해 본 적은 없었다.
 하지만 공부를 하고 나니, 왜 인덱스를 걸어야 하고 & 현재 DB에서 어느 부분에 걸면 좋을지 어느정도 떠올릴 수가 있었다.
 
 ## ✅ 해결 방안 1 : selections 테이블에 인덱스 걸기

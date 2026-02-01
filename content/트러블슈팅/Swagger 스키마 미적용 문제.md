@@ -7,7 +7,6 @@ tags:
   - rest-docs
   - troubleshooting
 ---
-Trouble Shooting
 
 ---
 

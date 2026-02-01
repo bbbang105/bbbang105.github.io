@@ -5,14 +5,12 @@ tags:
   - backend
   - springsecurity
 ---
-Trouble Shooting
 
 ---
 
 # 🎬 서론
 
-최근에 원타임의 로깅을 개선해보았다. ([관련 글]
-(https://velog.io/@hsh111366/Spring-조악한-로깅-개선해-보기))
+최근에 원타임의 로깅을 개선해보았다. [관련 글](https://bbbang105.github.io/Spring/%EC%A1%B0%EC%95%85%ED%95%9C-%EB%A1%9C%EA%B9%85-%EA%B0%9C%EC%84%A0%ED%95%B4-%EB%B3%B4%EA%B8%B0)
 
 ![](https://velog.velcdn.com/images/hsh111366/post/03da7f37-f29a-47cd-89e0-a51e23a48177/image.png)
 

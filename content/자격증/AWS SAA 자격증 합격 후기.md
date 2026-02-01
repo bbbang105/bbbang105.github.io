@@ -85,7 +85,7 @@ AWS에는 서비스가 매우 많고, SAA에도 나오는 서비스 종류가 �
 
 등등을 꼼꼼하게 파악하면서 Gemini와 함께 정리를 시작했다.
 
-https://velog.io/@hsh111366/Infra-AWS-SAA-학습-ing
+[AWS SAA 학습 글](https://bbbang105.github.io/%EC%9E%90%EA%B2%A9%EC%A6%9D/AWS-SAA-%ED%95%99%EC%8A%B5)
 
 그렇게 작성한 글이 위 글이다. 정리를 더 깔끔하게 하지는 못 했지만, 나름 열심히 했던 것 같다.
 문제 풀기 및 정리를 하면서 느낀 점들은 아래와 같다.

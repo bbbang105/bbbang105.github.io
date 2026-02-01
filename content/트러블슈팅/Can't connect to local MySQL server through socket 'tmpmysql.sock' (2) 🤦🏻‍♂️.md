@@ -4,7 +4,6 @@ tags:
   - troubleshooting
   - database
 ---
-Trouble Shooting
 
 ---
 

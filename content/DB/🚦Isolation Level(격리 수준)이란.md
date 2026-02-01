@@ -9,7 +9,7 @@ tags:
 
 # 🚦DB Isolation Level(격리 수준)이란?
 
-이전에 [DB 트랜잭션](https://velog.io/@hsh111366/DB-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%EC%9D%B4%EB%9E%80)에 대한 글을 정리하면서, 특징 중 `격리성` 에 대해서도 알아보았다. 
+이전에 [DB 트랜잭션](https://bbbang105.github.io/DB/%EF%B8%8F-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%EC%9D%B4%EB%9E%80)에 대한 글을 정리하면서, 특징 중 `격리성` 에 대해서도 알아보았다. 
 
 기본적으로 트랜잭션이 독립적으로 수행되어야 하지만, **얼마나 독립적인지의 정도에서는 차이가 존재**한다.
 

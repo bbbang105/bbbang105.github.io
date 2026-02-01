@@ -52,7 +52,7 @@ JPA 사용을 위한 엔터티를 정의하는 과정에서, 습관적으로 위
 
 ## 1. 리플렉션 (Reflection)
 
-> 리플렉션에 대한 자세한 내용은 [해당 글](https://velog.io/@hsh111366/Java-Reflection이란)에서 살펴볼 수 있다.
+> 리플렉션에 대한 자세한 내용은 [해당 글](https://bbbang105.github.io/Java/Reflection%EC%9D%B4%EB%9E%80)에서 살펴볼 수 있다.
 
 JPA 구현체는 데이터베이스에서 조회한 데이터를 바탕으로 엔티티 객체를 동적으로 생성한다.
 
@@ -168,7 +168,7 @@ public class Member extends BaseEntity {
 
 그럼 기본 생성자를 명시적으로 만들어주기 위해서, `@NoArgsConstructor` 를 붙여보자! 
 
-그러면 또 다시 컴파일 에러가 발생하는데, 이번에는 엔터티가 아닌 빌더와 `@NoArgsConstructor` 때문이다. 이에 대해서는 [해당 글](https://velog.io/@hsh111366/Spring-Builder와-NoArgsConstructor가-충돌되는-이유)을 읽어 보면 이해할 수 있다.
+그러면 또 다시 컴파일 에러가 발생하는데, 이번에는 엔터티가 아닌 빌더와 `@NoArgsConstructor` 때문이다. 이에 대해서는 [해당 글](https://bbbang105.github.io/Spring/@Builder%EC%99%80-@NoArgsConstructor%EA%B0%80-%EC%B6%A9%EB%8F%8C%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0)을 읽어 보면 이해할 수 있다.
 
 ![](https://velog.velcdn.com/images/hsh111366/post/56e02e36-9e29-494a-8fd9-182525ed1fa8/image.png)
 

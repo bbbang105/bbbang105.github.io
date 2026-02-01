@@ -35,7 +35,7 @@ public class UserDto {
 
 이전에는 이에 대한 이유를 모른 채로 사용을 했고, 이후에는 Record를 활용해서 DTO를 구성하다 보니 신경을 쓰지 않게 되었다. 
 
-하지만 [최근에 회사에서 `@Builder`와 관련된 조사](https://velog.io/@hsh111366/왜-Builder를-쓰면-MyBatis-매핑이-꼬일까)를 하게 되었고, 이 참에 정확한 이유를 알아보아야겠다는 생각이 들어 글을 적게 되었다.
+하지만 [최근에 회사에서 `@Builder`와 관련된 조사](https://bbbang105.github.io/Spring/%EC%99%9C-@Builder%EB%A5%BC-%EC%93%B0%EB%A9%B4-MyBatis-%EB%A7%A4%ED%95%91%EC%9D%B4-%EA%BC%AC%EC%9D%BC%EA%B9%8C)를 하게 되었고, 이 참에 정확한 이유를 알아보아야겠다는 생각이 들어 글을 적게 되었다.
 
 ---
 

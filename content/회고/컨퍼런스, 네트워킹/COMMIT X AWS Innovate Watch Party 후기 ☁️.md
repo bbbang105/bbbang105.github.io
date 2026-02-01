@@ -61,7 +61,7 @@ COMMIT이 AWS와 함께 COMMIT X AWS Innovate Watch Party를 진행합니다!
 
 ![](https://velog.velcdn.com/images/hsh111366/post/e9c62aa2-e06f-4469-9e64-65f543131722/image.jpg)
 
-마침 이틀 전에 신청했던 AWS Activate Startups가 퀴즈로 나와서 바로 맞췄다! ([관련 글](https://velog.io/@hsh111366/5분-만에-AWS-140만원-벌기))
+마침 이틀 전에 신청했던 AWS Activate Startups가 퀴즈로 나와서 바로 맞췄다! ([관련 글](https://bbbang105.github.io/%EC%9D%BC%EC%83%81,-%EC%A0%95%EB%B3%B4/5%EB%B6%84%EB%A7%8C%EC%97%90-AWS-140%EB%A7%8C%EC%9B%90-%EB%B2%8C%EA%B8%B0))
 스타벅스 기프티콘도 받고 운이 좋았다 😄
 
 아래는 공식 홈페이지에 있는 세션 소개 글이다.

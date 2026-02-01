@@ -11,7 +11,7 @@ tags:
 
 Java에서 Object 클래스의 hashCode() 메서드를 호출하게 되면, 일반적으로는 `객체의 메모리 주소`나 그 `주소를 기반으로 계산한 수치`를 해시 코드로 반환하게 된다.
 
-(hashCode() 메서드에 대해서는 [해당 글](https://velog.io/@hsh111366/Java-Object-Class-toString-equals-hashCode)에 정리해두었다.)
+(hashCode() 메서드에 대해서는 [해당 글](https://bbbang105.github.io/Java/%F0%9F%8F%BB-Object-Class-toString(),-equals(),-hashCode())에 정리해두었다.)
 
 여기서 중요한 점은 `hashCode() == 메모리 주소` 가 아니라, 해시 코드는 `객체의 메모리 주소 or 주소를 기반으로 계산한 수치` 라는 것이다.
 

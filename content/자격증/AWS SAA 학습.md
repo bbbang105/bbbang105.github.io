@@ -7,11 +7,6 @@ tags:
   - backend
 ---
 
-# AWS SAA 학습
-
-> 원본 URL: https://velog.io/@hsh111366/Infra-AWS-SAA-학습-ing
-> 크롤링 시간: 2025-11-30T11:46:47.554Z
-
 ---
 
 # 📊 데이터 분석 및 빅데이터

@@ -9,7 +9,7 @@ tags:
 
 # 📌 hashCode
 
-Java에서의 [`해시 코드`](https://velog.io/@hsh111366/Java-Object-Class-toString-equals-hashCode)는 **객체를 해시 기반 자료구조에서 효율적으로 관리하기 위해 생성되는 정수 값**이다.
+Java에서의 [`해시 코드`](https://bbbang105.github.io/Java/%F0%9F%8F%BB-Object-Class-toString(),-equals(),-hashCode())는 **객체를 해시 기반 자료구조에서 효율적으로 관리하기 위해 생성되는 정수 값**이다.
 
 > 일반적으로는 해시 코드 자체가 겹치는 경우는 자주 발생하지 않으나, 그렇다고 `해시 코드가 고유하다` 라고 말할 수는 없다.
 
@@ -61,7 +61,7 @@ N개의 비둘기 집에 M마리의 비둘기를 넣으려고 할 때 M > N이�
 
 만약 `hashCode == 메모리 주소` 였다면, 이는 객체마다 다른 고유한 값이 맞으므로 해시 코드가 고유할 수도 있겠다.
 
-하지만 [hashCode는 객체의 메모리 주소와 다르다](https://velog.io/@hsh111366/Java-hashCode-메모리-주소일까). JVM 내부 구현 방식에 따라 다르겠지만, 현재는 대부분 메모리 주소와 전혀 관련이 없다.
+하지만 [hashCode는 객체의 메모리 주소와 다르다](https://bbbang105.github.io/Java/hashCode-==-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%A3%BC%EC%86%8C%EC%9D%BC%EA%B9%8C). JVM 내부 구현 방식에 따라 다르겠지만, 현재는 대부분 메모리 주소와 전혀 관련이 없다.
 
 또한 메모리 주소를 기반으로 해시 코드를 만들었다 하더라도, 객체 개수가 43억 개를 넘어간다면 비둘기집 원리에 의해서 충돌이 필연적으로 발생한다.
 

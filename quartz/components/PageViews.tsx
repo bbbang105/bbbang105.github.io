@@ -73,6 +73,10 @@ updatePageViews()
 
 // SPA 네비게이션 시 실행
 document.addEventListener('nav', () => {
+  // 페이지뷰 카운트 전송
+  if (window.goatcounter && window.goatcounter.count) {
+    window.goatcounter.count({ path: location.pathname })
+  }
   updatePageViews()
 })
 `

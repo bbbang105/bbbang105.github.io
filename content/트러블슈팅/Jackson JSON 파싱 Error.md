@@ -4,7 +4,6 @@ tags:
   - json
   - troubleshooting
 ---
-Trouble Shooting
 
 ---
 # 🚨 문제 상황

@@ -4,7 +4,6 @@ tags:
   - troubleshooting
   - git
 ---
-Trouble Shooting
 
 ---
 

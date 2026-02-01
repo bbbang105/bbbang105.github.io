@@ -15,7 +15,7 @@ tags:
 `한국대학생IT경영학회(KUSITMS)` 큐시즘에서는 약 두 달간 진행하는 메인 프로젝트인 `밋업 프로젝트`를 진행하는데, 보통 3명의 기획자 + 2명의 디자이너 + 2명의 프론트엔드 + 2명의 백엔드로 팀이 결성된다.
 물론 이는 각 기수마다 변동 가능성이 존재한다.
 
-이전 [29기 때 밋업 프로젝트](https://velog.io/@hsh111366/KUSITMS-29기-2개월-간의-밋업-프로젝트-후기) 이후로 나의 두 번째 밋업 프로젝트인데, 여러 부분에서 느끼고 배운 점들을 정리해보려고 한다 ✍🏻
+이전 [29기 때 밋업 프로젝트](https://bbbang105.github.io/%ED%81%90%EC%8B%9C%EC%A6%98/29%EA%B8%B0/2%EA%B0%9C%EC%9B%94-%EA%B0%84%EC%9D%98-%EB%B0%8B%EC%97%85-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9A%8C%EA%B3%A0%EB%A1%9D-%F0%9F%8F%BB) 이후로 나의 두 번째 밋업 프로젝트인데, 여러 부분에서 느끼고 배운 점들을 정리해보려고 한다 ✍🏻
 
 ---
 
@@ -266,7 +266,7 @@ Swagger나 Postman 등 다양한 툴이 있는데 왜 노션만 사용했냐...�
 
 프론트엔드 측에 위 링크만 넘겨주면 되었고, 자유로운 커스터마이징이나 직접 테스트도 가능해서 이점이 많았다. 왜 이제서야 이러한 방법들을 사용했는지 그동안의 나의 모습을 반성하게 되었다 🥲
 
-또한 프로젝트를 하던 중 이와 관련해서 [트러블 슈팅을 한 내용](https://velog.io/@hsh111366/Spring-Boot-배포-서버에서는-왜-REST-Docs가-적용되지-않았을까)도 블로그에 작성하며, 조금 더 이해도를 높일 수 있었다 😄
+또한 프로젝트를 하던 중 이와 관련해서 [트러블 슈팅을 한 내용](https://bbbang105.github.io/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85/%EB%B0%B0%ED%8F%AC-%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C%EB%8A%94-%EC%99%9C-REST-Docs%EA%B0%80-%EC%A0%81%EC%9A%A9%EB%90%98%EC%A7%80-%EC%95%8A%EC%95%98%EC%9D%84%EA%B9%8C)도 블로그에 작성하며, 조금 더 이해도를 높일 수 있었다 😄
 
 ## Record 사용
 
@@ -511,9 +511,9 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
 ![](https://velog.velcdn.com/images/hsh111366/post/8e377e5d-88b0-441b-b49a-68025bd7a5dc/image.png)
 
-[에러를 쥐잡듯이 잡아보자1](https://velog.io/@hsh111366/에러를-쥐잡듯이-잡아보자-1)
-[에러를 쥐잡듯이 잡아보자2](https://velog.io/@hsh111366/에러를-쥐잡듯이-잡아보자-2)
-[에러를 쥐잡듯이 잡아보자3](https://velog.io/@hsh111366/에러를-쥐잡듯이-잡아보자-3)
+[에러를 쥐잡듯이 잡아보자1](https://bbbang105.github.io/Spring/%EC%97%90%EB%9F%AC%EB%A5%BC-%EC%A5%90%EC%9E%A1%EB%93%AF%EC%9D%B4-%EC%9E%A1%EC%95%84%EB%B3%B4%EC%9E%90-1)
+[에러를 쥐잡듯이 잡아보자2](https://bbbang105.github.io/Spring/%EC%97%90%EB%9F%AC%EB%A5%BC-%EC%A5%90%EC%9E%A1%EB%93%AF%EC%9D%B4-%EC%9E%A1%EC%95%84%EB%B3%B4%EC%9E%90-2)
+[에러를 쥐잡듯이 잡아보자3](https://bbbang105.github.io/Spring/%EC%97%90%EB%9F%AC%EB%A5%BC-%EC%A5%90%EC%9E%A1%EB%93%AF%EC%9D%B4-%EC%9E%A1%EC%95%84%EB%B3%B4%EC%9E%90-3)
 
 ## 테스트코드
 

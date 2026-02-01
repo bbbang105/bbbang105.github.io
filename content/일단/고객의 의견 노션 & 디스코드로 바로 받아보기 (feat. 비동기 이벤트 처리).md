@@ -10,7 +10,7 @@ tags:
 
 # 🎬 서론
 
-[MBTI P들을 위한 투두 앱, `일단`](https://velog.io/@hsh111366/계획은-적게-행동은-빠르게-일단) 에서는 최근 VOC 수집을 위해서 `일단에게 의견 보내기` 기능을 앱 내에 구현했다.
+[MBTI P들을 위한 투두 앱, `일단`](https://bbbang105.github.io/%EC%9D%BC%EB%8B%A8/%EA%B3%84%ED%9A%8D%EC%9D%80-%EC%A0%81%EA%B2%8C,-%ED%96%89%EB%8F%99%EC%9D%80-%EB%B9%A0%EB%A5%B4%EA%B2%8C-'%EC%9D%BC%EB%8B%A8') 에서는 최근 VOC 수집을 위해서 `일단에게 의견 보내기` 기능을 앱 내에 구현했다.
 
 해당 기능에서는 디스코드 & 노션 외부 API 연동이 필요했고, 이를 구현하기 위해서 비동기 이벤트 처리 방식을 활용했다. 이번 글에서는 이에 대해서 작성해보려고 한다.
 
@@ -630,7 +630,7 @@ public void sendCreateUserComment(CreateUserCommentEvent event) {
 
 ![](https://velog.velcdn.com/images/hsh111366/post/cd9f63b8-2b93-4590-9fda-5ee7ec81e544/image.png)
 
-정말로 감사하게도 [일단 소개글](https://velog.io/@hsh111366/계획은-적게-행동은-빠르게-일단)을 작성한 이후로 20명이 넘는 분들이 가입을 해 주셨다. 벨로그 트렌딩에도 꽤나 상위권에 올라서 많은 분들께서 관심을 가져주신 듯하다.
+정말로 감사하게도 [일단 소개글](https://bbbang105.github.io/%EC%9D%BC%EB%8B%A8/%EA%B3%84%ED%9A%8D%EC%9D%80-%EC%A0%81%EA%B2%8C,-%ED%96%89%EB%8F%99%EC%9D%80-%EB%B9%A0%EB%A5%B4%EA%B2%8C-'%EC%9D%BC%EB%8B%A8')을 작성한 이후로 20명이 넘는 분들이 가입을 해 주셨다. 벨로그 트렌딩에도 꽤나 상위권에 올라서 많은 분들께서 관심을 가져주신 듯하다.
 
 > 🧑🏻‍💻 사이드 프로젝트로 서비스를 1년 이상 운영해 보고 있는 입장에서, 유저 한 명이 얼마나 소중하고 팀원들에게 큰 동기부여가 되는지를 잘 알고 있다. 
 >

@@ -9,7 +9,7 @@ tags:
 
 # 🎬 서론
 
-최근 [OneTime](https://www.onetime-with-members.com/) 서비스에 [Spring Filter & Interceptor를 적용한 로깅 개선 작업](https://velog.io/@hsh111366/Spring-조악한-로깅-개선해-보기)을 진행했었다.
+최근 [OneTime](https://www.onetime-with-members.com/) 서비스에 [Spring Filter & Interceptor를 적용한 로깅 개선 작업](https://bbbang105.github.io/Spring/%EC%A1%B0%EC%95%85%ED%95%9C-%EB%A1%9C%EA%B9%85-%EA%B0%9C%EC%84%A0%ED%95%B4-%EB%B3%B4%EA%B8%B0)을 진행했었다.
 
 로그를 보던 중, 짧은 시간 안에 무수히 많은 요청이 들어온 것을 확인했다.
 모두 정상적인 API 호출은 아니었기에 에러 로그로 찍혔지만, 누군가의 악의적인 공격 시도라고 판단하여 이를 막아보기로 결정했다.

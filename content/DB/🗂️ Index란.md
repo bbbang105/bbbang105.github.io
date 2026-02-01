@@ -120,7 +120,7 @@ SELECT * FROM users WHERE age > 5;
 
 B+Tree는 B-Tree의 확장 개념으로, **트리의 높이를 최대한 낮게 유지하며 탐색의 성능을 극대화한 자료구조**이다.
 
-B-Tree & B+Tree가 무엇인지, 그리고 차이점은 무엇이 있는지는 [해당 글](https://velog.io/@hsh111366/자료구조-B-Tree-BTree)에 정리해 두었다.
+B-Tree & B+Tree가 무엇인지, 그리고 차이점은 무엇이 있는지는 [해당 글](https://bbbang105.github.io/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/B-Tree--B+Tree)에 정리해 두었다.
 
 ---
 

@@ -282,7 +282,7 @@ Integer 클래스가 `Object.toString()`을 오버라이딩할 때 이 메서드
 >
 즉, `int → String 변환`이 자주 쓰이기 때문에, **`JIT 컴파일러`가 아주 빠르게 처리할 수 있도록** 특별 대우를 해 주는 것이다.
 >
-[JIT 컴파일러에 대한 간략한 정리 글](https://velog.io/@hsh111366/Java-1-자바는-컴파일-언어인가)
+[JIT 컴파일러에 대한 간략한 정리 글](https://bbbang105.github.io/Java/%EC%9E%90%EB%B0%94%EB%8A%94-%EC%BB%B4%ED%8C%8C%EC%9D%BC-%EC%96%B8%EC%96%B4%EC%9D%B8%EA%B0%80)
 
 ### 내부적인 static 메서드 (radix 존재 O)
 
@@ -503,7 +503,7 @@ public static boolean equals(byte[] value, byte[] other) {
 
 이 값은 데이터의 내용을 **짧고 고유한 숫자**로 요약한 것이라고 볼 수 있다. **동일한 데이터는 동일한 해시 값**을 가지며, 다른 데이터는 되도록이면 다른 해시 값을 가지도록 설계된다.
 
-> 여기서 '되도록'이라고 표현한 이유는, [불가피하게 해시 값이 같은 경우가 발생](https://velog.io/@hsh111366/Java-hashCode는-항상-고유할까)할 수 있기 때문이다.
+> 여기서 '되도록'이라고 표현한 이유는, [불가피하게 해시 값이 같은 경우가 발생](https://bbbang105.github.io/Java/hashCode%EB%8A%94-%ED%95%AD%EC%83%81-%EA%B3%A0%EC%9C%A0%ED%95%A0%EA%B9%8C)할 수 있기 때문이다.
 
 ## 왜 필요한가?
 
@@ -529,9 +529,9 @@ Object 클래스에서 정의되어 있는 hashCode() 메서드는 위와 같다
 
 생소한 `native` 라는 부분이 보일 것이다. 
 
-native 메서드는 자바 코드로 구현되어 있지 않고, `JVM 내부(네이티브 코드)` 에 구현되어 있다. 	[`JNI(Java Native Interface)`](https://velog.io/@hsh111366/Java-GC란) 를 통해 **JVM 레벨, 시스템 레벨에서 작동**하게 되는 것이다.
+native 메서드는 자바 코드로 구현되어 있지 않고, `JVM 내부(네이티브 코드)` 에 구현되어 있다. 	[`JNI(Java Native Interface)`](https://bbbang105.github.io/Java/GC%EB%9E%80) 를 통해 **JVM 레벨, 시스템 레벨에서 작동**하게 되는 것이다.
 
-기본적으로는 객체의 메모리 주소나 그 주소를 기반으로 계산한 수치를 해시 코드로 반환하게 되는데, [**JVM 구현마다 방식이 다를 수가 있다.**](https://velog.io/@hsh111366/Java-hashCode-메모리-주소일까)
+기본적으로는 객체의 메모리 주소나 그 주소를 기반으로 계산한 수치를 해시 코드로 반환하게 되는데, [**JVM 구현마다 방식이 다를 수가 있다.**](https://bbbang105.github.io/Java/hashCode-==-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%A3%BC%EC%86%8C%EC%9D%BC%EA%B9%8C)
 
 ## String 클래스의 hashCode()
 
@@ -924,7 +924,7 @@ public class test {
 
 이는 오버라이딩과 무관하게, 객체 자체의 해시 코드이기 때문에 **모든 객체들에 대해서 항상 다른 해시 코드를 반환할 것을 보장**한다.
 
-> **🧑🏻‍💻 하지만 과연 [모든 객체들은 서로 다른 해시 코드를 가질까?](https://velog.io/@hsh111366/Java-hashCode는-항상-고유할까) 다음 글은 이에 대해 알아보고자 한다.**
+> **🧑🏻‍💻 하지만 과연 [모든 객체들은 서로 다른 해시 코드를 가질까?](https://bbbang105.github.io/Java/hashCode%EB%8A%94-%ED%95%AD%EC%83%81-%EA%B3%A0%EC%9C%A0%ED%95%A0%EA%B9%8C) 다음 글은 이에 대해 알아보고자 한다.**
 
 ---
 

@@ -10,7 +10,7 @@ tags:
 # 📌 Interceptor?
 
 인터셉터는 요청 전/후의 공통 처리 로직을 담당하는 컴포넌트이다.
-이전에 정리한 [Spring Filter](https://velog.io/@hsh111366/Spring-Filter란)와 유사하지만 동작하는 레벨에서의 차이점이 존재한다.
+이전에 정리한 [Spring Filter](https://bbbang105.github.io/Spring/%EF%B8%8FFilter%EB%9E%80)와 유사하지만 동작하는 레벨에서의 차이점이 존재한다.
 
 ## Interceptor 🆚 Filter
 
