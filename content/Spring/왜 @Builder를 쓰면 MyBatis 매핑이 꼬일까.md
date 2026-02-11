@@ -1,5 +1,6 @@
 ---
 date: 2025-08-29
+description: "@Builder가 기본 생성자를 제거해 MyBatis 결과 매핑이 실패하는 원인과 해결 방법을 분석합니다."
 tags:
   - springboot
   - backend

@@ -1,5 +1,6 @@
 ---
 date: 2023-09-27
+description: HashMap을 Key 또는 Value 기준으로 정렬하는 방법을 람다와 함께 정리합니다.
 tags:
   - java
   - backend

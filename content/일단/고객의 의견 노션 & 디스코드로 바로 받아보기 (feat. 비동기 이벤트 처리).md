@@ -1,5 +1,6 @@
 ---
 date: 2025-07-25
+description: 비동기 이벤트와 FeignClient로 유저 의견을 디스코드/노션에 자동 전송하는 구조를 구현합니다.
 tags:
   - illdan
   - backend

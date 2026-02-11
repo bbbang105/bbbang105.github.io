@@ -1,5 +1,6 @@
 ---
 date: 2023-08-12
+description: CCW 알고리즘과 신발끈 공식을 활용한 선분 교차 판별 방법을 정리합니다.
 tags:
   - algorithm
   - ccw

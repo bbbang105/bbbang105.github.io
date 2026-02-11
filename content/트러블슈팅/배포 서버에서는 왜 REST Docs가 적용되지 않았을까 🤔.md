@@ -1,5 +1,6 @@
 ---
 date: 2024-11-01
+description: 로컬에서는 정상인 REST Docs가 배포 서버에서 적용되지 않는 문제 해결
 tags:
   - backend
   - springboot

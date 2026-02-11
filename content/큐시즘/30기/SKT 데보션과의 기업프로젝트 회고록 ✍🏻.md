@@ -1,5 +1,6 @@
 ---
 date: 2024-09-22
+description: SKT 데보션 마이페이지 개선 기업 프로젝트의 레거시 분석과 개발 회고
 tags:
   - kusitms
   - crew

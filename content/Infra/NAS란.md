@@ -1,5 +1,6 @@
 ---
 date: 2025-08-24
+description: NAS의 개념, 클라우드 스토리지와의 비교, 활용 시나리오를 정리합니다.
 tags:
   - infra
   - backend
@@ -9,7 +10,7 @@ tags:
 
 > **Written by Google Gemini 2.5 Pro**
 - Deep Research 정리 문서: https://docs.google.com/document/d/1Bwx6voatv_vBj-aGnSgc7PJZmKLdmLi7Ll5-xGqgZ9s/edit?tab=t.0
-> 
+>
 
 # 📌 **1. NAS란 무엇인가?**
 

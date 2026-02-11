@@ -1,5 +1,6 @@
 ---
 date: 2023-07-21
+description: 트리 자료구조의 기본 개념과 이진 트리의 종류 및 특징을 정리합니다.
 tags:
   - data-structure
   - tree

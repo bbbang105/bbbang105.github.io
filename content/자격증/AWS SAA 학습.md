@@ -1,5 +1,6 @@
 ---
 date: 2025-10-16
+description: AWS SAA 시험 대비를 위한 주요 서비스별 핵심 개념 정리 노트입니다.
 tags:
   - certificate
   - aws

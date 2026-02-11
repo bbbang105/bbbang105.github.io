@@ -1,5 +1,6 @@
 ---
 date: 2025-12-10
+description: 카카오 소셜 로그인 시 전화번호 가입 계정의 email이 null로 들어오는 문제 해결
 tags:
 - backend
 - troubleshooting

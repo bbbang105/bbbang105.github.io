@@ -1,5 +1,6 @@
 ---
 date: 2025-12-27
+description: Jackson에서 JSON 내 제어문자(CTRL-CHAR)로 인한 파싱 오류 해결
 tags:
   - json
   - troubleshooting

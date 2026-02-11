@@ -1,5 +1,6 @@
 ---
 date: 2025-04-24
+description: 서블릿 필터의 개념과 동작 원리, 로깅/인코딩/CORS 등 실전 사용 사례를 정리합니다.
 tags:
   - springboot
   - backend

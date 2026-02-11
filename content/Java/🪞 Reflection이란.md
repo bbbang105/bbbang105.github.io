@@ -1,5 +1,6 @@
 ---
 date: 2025-10-04
+description: Java Reflection의 동작 원리와 Spring DI, JPA 등 프레임워크에서의 활용을 정리합니다.
 tags:
   - java
   - backend

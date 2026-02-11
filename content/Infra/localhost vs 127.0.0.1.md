@@ -1,5 +1,6 @@
 ---
 date: 2025-12-14
+description: localhost와 127.0.0.1의 해석 과정 차이와 IPv4/IPv6 이슈 사례를 분석합니다.
 tags:
 - backend
 - infra

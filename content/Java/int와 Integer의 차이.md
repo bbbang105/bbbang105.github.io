@@ -1,5 +1,6 @@
 ---
 date: 2023-10-09
+description: 기본형 int와 래퍼 클래스 Integer의 차이, 그리고 Boxing/Unboxing을 정리합니다.
 tags:
   - java
   - backend

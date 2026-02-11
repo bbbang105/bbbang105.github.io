@@ -1,5 +1,6 @@
 ---
 date: 2024-02-28
+description: SKT 데보션영 3기 지원 동기부터 합격까지의 과정을 공유합니다.
 tags:
   - devocean
   - career

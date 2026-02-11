@@ -1,5 +1,6 @@
 ---
 date: 2024-12-21
+description: 야구 구역 추천 서비스 HitZone의 DDD 리팩토링과 REST Docs+Swagger 적용 회고
 tags:
   - backend
   - kusitms

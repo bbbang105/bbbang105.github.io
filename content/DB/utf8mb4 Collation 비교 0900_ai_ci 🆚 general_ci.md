@@ -1,5 +1,6 @@
 ---
 date: 2025-08-15
+description: MySQL utf8mb4의 두 Collation 차이와 한글 자소 분리 문제를 비교 분석합니다.
 tags:
   - database
   - backend

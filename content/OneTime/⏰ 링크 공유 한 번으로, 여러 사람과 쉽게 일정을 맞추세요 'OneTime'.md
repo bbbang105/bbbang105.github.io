@@ -1,5 +1,6 @@
 ---
 date: 2024-11-19
+description: 다인원 일정 조율 웹 서비스 OneTime의 탄생 배경과 주요 기능을 소개합니다.
 tags:
   - onetime
   - backend

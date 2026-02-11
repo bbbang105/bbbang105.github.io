@@ -1,5 +1,6 @@
 ---
 date: 2025-09-19
+description: Java 25 LTS의 주요 변경점과 신규 기능, 마이그레이션 시 고려사항을 정리합니다.
 tags:
   - java
   - backend

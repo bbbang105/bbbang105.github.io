@@ -1,5 +1,6 @@
 ---
 date: 2024-02-19
+description: 프로그래머스 PCCP Java 응시 후기와 Lv.2 취득 과정을 공유합니다.
 tags:
   - certificate
   - java

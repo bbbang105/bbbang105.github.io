@@ -1,5 +1,6 @@
 ---
 date: 2025-04-28
+description: Spring Interceptor의 동작 원리와 Filter와의 차이점, 인증 처리 활용법을 정리합니다.
 tags:
   - springboot
   - backend

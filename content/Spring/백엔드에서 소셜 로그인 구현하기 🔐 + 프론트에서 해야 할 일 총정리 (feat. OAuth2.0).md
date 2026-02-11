@@ -1,5 +1,6 @@
 ---
 date: 2024-04-20
+description: Spring Security와 OAuth2.0으로 구글/카카오/네이버 소셜 로그인을 구현하는 전체 과정을 정리합니다.
 tags:
   - springboot
   - backend

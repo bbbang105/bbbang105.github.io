@@ -1,5 +1,6 @@
 ---
 date: 2024-07-05
+description: Effective Java의 toString 재정의 원칙과 Cloneable/clone의 주의사항을 정리합니다.
 tags:
   - books
   - backend

@@ -1,5 +1,6 @@
 ---
 date: 2025-05-25
+description: Bulk Insert 적용으로 OneTime 이벤트 생성 API의 처리 속도를 개선한 과정을 다룹니다.
 tags:
   - onetime
   - backend

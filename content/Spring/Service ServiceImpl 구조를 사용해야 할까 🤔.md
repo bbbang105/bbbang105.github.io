@@ -1,5 +1,6 @@
 ---
 date: 2024-07-26
+description: Service-ServiceImpl 인터페이스 구현체 구조의 장단점과 사용 여부에 대한 고찰을 담았습니다.
 tags:
   - springboot
   - backend

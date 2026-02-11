@@ -1,5 +1,6 @@
 ---
 date: 2025-06-19
+description: Object 클래스의 toString(), equals(), hashCode() 메서드 동작 원리와 재정의 방법을 다룹니다.
 tags:
   - java
   - backend

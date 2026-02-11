@@ -1,5 +1,6 @@
 ---
 date: 2025-03-27
+description: 구름 COMMIT X AWS Innovate Watch Party에서 생성형 AI와 클라우드 세션을 들은 후기입니다
 tags:
   - career
 ---

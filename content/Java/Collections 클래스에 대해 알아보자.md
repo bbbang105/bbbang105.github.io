@@ -1,5 +1,6 @@
 ---
 date: 2024-02-29
+description: collection, Collection, Collections의 차이와 주요 유틸리티 메서드를 정리합니다.
 tags:
   - java
   - backend

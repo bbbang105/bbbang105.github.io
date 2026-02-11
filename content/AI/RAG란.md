@@ -1,5 +1,6 @@
 ---
 date: 2025-08-15
+description: LLM의 환각과 지식 단절을 보완하는 검색 증강 생성(RAG)의 작동 원리와 장단점을 정리합니다.
 tags:
   - ai
   - rag

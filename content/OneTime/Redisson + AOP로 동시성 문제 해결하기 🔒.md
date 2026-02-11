@@ -1,5 +1,6 @@
 ---
 date: 2025-06-08
+description: 토큰 재발행 시 발생한 동시성 문제를 Redisson 분산 락과 AOP로 해결한 과정입니다.
 tags:
   - onetime
   - backend

@@ -1,5 +1,6 @@
 ---
 date: 2025-03-29
+description: REST Docs + Swagger 연동 시 Components 덮어쓰기로 스키마가 누락되는 문제 해결
 tags:
   - backend
   - swaager

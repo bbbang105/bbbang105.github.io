@@ -1,5 +1,6 @@
 ---
 date: 2025-04-30
+description: 2025년 SKT 유심 정보 유출 사건의 경과와 기술적 쟁점을 정리합니다.
 tags:
   - life
   - security

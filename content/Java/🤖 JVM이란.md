@@ -1,5 +1,6 @@
 ---
 date: 2025-05-29
+description: JVM의 구성 요소와 클래스 로더, 실행 엔진, 런타임 데이터 영역을 정리합니다.
 tags:
   - java
   - backend

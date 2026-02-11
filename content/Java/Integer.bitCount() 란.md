@@ -1,5 +1,6 @@
 ---
 date: 2024-01-26
+description: 정수의 이진수 표현에서 1의 개수를 세는 Integer.bitCount() 메서드를 소개합니다.
 tags:
   - java
   - backend

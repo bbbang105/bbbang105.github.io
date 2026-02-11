@@ -1,5 +1,6 @@
 ---
 date: 2024-02-28
+description: SKT 데보션영 3기 발대식 현장 스케치와 주요 프로그램 후기입니다.
 tags:
   - devocean
   - career

@@ -1,5 +1,6 @@
 ---
 date: 2025-10-23
+description: 3일 벼락치기로 AWS SAA 자격증에 합격한 공부법과 후기를 공유합니다.
 tags:
   - certificate
   - aws

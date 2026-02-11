@@ -1,5 +1,6 @@
 ---
 date: 2025-05-20
+description: B-Tree와 B+Tree의 구조, 동작 원리, 차이점을 비교하여 정리합니다.
 tags:
   - data-structure
   - tree

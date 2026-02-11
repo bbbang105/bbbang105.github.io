@@ -1,5 +1,6 @@
 ---
 date: 2025-06-19
+description: Object.hashCode()가 메모리 주소와 같은지 JVM 내부 코드를 분석하여 확인합니다.
 tags:
   - java
   - backend

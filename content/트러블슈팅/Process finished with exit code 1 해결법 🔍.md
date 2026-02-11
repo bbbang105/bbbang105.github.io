@@ -1,5 +1,6 @@
 ---
 date: 2023-08-01
+description: Spring Boot 실행 시 포트 8080 충돌로 인한 종료 문제 해결
 tags:
   - backend
   - springboot

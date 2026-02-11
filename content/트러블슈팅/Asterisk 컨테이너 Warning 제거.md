@@ -4,6 +4,7 @@ tags:
   - asterisk
   - troubleshooting
 date: 2025-12-28
+description: Asterisk extensions.conf 문법 오류로 인한 Warning 메시지 해결
 ---
 
 ---

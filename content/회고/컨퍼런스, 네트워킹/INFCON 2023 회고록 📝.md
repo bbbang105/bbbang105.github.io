@@ -1,5 +1,6 @@
 ---
 date: 2023-08-26
+description: 인프콘 2023에 참가하여 세션을 듣고 기업 부스를 돌아보며 느낀 점을 기록한 회고입니다
 tags:
   - conference
   - career

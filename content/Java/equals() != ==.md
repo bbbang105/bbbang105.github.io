@@ -1,5 +1,6 @@
 ---
 date: 2023-09-18
+description: Java에서 문자열 비교 시 ==가 아닌 equals()를 사용해야 하는 이유를 설명합니다.
 tags:
   - java
   - backend

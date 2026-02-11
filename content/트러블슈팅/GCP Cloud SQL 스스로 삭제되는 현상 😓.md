@@ -1,5 +1,6 @@
 ---
 date: 2024-11-29
+description: GCP Cloud SQL 인스턴스가 예고 없이 자동 삭제되는 현상의 원인과 해결
 tags:
   - troubleshooting
   - gcp

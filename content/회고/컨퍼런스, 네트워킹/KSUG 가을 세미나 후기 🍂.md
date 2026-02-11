@@ -1,5 +1,6 @@
 ---
 date: 2024-10-27
+description: KSUG 가을 세미나에서 Spring 관련 세션을 듣고 네트워킹에 참여한 후기입니다
 tags:
   - conference
   - career

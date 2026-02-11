@@ -1,5 +1,6 @@
 ---
 date: 2024-09-29
+description: Docker Captain의 Dockerfile 베스트 프랙티스를 실제 프로젝트에 적용해봅니다.
 aliases:
 tags:
   - career

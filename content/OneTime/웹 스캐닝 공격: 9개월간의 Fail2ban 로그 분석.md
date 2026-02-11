@@ -1,5 +1,6 @@
 ---
 date: 2026-02-01
+description: Fail2ban을 9개월간 운영하며 수집한 웹 스캐닝 공격 로그를 분석합니다.
 tags:
   - onetime
   - backend

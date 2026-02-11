@@ -1,5 +1,6 @@
 ---
 date: 2024-11-06
+description: SK AI SUMMIT 2024 2일차 전시와 세션 참관 후기를 정리합니다.
 tags:
   - devocean
   - ai

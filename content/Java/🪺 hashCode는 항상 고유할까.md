@@ -1,5 +1,6 @@
 ---
 date: 2025-06-22
+description: hashCode가 고유하지 않은 이유와 해시 충돌이 허용되는 설계 원리를 알아봅니다.
 tags:
   - java
   - backend

@@ -1,5 +1,6 @@
 ---
 date: 2025-05-21
+description: N+1 문제 해결과 인덱스 적용으로 OneTime 조회 API 성능을 개선한 과정을 정리합니다.
 tags:
   - onetime
   - backend

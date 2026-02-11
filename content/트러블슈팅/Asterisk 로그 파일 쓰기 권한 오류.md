@@ -1,5 +1,6 @@
 ---
 date: 2025-12-22
+description: Docker Asterisk 컨테이너에서 CDR CSV 로그 파일 쓰기 권한 오류 해결
 tags:
   - troubleshooting
   - asterisk

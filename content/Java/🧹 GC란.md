@@ -1,5 +1,6 @@
 ---
 date: 2025-06-05
+description: JVM 가비지 컬렉터의 동작 원리, 힙 메모리 구조, 그리고 다양한 GC 알고리즘을 정리합니다.
 tags:
   - java
   - backend

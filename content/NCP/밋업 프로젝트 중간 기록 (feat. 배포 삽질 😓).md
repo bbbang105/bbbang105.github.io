@@ -1,5 +1,6 @@
 ---
 date: 2024-11-07
+description: NCP 기반 밋업 프로젝트 배포 과정에서 Docker 포트포워딩 누락 삽질과 해결 경험을 기록합니다.
 tags:
   - ncp
   - backend

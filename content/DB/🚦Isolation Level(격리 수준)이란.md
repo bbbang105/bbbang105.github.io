@@ -1,5 +1,6 @@
 ---
 date: 2025-06-10
+description: 트랜잭션 격리 수준 4단계와 각 수준에서 발생할 수 있는 정합성 문제를 정리합니다.
 tags:
   - database
   - backend

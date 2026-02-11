@@ -1,5 +1,6 @@
 ---
 date: 2025-05-18
+description: 파일 스캐닝 공격을 Nginx와 Fail2Ban으로 탐지하고 iptables로 IP를 차단하는 과정을 기록합니다.
 tags:
   - infra
   - backend

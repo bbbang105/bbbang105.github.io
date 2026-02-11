@@ -1,5 +1,6 @@
 ---
 date: 2025-05-21
+description: DB 인덱스의 필요성, B+Tree 기반 동작 원리, 한계점 및 생성 전략을 정리합니다.
 tags:
   - database
   - backend

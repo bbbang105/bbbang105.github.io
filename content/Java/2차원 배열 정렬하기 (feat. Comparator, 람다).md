@@ -1,5 +1,6 @@
 ---
 date: 2023-10-07
+description: Comparator와 람다를 활용한 Java 2차원 배열 정렬 방법을 정리합니다.
 tags:
   - java
   - backend

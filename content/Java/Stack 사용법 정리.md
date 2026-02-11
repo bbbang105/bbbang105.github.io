@@ -1,5 +1,6 @@
 ---
 date: 2023-09-19
+description: Java Stack 클래스의 주요 메서드(push, pop, peek 등) 사용법을 정리합니다.
 tags:
   - java
   - backend

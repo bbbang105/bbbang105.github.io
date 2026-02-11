@@ -1,5 +1,6 @@
 ---
 date: 2025-04-23
+description: Spring의 복잡한 설정 문제를 Spring Boot가 어떻게 해결하는지 핵심 기능 중심으로 비교합니다.
 tags:
   - springboot
   - backend

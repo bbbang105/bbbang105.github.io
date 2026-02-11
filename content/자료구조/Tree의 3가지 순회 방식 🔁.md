@@ -1,5 +1,6 @@
 ---
 date: 2023-07-22
+description: 이진 트리의 전위, 중위, 후위 순회 방식과 Python 구현 코드를 설명합니다.
 tags:
   - data-structure
   - tree

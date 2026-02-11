@@ -1,5 +1,6 @@
 ---
 date: 2025-10-04
+description: Lombok @Builder와 @NoArgsConstructor를 함께 사용할 때 컴파일 에러가 발생하는 원인을 분석합니다.
 tags:
   - springboot
   - backend

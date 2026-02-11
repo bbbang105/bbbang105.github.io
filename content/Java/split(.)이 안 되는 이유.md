@@ -1,5 +1,6 @@
 ---
 date: 2023-09-13
+description: split(".")이 동작하지 않는 이유와 정규식 이스케이프 처리 방법을 설명합니다.
 tags:
   - java
   - backend

@@ -1,5 +1,6 @@
 ---
 date: 2025-10-04
+description: JPA 엔티티에서 protected 기본 생성자가 필요한 이유를 리플렉션과 프록시 관점에서 설명합니다.
 tags:
   - springboot
   - backend

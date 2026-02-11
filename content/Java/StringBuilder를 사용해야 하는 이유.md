@@ -1,5 +1,6 @@
 ---
 date: 2023-10-01
+description: String의 불변 특성으로 인한 성능 문제와 StringBuilder를 사용해야 하는 이유를 설명합니다.
 tags:
   - java
   - backend

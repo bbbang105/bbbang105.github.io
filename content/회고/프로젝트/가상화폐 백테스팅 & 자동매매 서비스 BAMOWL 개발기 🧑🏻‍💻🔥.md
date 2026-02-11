@@ -1,5 +1,6 @@
 ---
 date: 2024-07-06
+description: 캡스톤 디자인에서 가상화폐 백테스팅 및 자동매매 서비스 BAMOWL을 개발한 회고입니다
 tags:
   - project
   - backend

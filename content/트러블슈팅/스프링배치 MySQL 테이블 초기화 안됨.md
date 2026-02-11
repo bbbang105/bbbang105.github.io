@@ -1,5 +1,6 @@
 ---
 date: 2025-11-13
+description: Spring Batch initialize-schema 설정에도 메타 테이블이 생성되지 않는 문제 해결
 tags:
   - springbatch
   - troubleshooting
