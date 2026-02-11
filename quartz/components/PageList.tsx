@@ -1,4 +1,4 @@
-import { FullSlug, isFolderPath, resolveRelative } from "../util/path"
+import { isFolderPath, resolveRelative } from "../util/path"
 import { QuartzPluginData } from "../plugins/vfile"
 import { Date as DateComponent, getDate } from "./Date"
 import { QuartzComponent, QuartzComponentProps } from "./types"
@@ -6,18 +6,17 @@ import { GlobalConfiguration } from "../cfg"
 
 export type SortFn = (f1: QuartzPluginData, f2: QuartzPluginData) => number
 
-export function byDateAndAlphabetical(cfg: GlobalConfiguration): SortFn {
-  return (f1, f2) => {
-    // frontmatter.date 기준 최신순 정렬
-    const getDateValue = (f: QuartzPluginData): number => {
-      const dateStr = f.frontmatter?.date
-      if (dateStr && typeof dateStr === 'string') {
-        const d = new Date(dateStr)
-        return isNaN(d.getTime()) ? 0 : d.getTime()
-      }
-      return 0
-    }
+function getDateValue(f: QuartzPluginData): number {
+  const dateStr = f.frontmatter?.date
+  if (dateStr && typeof dateStr === 'string') {
+    const d = new Date(dateStr)
+    return isNaN(d.getTime()) ? 0 : d.getTime()
+  }
+  return 0
+}
 
+export function byDateAndAlphabetical(_cfg: GlobalConfiguration): SortFn {
+  return (f1, f2) => {
     const f1Time = getDateValue(f1)
     const f2Time = getDateValue(f2)
 
@@ -36,23 +35,13 @@ export function byDateAndAlphabetical(cfg: GlobalConfiguration): SortFn {
   }
 }
 
-export function byDateAndAlphabeticalFolderFirst(cfg: GlobalConfiguration): SortFn {
+export function byDateAndAlphabeticalFolderFirst(_cfg: GlobalConfiguration): SortFn {
   return (f1, f2) => {
     // Sort folders first
     const f1IsFolder = isFolderPath(f1.slug ?? "")
     const f2IsFolder = isFolderPath(f2.slug ?? "")
     if (f1IsFolder && !f2IsFolder) return -1
     if (!f1IsFolder && f2IsFolder) return 1
-
-    // frontmatter.date 기준 최신순 정렬
-    const getDateValue = (f: QuartzPluginData): number => {
-      const dateStr = f.frontmatter?.date
-      if (dateStr && typeof dateStr === 'string') {
-        const d = new Date(dateStr)
-        return isNaN(d.getTime()) ? 0 : d.getTime()
-      }
-      return 0
-    }
 
     const f1Time = getDateValue(f1)
     const f2Time = getDateValue(f2)
@@ -90,6 +79,7 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
         const title = page.frontmatter?.title
         const tags = page.frontmatter?.tags ?? []
         const coverImage = page.coverImage
+        const description = page.frontmatter?.description ?? page.description
         const isFolder = isFolderPath(page.slug ?? "")
         const fileCount = (page as any).fileCount
 
@@ -102,17 +92,36 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
               </a>
             ) : (
             <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal post-card">
-              <div class="post-meta">
-                {getDate(cfg, page) && <DateComponent date={getDate(cfg, page)!} locale={cfg.locale} />}
-                {tags.length > 0 && (
-                  <span class="post-tags">
-                    {tags.map((tag) => (
-                      <span class="tag">{tag}</span>
-                    ))}
-                  </span>
+              <div class={coverImage ? "post-card-with-thumb" : ""}>
+                <div class="post-card-content">
+                  <div class="post-meta">
+                    {getDate(cfg, page) && <DateComponent date={getDate(cfg, page)!} locale={cfg.locale} />}
+                    {tags.length > 0 && (
+                      <span class="post-tags">
+                        {tags.slice(0, 3).map((tag) => (
+                          <span class="tag">{tag}</span>
+                        ))}
+                      </span>
+                    )}
+                  </div>
+                  <h3 class="post-title">{title}</h3>
+                  {description && (
+                    <p class="post-description">{
+                      typeof description === 'string' && description.length > 120
+                        ? description.slice(0, 120) + "..."
+                        : description
+                    }</p>
+                  )}
+                </div>
+                {coverImage && (
+                  <img
+                    class="post-thumbnail"
+                    src={coverImage}
+                    alt={title ?? "Post thumbnail"}
+                    loading="lazy"
+                  />
                 )}
               </div>
-              <h3 class="post-title">{title}</h3>
             </a>
             )}
           </li>
@@ -130,30 +139,28 @@ PageList.css = `
 }
 
 .section-li {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-/* 포스트 카드 - 구분선 스타일 */
+/* 포스트 카드 - shadcn 스타일 */
 .post-card {
   display: block;
-  padding: 1rem 0 3rem 0;
+  padding: 1.5rem 1.75rem;
   background-color: transparent !important;
   text-decoration: none;
-  transition: background-color 0.2s ease;
-  border-bottom: 1px solid var(--lightgray);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--lightgray);
+  border-radius: 0.75rem;
 }
 
 .post-card:hover {
-  background-color: rgba(0, 0, 0, 0.04) !important;
+  border-color: var(--secondary);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
 }
 
-.section-li:first-child .post-card {
-  padding-top: 0;
-}
-
-.section-li:last-child .post-card {
-  border-bottom: none;
-  padding-bottom: 0;
+.post-card:hover .post-title {
+  color: var(--secondary);
 }
 
 .post-meta {
@@ -161,7 +168,7 @@ PageList.css = `
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 0.4rem;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--gray);
 }
 
@@ -176,7 +183,8 @@ PageList.css = `
 
 .post-tags .tag {
   color: var(--secondary);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 500;
 }
 
 .post-tags .tag::before {
@@ -184,43 +192,47 @@ PageList.css = `
 }
 
 .post-title {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  font-weight: 500;
+  margin: 0 0 0.15rem 0;
+  font-size: 1.05rem;
+  font-weight: 600;
   color: var(--dark);
   line-height: 1.4;
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 폴더 스타일 - 포스트와 동일한 구분선 스타일 */
+/* 폴더 스타일 - shadcn 카드 */
 .section-folder {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 0 3.5rem 0;
+  padding: 1.25rem;
   background: transparent !important;
   text-decoration: none;
-  transition: background-color 0.2s ease;
-  border-bottom: 1px solid var(--lightgray);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--lightgray);
+  border-radius: 0.75rem;
 }
 
 .section-folder:hover {
-  background: rgba(0, 0, 0, 0.04) !important;
-}
-
-.section-li:last-child .section-folder {
-  border-bottom: none;
+  border-color: var(--secondary);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
 }
 
 .section-folder .folder-title {
   margin: 0;
-  font-size: 1.1rem;
-  font-weight: 500;
+  font-size: 1.05rem;
+  font-weight: 600;
   color: var(--dark);
   line-height: 1.4;
 }
 
+.section-folder:hover .folder-title {
+  color: var(--secondary);
+}
+
 .section-folder .folder-count {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--gray);
   flex-shrink: 0;
 }
@@ -228,24 +240,24 @@ PageList.css = `
 /* 모바일 */
 @media (max-width: 650px) {
   .post-card {
-    padding: 0.8rem 0;
+    padding: 1.25rem;
   }
 
   .post-title {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .post-meta {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     flex-wrap: wrap;
   }
 
   .section-folder {
-    padding: 0.8rem 0;
+    padding: 1rem;
   }
 
   .section-folder .folder-title {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 }
 `

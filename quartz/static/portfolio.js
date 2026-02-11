@@ -1,3 +1,5 @@
+var _scrollObserver = null;
+
 function switchLang(lang) {
   document.querySelectorAll(".lang-content").forEach(function(el) { el.classList.remove("active") });
   document.querySelectorAll(".lang-btn").forEach(function(el) { el.classList.remove("active") });
@@ -6,6 +8,7 @@ function switchLang(lang) {
   if (btn) btn.classList.add("active");
   localStorage.setItem("preferredLang", lang);
   updateToc(lang);
+  initScrollAnimations();
 }
 
 function updateToc(lang) {
@@ -26,12 +29,12 @@ function updateToc(lang) {
 
 function openContact() {
   document.getElementById("contact-overlay").classList.add("active");
-  document.body.style.overflow = "hidden";
+  document.body.classList.add("modal-open");
 }
 
 function closeContact() {
   document.getElementById("contact-overlay").classList.remove("active");
-  document.body.style.overflow = "";
+  document.body.classList.remove("modal-open");
 }
 
 document.addEventListener("click", function(e) {
@@ -42,11 +45,50 @@ document.addEventListener("keydown", function(e) {
   if (e.key === "Escape") closeContact();
 });
 
+function initScrollAnimations() {
+  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReducedMotion) {
+    document.querySelectorAll(".scroll-fade-in").forEach(function(el) {
+      el.classList.add("visible");
+    });
+    return;
+  }
+
+  // Cleanup previous observer
+  if (_scrollObserver) {
+    _scrollObserver.disconnect();
+    _scrollObserver = null;
+  }
+
+  _scrollObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        _scrollObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: "0px 0px -40px 0px"
+  });
+
+  document.querySelectorAll(".scroll-fade-in").forEach(function(el) {
+    if (!el.classList.contains("visible")) {
+      _scrollObserver.observe(el);
+    }
+  });
+}
+
 function initLang() {
   var saved = localStorage.getItem("preferredLang") || "en";
   switchLang(saved);
 }
 
-document.addEventListener("DOMContentLoaded", initLang);
-document.addEventListener("nav", initLang);
-if (document.readyState !== "loading") initLang();
+function initPage() {
+  initLang();
+  initScrollAnimations();
+}
+
+document.addEventListener("DOMContentLoaded", initPage);
+document.addEventListener("nav", initPage);
+if (document.readyState !== "loading") initPage();

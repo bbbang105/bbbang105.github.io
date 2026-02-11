@@ -1,33 +1,53 @@
 @use "./base.scss";
 
 // ========================================
-// 폰트 설정 - Pretendard 통일
+// Design System - shadcn/Medium/BigTech inspired
 // ========================================
+
+// Design tokens + fonts
 :root {
+  --radius: 0.75rem;
+  --radius-sm: 0.5rem;
+  --radius-lg: 1rem;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   --headerFont: "Pretendard Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
   --bodyFont: "Pretendard Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
   --codeFont: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace !important;
 }
 
+// Modal body lock
+body.modal-open {
+  overflow: hidden;
+}
+
 // ========================================
-// 기본 타이포그래피 개선
+// 기본 타이포그래피 - Medium 스타일
 // ========================================
 body {
-  line-height: 1.7;
-  letter-spacing: -0.01em;
+  line-height: 1.75;
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
+  font-weight: 700;
 }
 
 // ========================================
-// 코드 블록
+// 코드 블록 - shadcn 스타일
 // ========================================
 pre {
   overflow-x: auto;
   max-width: 100%;
-  border-radius: 8px;
+  border-radius: var(--radius);
+  border: 1px solid var(--lightgray) !important;
+  box-shadow: var(--shadow-sm);
 }
 
 code {
@@ -41,31 +61,29 @@ code {
 }
 
 // ========================================
-// 탐색기 (Categories) 스타일
+// 탐색기 (Explorer) 스타일
 // ========================================
-
-// 제목 숨기기
 .explorer .desktop-explorer {
   display: none !important;
 }
 
-// 링크 색상
 .explorer ul li a {
   color: var(--dark);
-  transition: color 0.2s ease;
+  transition: color var(--transition);
+  opacity: 0.7;
 
   &:hover {
     color: var(--secondary);
+    opacity: 1;
   }
 }
 
-// 현재 읽는 글 하이라이트
 .explorer ul li a.active {
   color: var(--secondary) !important;
   font-weight: 600;
+  opacity: 1;
 }
 
-// 모바일 사이드바
 @media (max-width: 800px) {
   .explorer.collapsed > .explorer-content {
     transform: translateX(-100vw) !important;
@@ -75,14 +93,16 @@ code {
 }
 
 // ========================================
-// 다크모드
+// 다크모드 - GitHub/shadcn 스타일
 // ========================================
 :root[saved-theme="dark"] {
-  --lightgray: #2d333b;
+  --lightgray: #1c2128;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
 
-  // 탐색기
   .explorer ul li a {
-    color: #c9d1d9 !important;
+    color: #adbac7 !important;
   }
 
   .explorer ul li a.active {
@@ -90,83 +110,143 @@ code {
   }
 
   .explorer ul li {
-    border-color: #30363d !important;
+    border-color: #2d333b !important;
   }
 
-  // 포스트 카드
+  // 포스트 카드 다크모드
   .post-card {
     background-color: transparent !important;
     border-color: #30363d !important;
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.06) !important;
+      background-color: rgba(255, 255, 255, 0.03) !important;
+      border-color: #58a6ff !important;
     }
   }
 
   .post-title {
-    color: #c9d1d9 !important;
+    color: #adbac7 !important;
+  }
+
+  .post-card:hover .post-title {
+    color: var(--secondary) !important;
   }
 
   .post-meta,
   .post-meta time {
-    color: #8b949e !important;
+    color: #636e7b !important;
   }
 
-  // 폴더 - 포스트와 동일한 구분선 스타일
+  .post-description {
+    color: #636e7b !important;
+  }
+
+  .post-thumbnail {
+    border-color: #2d333b !important;
+  }
+
+  // 폴더 다크모드
   .section-folder {
     background: transparent !important;
     border-color: #30363d !important;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.06) !important;
+      background: rgba(255, 255, 255, 0.03) !important;
+      border-color: #58a6ff !important;
     }
 
     .folder-title {
-      color: #c9d1d9 !important;
+      color: #adbac7 !important;
     }
 
     .folder-count {
-      color: #8b949e !important;
+      color: #636e7b !important;
     }
   }
 
   // 구분선
   hr {
-    border-color: var(--secondary) !important;
-    background-color: var(--secondary) !important;
+    background-color: #2d333b !important;
+    border-color: #2d333b !important;
   }
 
   // 코드 블록
   pre {
-    border: 1px solid #30363d !important;
+    border: 1px solid #2d333b !important;
+    box-shadow: none;
   }
 
-  // 인라인 코드 배경색
   code:not(pre code) {
-    background-color: #343942 !important;
+    background-color: #2d333b !important;
     color: #e6edf3 !important;
     padding: 0.2em 0.4em !important;
-    border-radius: 4px !important;
+    border-radius: var(--radius-sm) !important;
   }
 
-  // 테이블 구분선 - 더 밝게
+  // 테이블 구분선
   table {
     tr {
-      border-bottom-color: #484f58 !important;
+      border-bottom-color: #2d333b !important;
     }
     th {
-      border-bottom-color: #6e7681 !important;
+      border-bottom-color: #3d444d !important;
     }
   }
 
+  // 섹션 카드 (포트폴리오)
+  .section-card {
+    background: #161b22 !important;
+    border-color: #30363d !important;
+
+    &:hover {
+      border-color: #3d444d !important;
+    }
+  }
+
+  // Featured 카드 다크모드
+  .featured-card {
+    background: #161b22 !important;
+    border-color: #30363d !important;
+
+    &:hover {
+      border-color: #58a6ff !important;
+      box-shadow: 0 4px 12px rgba(88, 166, 255, 0.1) !important;
+    }
+  }
+
+  .featured-card-meta {
+    color: #58a6ff !important;
+  }
+
+  .featured-card-title {
+    color: #f0f6fc !important;
+  }
+
+  .featured-card-desc {
+    color: #8b949e !important;
+  }
+
+  .featured-section-title {
+    color: #f0f6fc !important;
+  }
+
+
+  // Hero 다크모드
+  .hero-greeting {
+    color: #f0f6fc !important;
+  }
+
+  .hero-tagline {
+    color: #c9d1d9 !important;
+  }
 }
 
 // ========================================
 // 폴더 목록 간격
 // ========================================
 .section-folder {
-  margin-bottom: 1rem !important;
-  padding-bottom: 1rem !important;
+  margin-bottom: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
 }
 
 // ========================================
@@ -178,9 +258,37 @@ code {
 
 article {
   h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.25rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
   }
+
+  h2 {
+    margin-top: 2.5rem;
+  }
+
+  // Medium 스타일 - 본문 링크
+  p a:not(.internal):not(.tag-link) {
+    text-decoration-line: underline;
+    text-decoration-color: var(--secondary);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: text-decoration-thickness var(--transition), text-underline-offset var(--transition);
+
+    &:hover {
+      text-decoration-thickness: 2px;
+      text-underline-offset: 2px;
+    }
+  }
+}
+
+// ========================================
+// hr 개선 - shadcn 스타일
+// ========================================
+hr {
+  background-color: var(--lightgray) !important;
+  height: 1px !important;
+  margin: 2rem auto !important;
 }
 
 // ========================================
@@ -190,15 +298,16 @@ article {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   margin: 1rem 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--lightgray);
 
   & > table {
     width: 100%;
     min-width: 100%;
     margin: 0;
-    table-layout: fixed;
 
     th, td {
-      padding: 0.6rem 1rem;
+      padding: 0.75rem 1rem;
       white-space: normal;
       word-wrap: break-word;
 
@@ -213,44 +322,10 @@ article {
   }
 }
 
-// 모바일에서 이미지 테이블 처리
 @media (max-width: 650px) {
   .table-container {
-    overflow-x: hidden !important;
-
-    & > table {
-      width: 100% !important;
-      min-width: 0 !important;
-      table-layout: fixed !important;
-
-      thead, tbody, tr {
-        display: block;
-        width: 100%;
-      }
-
-      th, td {
-        display: inline-block;
-        width: 50% !important;
-        box-sizing: border-box;
-        padding: 0.25rem !important;
-        vertical-align: top;
-
-        img {
-          width: 100% !important;
-          max-width: 100% !important;
-          height: auto !important;
-          margin: 0 !important;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 650px) {
-  .table-container {
-    margin: 0.5rem -1rem;
-    padding: 0 1rem;
-    width: calc(100% + 2rem);
+    overflow-x: auto !important;
+    margin: 0.5rem 0;
 
     & > table {
       min-width: max-content;
@@ -268,10 +343,675 @@ article {
 // ========================================
 @media (max-width: 650px) {
   article h1 {
-    font-size: 1.6rem;
+    font-size: 1.75rem;
   }
 
   .page-header {
     margin-bottom: 1.5rem;
+  }
+}
+
+// ========================================
+// Fade-in 애니메이션 시스템
+// ========================================
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// 인덱스 페이지 애니메이션
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.animate-fade-in-delay-1 {
+  animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.animate-fade-in-delay-3 {
+  animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+// 스크롤 기반 fade-in
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-fade-in-delay-1,
+  .animate-fade-in-delay-2,
+  .animate-fade-in-delay-3,
+  .scroll-fade-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+// ========================================
+// Featured Posts 섹션 (메인 페이지)
+// ========================================
+.featured-section {
+  margin: 2.5rem 0 3rem;
+}
+
+.featured-section-header {
+  margin-bottom: 1.25rem;
+}
+
+.featured-section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+.featured-card {
+  display: block;
+  padding: 1.25rem 1.5rem;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: all var(--transition);
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--secondary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  &:hover .featured-card-title {
+    color: var(--secondary);
+  }
+}
+
+.featured-card-meta {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--gray);
+  margin-bottom: 0.35rem;
+}
+
+.featured-card-category {
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+.featured-card-title {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 0;
+  line-height: 1.4;
+  transition: color var(--transition);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// ========================================
+// Hero 섹션 (랜딩 페이지)
+// ========================================
+.hero-section {
+  padding: 0.5rem 0 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-greeting {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+
+  @media (max-width: 650px) {
+    font-size: 1.2rem;
+  }
+}
+
+.hero-tagline {
+  font-size: 0.95rem;
+  color: var(--darkgray);
+  line-height: 1.75;
+  max-width: 600px;
+  margin: 0;
+
+  a {
+    color: var(--secondary);
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// ========================================
+// 포트폴리오 섹션 카드 - shadcn 스타일
+// ========================================
+.section-card {
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+
+  &:hover {
+    border-color: var(--gray);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.company-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.company-link {
+  color: inherit;
+  text-decoration: none;
+  margin-left: 0.15rem;
+  opacity: 0.5;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  transition: opacity var(--transition);
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .external-icon {
+    display: none !important;
+  }
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.period {
+  color: var(--darkgray);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.role {
+  color: var(--secondary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.subsection-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.metrics {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--secondary);
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin: 0.75rem 0;
+  padding: 0.4rem 0.85rem;
+  background: rgba(58, 134, 196, 0.08);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(58, 134, 196, 0.15);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+.tag {
+  background: var(--lightgray);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  color: var(--darkgray);
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 0.6rem 1rem;
+  font-size: 0.95rem;
+}
+
+.skill-category {
+  font-weight: 600;
+  color: var(--secondary);
+  font-size: 0.85rem;
+}
+
+.cert-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.cert {
+  background: var(--lightgray);
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: all var(--transition);
+}
+
+.activity-item {
+  margin-bottom: 1rem;
+}
+
+.activity-name {
+  font-weight: 600;
+}
+
+.pr-links {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  color: var(--gray);
+
+  a {
+    color: var(--secondary);
+  }
+}
+
+// ========================================
+// 언어 토글 - shadcn 스타일
+// ========================================
+.lang-toggle {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 2rem;
+  background: var(--lightgray);
+  padding: 0.25rem;
+  border-radius: var(--radius);
+  width: fit-content;
+}
+
+.lang-btn {
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: calc(var(--radius) - 2px);
+  background: transparent;
+  color: var(--gray);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all var(--transition);
+  font-family: var(--bodyFont);
+
+  &.active {
+    background: var(--light);
+    color: var(--dark);
+    box-shadow: var(--shadow-sm);
+  }
+
+  &:hover:not(.active) {
+    color: var(--darkgray);
+  }
+}
+
+// ========================================
+// Contact 모달 - shadcn 스타일
+// ========================================
+.contact-fab {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 2rem;
+  z-index: 100;
+
+  @media (max-width: 650px) {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+.contact-btn {
+  padding: 0.65rem 1.25rem;
+  background: var(--secondary);
+  color: var(--light);
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--bodyFont);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.contact-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 200;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  &.active {
+    display: flex;
+  }
+}
+
+.contact-modal {
+  background: var(--light);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.5rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--lightgray);
+  max-height: 90vh;
+  overflow-y: auto;
+
+  @media (max-width: 650px) {
+    padding: 1.5rem 1.75rem;
+    margin: 1rem;
+  }
+
+  h3 {
+    margin: 0 0 1.3rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--dark);
+    text-align: center;
+  }
+
+  .external-icon {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    visibility: hidden !important;
+  }
+
+  h3 svg,
+  h3 a,
+  .contact-modal-links .external-icon {
+    display: none !important;
+  }
+}
+
+.contact-modal-links {
+  display: flex;
+  gap: 0.65rem;
+  justify-content: center;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius);
+    background: var(--lightgray);
+    color: var(--darkgray);
+    transition: all var(--transition);
+    border: 1px solid transparent;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    &:hover {
+      background: var(--secondary);
+      color: var(--light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+  }
+
+  @media (max-width: 650px) {
+    a {
+      width: 48px;
+      height: 48px;
+
+      svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+}
+
+// ========================================
+// 포스트 카드 여백 강화
+// ========================================
+.section-ul .section-li {
+  margin-bottom: 1rem;
+}
+
+.post-card {
+  padding: 1rem 1.25rem !important;
+}
+
+.section-folder {
+  padding: 1.5rem 1.75rem !important;
+}
+
+@media (max-width: 650px) {
+  .post-card {
+    padding: 1.25rem 1.5rem !important;
+  }
+  .section-folder {
+    padding: 1.25rem 1.5rem !important;
+  }
+}
+
+// ========================================
+// 포스트 리스트 개선 - 썸네일 지원
+// ========================================
+.post-card-with-thumb {
+  display: grid;
+  grid-template-columns: 1fr 160px;
+  gap: 1rem;
+  align-items: center;
+
+  @media (max-width: 650px) {
+    grid-template-columns: 1fr 100px;
+    gap: 0.75rem;
+  }
+}
+
+.post-card-content {
+  min-width: 0;
+}
+
+.post-thumbnail {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--lightgray);
+  transition: all var(--transition);
+
+  @media (max-width: 650px) {
+    height: 72px;
+  }
+}
+
+.post-card:hover .post-thumbnail {
+  border-color: var(--gray);
+}
+
+.post-description {
+  font-size: 0.85rem;
+  color: var(--gray);
+  line-height: 1.5;
+  margin-top: 0.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// ========================================
+// 소셜 링크 개선
+// ========================================
+.social-links a {
+  border: 1px solid transparent;
+
+  &:hover {
+    border-color: var(--secondary);
+  }
+}
+
+// ========================================
+// Footer 개선
+// ========================================
+footer {
+  border-top: 1px solid var(--lightgray);
+  padding-top: 2rem;
+  margin-top: 3rem;
+}
+
+// ========================================
+// Breadcrumbs 개선
+// ========================================
+.breadcrumb-container {
+  font-size: 0.85rem;
+}
+
+// ========================================
+// 페이지 타이틀 개선
+// ========================================
+.page-title {
+  font-weight: 800 !important;
+  letter-spacing: -0.03em;
+}
+
+// ========================================
+// 인덱스 페이지 특수 스타일
+// ========================================
+.intro-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--darkgray);
+
+  a {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.lang-content {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+// 포트폴리오 리스트 개선
+.section-card ul {
+  margin: 0.5rem 0;
+  padding-left: 1.25rem;
+
+  li {
+    margin-bottom: 0.3rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+
+    strong {
+      color: var(--secondary);
+      font-weight: 700;
+    }
   }
 }
