@@ -2,322 +2,7 @@
 title: Introduction.
 ---
 
-<style>
-.lang-toggle {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-}
-
-.lang-btn {
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--gray);
-  border-radius: 6px;
-  background: transparent;
-  color: var(--darkgray);
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: all 0.2s;
-}
-
-.lang-btn.active {
-  background: var(--secondary);
-  color: var(--light);
-  border-color: var(--secondary);
-}
-
-.lang-btn:hover:not(.active) {
-  border-color: var(--secondary);
-}
-
-.lang-content {
-  display: none;
-}
-
-.lang-content.active {
-  display: block;
-}
-
-.intro-text {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-}
-
-.intro-text a {
-  color: var(--secondary);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.intro-text a:hover {
-  text-decoration: underline;
-}
-
-/* Floating Contact Button */
-.contact-fab {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 2rem;
-  z-index: 100;
-}
-
-@media (max-width: 650px) {
-  .contact-fab {
-    bottom: 0.75rem;
-    right: 0.75rem;
-  }
-}
-
-.contact-btn {
-  padding: 0.75rem 1.25rem;
-  background: var(--secondary);
-  color: var(--light);
-  border: none;
-  border-radius: 24px;
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: all 0.2s;
-}
-
-.contact-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Contact Modal Overlay */
-.contact-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  z-index: 200;
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.contact-overlay.active {
-  display: flex;
-}
-
-.contact-modal {
-  background: var(--light);
-  border-radius: 16px;
-  padding: 2rem 2.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  max-height: 90vh;
-  overflow-y: auto;
-}
-
-@media (max-width: 650px) {
-  .contact-modal {
-    padding: 1.5rem 1.75rem;
-    margin: 1rem;
-  }
-
-  .contact-modal-links a {
-    width: 50px;
-    height: 50px;
-  }
-
-  .contact-modal-links a svg {
-    width: 22px;
-    height: 22px;
-  }
-}
-
-.contact-modal h3 {
-  margin: 0 0 1.3rem;
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--darkgray);
-  text-align: center;
-}
-
-.contact-modal-links {
-  display: flex;
-  gap: 0.65rem;
-  justify-content: center;
-}
-
-.contact-modal-links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 57px;
-  height: 57px;
-  border-radius: 10px;
-  background: var(--lightgray);
-  color: var(--darkgray);
-  transition: all 0.2s ease;
-}
-
-.contact-modal-links a svg {
-  width: 26px;
-  height: 26px;
-}
-
-.contact-modal-links a:hover {
-  background: var(--secondary);
-  color: var(--light);
-  transform: translateY(-2px);
-}
-
-/* Hide Quartz external link icons in contact modal */
-.contact-modal .external-icon {
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
-  visibility: hidden !important;
-}
-
-.contact-modal h3 svg,
-.contact-modal h3 a,
-.contact-modal-links .external-icon {
-  display: none !important;
-}
-
-.section-card {
-  background: var(--lightgray);
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.company-name {
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.company-link {
-  color: inherit;
-  text-decoration: none;
-  margin-left: 0.15rem;
-  opacity: 0.7;
-  display: inline-flex;
-  align-items: center;
-  vertical-align: middle;
-}
-
-.company-link:hover {
-  opacity: 1;
-}
-
-.company-link .external-icon {
-  display: none !important;
-}
-
-.company-link svg {
-  width: 14px;
-  height: 14px;
-}
-
-.period {
-  color: var(--darkgray);
-  font-size: 0.9rem;
-}
-
-.role {
-  color: var(--secondary);
-  font-weight: 500;
-  margin-bottom: 0.75rem;
-}
-
-.subsection-title {
-  font-weight: 600;
-  margin-top: 1.25rem;
-  margin-bottom: 0.5rem;
-}
-
-
-.metrics {
-  display: inline-block;
-  color: var(--secondary);
-  font-weight: 600;
-  margin: 0.75rem 0;
-  padding: 0.4rem 0.8rem;
-  background: rgba(var(--secondary-rgb), 0.1);
-  border-radius: 6px;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.tag {
-  background: var(--light);
-  border: 1px solid var(--gray);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  color: var(--darkgray);
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 0.75rem 1rem;
-}
-
-.skill-category {
-  font-weight: 600;
-  color: var(--secondary);
-}
-
-.cert-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.cert {
-  background: var(--lightgray);
-  padding: 0.3rem 0.7rem;
-  border-radius: 4px;
-  font-size: 0.85rem;
-}
-
-.activity-item {
-  margin-bottom: 1rem;
-}
-
-.activity-name {
-  font-weight: 600;
-}
-
-.pr-links {
-  font-size: 0.85rem;
-  margin-top: 0.5rem;
-  color: var(--gray);
-}
-
-.pr-links a {
-  color: var(--secondary);
-}
-</style>
-
-<div class="lang-toggle">
+<div class="lang-toggle animate-fade-in">
   <button class="lang-btn active" onclick="switchLang('en')">EN</button>
   <button class="lang-btn" onclick="switchLang('ko')">한국어</button>
 </div>
@@ -365,53 +50,49 @@ title: Introduction.
 <!-- English Version -->
 <div id="content-en" class="lang-content active">
 
-## About Me
-
-<div class="intro-text">
-I believe the essence of development is understanding user pain points and proactively solving them.<br>
-Currently building and operating a service with <strong>20,000+ users</strong> — <a href="https://www.onetime-with-members.com/en/landing" target="_blank">OneTime</a>.
-</div>
-
-<div class="intro-text">
-I believe in the power of documentation and human connections.<br>
-100+ tech blog posts over 2 years, and running a blog study group for 1.5+ years.
+<!-- Hero Section -->
+<div class="hero-section animate-fade-in">
+  <div class="hero-greeting">Hello, I'm Sangho Han, a developer.</div>
+  <p class="hero-tagline">
+    I believe the essence of development is understanding user pain points and proactively solving them.<br>
+    I'm building and operating <a href="https://www.onetime-with-members.com/en/landing" target="_blank">OneTime</a>, a scheduling service with over 20,000 users, putting this belief into practice.<br><br>
+    I believe in the power of writing and community.<br>
+    I've written 100+ tech blog posts over 2 years and have been running a blog study group for over 1.5 years.
+  </p>
 </div>
 
 ---
 
 ## Career
 
-<div class="section-card">
+<div class="section-card scroll-fade-in">
   <div class="section-header">
     <span class="company-name">LOGOS AI <a href="https://www.logosai.co.kr/" target="_blank" class="company-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></span>
     <span class="period">2025.08 - Present</span>
   </div>
   <div class="role">Backend Engineer</div>
-  <p>Building backend for RAG-based AI Contact Center (AICC) solution platform.</p>
+  <p>Building backend and infrastructure for RAG-based AI Contact Center (AICC) solution platform.</p>
 
   <div class="subsection-title">Building batch systems for large-scale document processing</div>
   <ul>
-    <li>Implemented RAG chunking batch service with Spring Batch (5 threads parallel processing)</li>
-    <li>Applied SynchronizedItemStreamReader for thread-safe data reading in multi-threaded environment</li>
-    <li>Designed chunk-level document processing for improved memory efficiency and resumability</li>
-    <li>Implemented zombie process auto-reset (1h timeout) for uninterrupted operation stability</li>
-    <li>Applied Soft Delete strategy to preserve data integrity during document modifications</li>
-    <li>Built chat file cleanup batch for storage optimization</li>
+    <li>Implemented RAG chunking batch service with Spring Batch.</li>
+    <li>Applied SynchronizedItemStreamReader for thread-safe data reading in multi-threaded environment.</li>
+    <li>Designed chunk-level document processing for improved memory efficiency and resumability.</li>
+    <li>Built chat file cleanup batch for storage optimization.</li>
   </ul>
 
   <div class="subsection-title">Optimizing query performance and real-time response</div>
   <ul>
     <li>Added composite index for RAG reference document lookup: <strong>16,000 rows scan → 16 rows (1000x reduction)</strong></li>
-    <li>Built real-time LLM response streaming (SSE) without WebFlux using RestClient + SseEmitter</li>
-    <li>Leveraged Virtual Thread for async processing to improve TTFB</li>
+    <li>Built real-time LLM response streaming (SSE) without WebFlux using RestClient + SseEmitter.</li>
+    <li>Leveraged Java Virtual Thread for async processing to improve TTFB.</li>
   </ul>
 
   <div class="subsection-title">Considering security in multi-tenant environments</div>
   <ul>
-    <li>Implemented organization-based access control with @PreAuthorize annotation</li>
-    <li>Designed REST APIs for statistics, RAG document management, and history tracking</li>
-    <li>Implemented voicebot system API for AI Contact Center integration</li>
-    <li>Delivered LG-POC project system API set for enterprise PoC integration</li>
+    <li>Implemented organization-based access control with @PreAuthorize annotation for multi-tenant security.</li>
+    <li>Designed and implemented REST APIs for statistics, RAG document management, and history tracking.</li>
+    <li>Implemented voicebot system API for AI Contact Center integration.</li>
   </ul>
 
   <div class="tags">
@@ -427,7 +108,7 @@ I believe in the power of documentation and human connections.<br>
   </div>
 </div>
 
-<div class="section-card">
+<div class="section-card scroll-fade-in">
   <div class="section-header">
     <span class="company-name">Ribella Realty</span>
     <span class="period">2025.06 - 2025.08</span>
@@ -437,18 +118,18 @@ I believe in the power of documentation and human connections.<br>
 
   <div class="subsection-title">Designing infrastructure and optimizing costs</div>
   <ul>
-    <li>Built initial development infrastructure on KVM-based on-premise with Docker Swarm</li>
-    <li>Led AWS cloud migration in 3 days: <strong>monthly cost $300+ → $108 (66%+ reduction)</strong></li>
-    <li>Architected VPC with Public/Private subnets, ALB, WAF, ACM for security best practices</li>
-    <li>Applied SSH → SSM migration for secure server access without key management</li>
-    <li>Wrote infrastructure architecture and operation manuals to reduce team onboarding time</li>
+    <li>Built initial development infrastructure on KVM-based on-premise with Docker Swarm.</li>
+    <li>Completed AWS cloud migration in 3 days: <strong>monthly cost $300+ → $108 (66%+ reduction)</strong></li>
+    <li>Architected VPC with Public/Private subnets, ALB, WAF, ACM for security best practices.</li>
+    <li>Applied SSH → SSM migration for secure server access without key management.</li>
+    <li>Built GitLab CI/CD pipeline with ECR integration for automated deployments.</li>
+    <li>Wrote infrastructure architecture and operation manuals to reduce team onboarding time.</li>
   </ul>
 
   <div class="subsection-title">Sharing knowledge through documentation</div>
   <ul>
-    <li>Implemented REST APIs with FastAPI and Swagger documentation</li>
-    <li>Built GitLab CI/CD pipeline with ECR integration for automated deployments</li>
-    <li>Documented DNS migration, troubleshooting guides for MinIO/S3, ALB configuration</li>
+    <li>Implemented REST APIs with FastAPI and Swagger documentation.</li>
+    <li>Documented DNS migration, MinIO/S3 troubleshooting, and ALB configuration guides.</li>
   </ul>
 
   <div class="tags">
@@ -466,7 +147,7 @@ I believe in the power of documentation and human connections.<br>
 
 ## Projects
 
-<div class="section-card">
+<div class="section-card scroll-fade-in">
   <div class="section-header">
     <span class="company-name">OneTime <a href="https://www.onetime-with-members.com/en/landing" target="_blank" class="company-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></span>
     <span class="period">2024.08 - Present</span>
@@ -475,46 +156,46 @@ I believe in the power of documentation and human connections.<br>
   <p>A web service that helps multiple people easily coordinate schedules with a single link share.</p>
   <div class="metrics">20,000+ users / 2,000+ MAU</div>
 
-  <div class="subsection-title">I measure and improve performance</div>
+  <div class="subsection-title">Measuring and improving performance</div>
   <ul>
     <li>Discovered N+1 query in schedule API. Applied QueryDSL fetch join + composite index. <strong>18.38s → 0.35s (98% faster)</strong></li>
     <li>Identified JPA saveAll individual INSERTs as bottleneck. Applied Bulk INSERT + async QR generation. <strong>16.56s → 0.41s (97.5% faster)</strong></li>
   </ul>
 
-  <div class="subsection-title">I solve costs with technology</div>
+  <div class="subsection-title">Solving costs with technology</div>
   <ul>
-    <li><strong>Reduced AWS costs from $83 to under $50/month (40%)</strong></li>
+    <li><strong>Reduced AWS monthly costs from $83 to under $50 (40% reduction)</strong></li>
     <li>EC2 t2 → t4g migration for better price/performance ratio</li>
     <li>Applied RDS Reserved Instance + EC2 Savings Plans for additional 20%+ savings</li>
-    <li>Removed CodeDeploy + ECR adoption: <strong>CI/CD time 4min → 2min (50% faster)</strong></li>
-    <li>Secured <strong>$1,100 in AWS credits</strong> through Activate program</li>
+    <li>Removed CodeDeploy + adopted ECR: <strong>CI/CD time 4min → 2min (50% faster)</strong></li>
+    <li>Secured <strong>$1,100 in AWS credits</strong> through Activate startup program</li>
   </ul>
 
-  <div class="subsection-title">I consider security</div>
+  <div class="subsection-title">Considering security</div>
   <ul>
     <li>Built Fail2ban firewall: Nginx access log-based malicious HTTP request detection and blocking</li>
     <li>Auto-block repeated malicious IPs with Discord Webhook alerts</li>
   </ul>
 
-  <div class="subsection-title">I build monitoring systems</div>
+  <div class="subsection-title">Building monitoring systems</div>
   <ul>
     <li>Built serverless logging system: CloudWatch Logs → S3 → Athena for SQL analysis</li>
     <li>Implemented JSON structured logging with Logback for efficient log analysis</li>
     <li>Real-time alerts for 500 errors and slow APIs (1s+) via Lambda → Discord</li>
   </ul>
 
-  <div class="subsection-title">I integrate external services</div>
+  <div class="subsection-title">Integrating external services</div>
   <ul>
     <li>Migrated Everytime timetable feature from Lambda(Python/Selenium) to Spring Boot</li>
     <li>Implemented Feign Client + JSoup for direct XML API parsing (faster than crawling)</li>
     <li>Auto-converts university timetable to fixed schedule format</li>
   </ul>
 
-  <div class="subsection-title">I collaborate and communicate</div>
+  <div class="subsection-title">Collaborating and communicating</div>
   <ul>
     <li>Weekly sync meetings with FE/Design/Marketing teams for planning, design, and implementation.</li>
-    <li>Detailed PR descriptions: background, changes, test methods, and screenshots</li>
-    <li>Shared technical decisions through internal docs and retrospectives</li>
+    <li>Detailed PR descriptions: background, changes, test methods, and screenshots.</li>
+    <li>Shared technical decisions through internal docs and retrospectives.</li>
   </ul>
 
   <div class="tags">
@@ -533,12 +214,12 @@ I believe in the power of documentation and human connections.<br>
 
 ## Activities
 
-<div class="section-card">
+<div class="section-card scroll-fade-in">
   <div class="section-header">
     <span class="company-name">Technical Blog</span>
     <span class="period">2023 - Present</span>
   </div>
-  <p>250+ posts over 2 years</p>
+  <p>100+ tech posts over 2 years.</p>
   <div class="skills-grid">
     <span class="skill-category">Spring</span>
     <span>Filter vs Interceptor, OAuth2.0, Error Handling</span>
@@ -551,45 +232,27 @@ I believe in the power of documentation and human connections.<br>
   </div>
 </div>
 
-<div class="section-card">
+<div class="section-card scroll-fade-in">
   <div class="section-header">
     <span class="company-name">Blog Study Group</span>
     <span class="period">2023.06 - Present</span>
   </div>
-  <p>Running a blog study group for 1.5+ years. Encouraging consistent documentation and knowledge sharing.</p>
+  <p>Running a blog study group for 1.5+ years, encouraging consistent documentation and knowledge sharing.</p>
 </div>
 
-<div class="section-card">
+<div class="section-card scroll-fade-in">
   <div class="section-header">
-    <span class="company-name">KUSITMS <a href="https://www.kusitms.com/" target="_blank" class="company-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></span>
+    <span class="company-name">KUSITMS (IT Management Society) <a href="https://www.kusitms.com/" target="_blank" class="company-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></span>
     <span class="period">2024</span>
   </div>
-  <p>IT Management Society - Collaborated with 70+ members on tech projects.<br>Participated as backend developer in corporate project.</p>
+  <p>Participated as backend developer in corporate and collaborative projects.<br>Served as Vice President in the 30th cohort, leading 70+ members.</p>
 </div>
-
-
-<!-- ## Skills
-
-<div class="section-card">
-  <div class="subsection-title">Backend</div>
-  <p>Proficient in Spring Boot, Spring Batch, Spring Data JPA, QueryDSL. Experience with Python FastAPI. MyBatis legacy system maintenance experience.</p>
-
-  <div class="subsection-title">Database</div>
-  <p>Primary: MySQL. Strong interest in query optimization and index design. Redis caching and distributed lock implementation experience.</p>
-
-  <div class="subsection-title">Infrastructure</div>
-  <p>AWS (EC2, RDS, S3, CodeDeploy, ECR), NCP experience. Docker containerization, GitHub Actions & GitLab CI pipeline construction. Active use of Reserved Instances and Savings Plans for cost optimization.</p>
-
-  <div class="subsection-title">Documentation</div>
-  <p>Technical blog for learning documentation and sharing. Detailed PR descriptions with background, changes, and test methods. Infrastructure architecture and operation manual writing experience.</p>
-</div>
--->
 
 ---
 
 ## Education
 
-<div class="section-card">
+<div class="section-card scroll-fade-in">
   <div class="section-header">
     <span class="company-name">Dongguk University <a href="https://www.linkedin.com/school/dongguk/" target="_blank" class="company-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></span>
     <span class="period">2018 - 2025</span>
@@ -614,23 +277,22 @@ I believe in the power of documentation and human connections.<br>
 <!-- Korean Version -->
 <div id="content-ko" class="lang-content">
 
-## About Me
-
-<div class="intro-text">
-사용자가 겪는 불편함을 이해하고 주도적으로 해결해 나가는 것이 개발의 본질이라고 생각합니다.<br>
-<strong>2만 명 이상</strong>이 사용하는 서비스 <a href="https://www.onetime-with-members.com/ko/landing" target="_blank">OneTime</a>을 직접 기획·개발·운영하며 이를 실천하고 있습니다.
-</div>
-
-<div class="intro-text">
-기록과 사람의 힘을 믿습니다.<br>
-2년간 100개 이상의 기술 블로그 글을 작성하고, 블로그 스터디를 1년 반 이상 운영해왔습니다.
+<!-- Hero Section -->
+<div class="hero-section animate-fade-in">
+  <div class="hero-greeting">안녕하세요, 개발자 한상호입니다.</div>
+  <p class="hero-tagline">
+    사용자가 겪는 불편함을 이해하고 주도적으로 해결해 나가는 것이 개발의 본질이라고 생각합니다.<br>
+    2만 명 이상이 사용하는 서비스 <a href="https://www.onetime-with-members.com/ko/landing" target="_blank">OneTime</a>을 직접 기획·개발·운영하며 이를 실천하고 있습니다.<br><br>
+    기록과 사람의 힘을 믿습니다.<br>
+    2년간 100개 이상의 기술 블로그 글을 작성하고, 블로그 스터디를 1년 반 이상 운영해왔습니다.
+  </p>
 </div>
 
 ---
 
 ## 경력
 
-<div class="section-card">
+<div class="section-card scroll-fade-in">
   <div class="section-header">
     <span class="company-name">(주)로고스에이아이 <a href="https://www.logosai.co.kr/" target="_blank" class="company-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></span>
     <span class="period">2025.08 - 현재</span>
@@ -673,7 +335,7 @@ I believe in the power of documentation and human connections.<br>
   </div>
 </div>
 
-<div class="section-card">
+<div class="section-card scroll-fade-in">
   <div class="section-header">
     <span class="company-name">(주)리벨라리얼티</span>
     <span class="period">2025.06 - 2025.08</span>
@@ -712,7 +374,7 @@ I believe in the power of documentation and human connections.<br>
 
 ## 프로젝트
 
-<div class="section-card">
+<div class="section-card scroll-fade-in">
   <div class="section-header">
     <span class="company-name">OneTime <a href="https://www.onetime-with-members.com/ko/landing" target="_blank" class="company-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></span>
     <span class="period">2024.08 - 현재</span>
@@ -779,7 +441,7 @@ I believe in the power of documentation and human connections.<br>
 
 ## 활동
 
-<div class="section-card">
+<div class="section-card scroll-fade-in">
   <div class="section-header">
     <span class="company-name">기술 블로그</span>
     <span class="period">2023 - 현재</span>
@@ -797,7 +459,7 @@ I believe in the power of documentation and human connections.<br>
   </div>
 </div>
 
-<div class="section-card">
+<div class="section-card scroll-fade-in">
   <div class="section-header">
     <span class="company-name">블로그 스터디</span>
     <span class="period">2023.06 - 현재</span>
@@ -805,7 +467,7 @@ I believe in the power of documentation and human connections.<br>
   <p>1년 6개월 이상 블로그 스터디를 운영하며 꾸준한 기록과 지식 공유를 독려하고 있습니다.</p>
 </div>
 
-<div class="section-card">
+<div class="section-card scroll-fade-in">
   <div class="section-header">
     <span class="company-name">KUSITMS (한국대학생IT경영학회) <a href="https://www.kusitms.com/" target="_blank" class="company-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></span>
     <span class="period">2024</span>
@@ -813,29 +475,11 @@ I believe in the power of documentation and human connections.<br>
   <p>기업 프로젝트 및 기획 & 디자인 파트와의 협업 프로젝트에서 백엔드 개발자로 참여했습니다.<br>또한 30기 부학회장으로서 70명 이상의 학회원들을 이끌어 보는 경험도 하였습니다.</p>
 </div>
 
-
-<!-- ## 기술
-
-<div class="section-card">
-  <div class="subsection-title">Backend</div>
-  <p>Spring Boot, Spring Batch, Spring Data JPA, QueryDSL을 사용한 백엔드 개발에 익숙합니다. Python FastAPI를 활용한 REST API 개발 경험이 있습니다. MyBatis를 사용한 레거시 시스템 유지보수 경험이 있습니다.</p>
-
-  <div class="subsection-title">Database</div>
-  <p>MySQL을 주로 사용하며, 쿼리 최적화와 인덱스 설계에 관심이 많습니다. Redis를 활용한 캐싱과 분산 락 구현 경험이 있습니다.</p>
-
-  <div class="subsection-title">Infrastructure</div>
-  <p>AWS (EC2, RDS, S3, CodeDeploy, ECR), NCP 기반 인프라 구축 경험이 있습니다. Docker 컨테이너화와 GitHub Actions, GitLab CI를 활용한 CI/CD 파이프라인 구축에 익숙합니다. 비용 최적화에 관심이 많아 Reserved Instance, Savings Plans 등을 적극 활용합니다.</p>
-
-  <div class="subsection-title">Documentation</div>
-  <p>기술 블로그 운영을 통해 배운 것을 정리하고 공유합니다. PR 작성 시 배경, 변경 사항, 테스트 방법을 상세히 기록합니다. 인프라 아키텍처와 운영 매뉴얼 작성 경험이 있습니다.</p>
-</div>
--->
-
 ---
 
 ## 학력
 
-<div class="section-card">
+<div class="section-card scroll-fade-in">
   <div class="section-header">
     <span class="company-name">동국대학교 <a href="https://www.linkedin.com/school/dongguk/" target="_blank" class="company-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></span>
     <span class="period">2018 - 2025</span>
