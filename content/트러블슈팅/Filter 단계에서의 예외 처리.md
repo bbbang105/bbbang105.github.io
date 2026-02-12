@@ -1,6 +1,7 @@
 ---
 date: 2025-05-14
-description: Spring Security Filter에서 발생한 예외가 GlobalExceptionHandler로 전달되지 않는 문제 해결
+description: "Spring Security Filter에서 발생한 예외가 GlobalExceptionHandler로 전달되지 않는 문제를 해결합니다."
+
 tags:
   - troubleshooting
   - backend

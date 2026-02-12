@@ -1,6 +1,7 @@
 ---
 date: 2025-11-19
-description: Git 객체 손상으로 인한 unable to read tree 오류를 git fsck로 진단하고 해결합니다
+description: "Git 객체 손상으로 인한 unable to read tree 오류를 git fsck로 진단하고 해결합니다."
+
 tags:
   - troubleshooting
   - git

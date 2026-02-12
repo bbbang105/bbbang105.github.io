@@ -1,6 +1,7 @@
 ---
 date: 2025-05-10
-description: JPA 지연 로딩으로 인한 LazyInitializationException 발생 원인 분석과 해결
+description: "JPA 지연 로딩으로 인한 LazyInitializationException 발생 원인을 분석하고 해결합니다."
+
 tags:
   - troubleshooting
   - backend

@@ -1,6 +1,7 @@
 ---
 date: 2025-12-15
-description: macOS NFD 인코딩으로 인한 한글 파일명 자소 분리와 DB 검색 실패 해결
+description: "macOS NFD 인코딩으로 인한 한글 파일명 자소 분리와 DB 검색 실패 문제를 해결합니다."
+
 tags:
   - troubleshooting
   - backend

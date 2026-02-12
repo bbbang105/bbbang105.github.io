@@ -1,6 +1,7 @@
 ---
 date: 2024-08-26
-description: 로컬 MySQL 소켓 연결 실패 문제를 MySQL 재설치로 해결한 과정
+description: "로컬 MySQL 소켓 연결 실패 문제를 MySQL 재설치로 해결한 과정을 공유합니다."
+
 tags:
   - troubleshooting
   - database

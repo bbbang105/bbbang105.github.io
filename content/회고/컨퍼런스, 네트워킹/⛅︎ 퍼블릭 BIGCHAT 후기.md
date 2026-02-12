@@ -1,6 +1,7 @@
 ---
 date: 2025-06-27
-description: AUSG 퍼블릭 빅챗에서 쿠버네티스 기반 PaaS 등 클라우드 세션을 듣고 정리한 후기입니다
+description: "AUSG 퍼블릭 빅챗에서 쿠버네티스 기반 PaaS 등 클라우드 세션을 듣고 정리한 후기입니다."
+
 tags:
   - conference
   - career

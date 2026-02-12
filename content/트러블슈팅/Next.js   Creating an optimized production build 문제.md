@@ -1,6 +1,7 @@
 ---
 date: 2025-12-24
-description: NCP SourceBuild에서 Next.js 16 Turbopack 빌드가 무한 대기되는 문제 해결
+description: "NCP SourceBuild에서 Next.js 16 Turbopack 빌드가 무한 대기되는 문제를 해결합니다."
+
 tags:
   - troubleshooting
   - backend

@@ -1,6 +1,7 @@
 ---
 date: 2025-12-20
-description: NCP Object Storage에서 프론트엔드 접근 시 발생한 CORS 오류를 s3cmd로 해결합니다
+description: "NCP Object Storage에서 프론트엔드 접근 시 발생한 CORS 오류를 s3cmd로 해결합니다."
+
 tags:
   - troubleshooting
   - backend

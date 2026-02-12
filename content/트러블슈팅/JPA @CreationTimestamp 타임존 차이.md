@@ -1,6 +1,7 @@
 ---
 date: 2025-11-15
-description: JPA @CreationTimestamp 사용 시 타임존 차이로 생성일자가 잘못 저장되는 문제 해결
+description: "JPA @CreationTimestamp 사용 시 타임존 차이로 생성일자가 잘못 저장되는 문제를 해결합니다."
+
 tags:
   - troubleshooting
   - backend
