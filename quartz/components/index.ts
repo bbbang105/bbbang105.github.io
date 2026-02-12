@@ -25,7 +25,6 @@ import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
 import SocialLinks from "./SocialLinks"
 import ShareButton from "./ShareButton"
-import FeaturedPosts from "./FeaturedPosts"
 
 export {
   ArticleTitle,
@@ -55,5 +54,4 @@ export {
   ConditionalRender,
   SocialLinks,
   ShareButton,
-  FeaturedPosts,
 }
