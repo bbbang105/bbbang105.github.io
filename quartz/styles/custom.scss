@@ -785,6 +785,11 @@ hr {
   bottom: 1.5rem;
   right: 2rem;
   z-index: 100;
+  display: none;
+
+  @media (max-width: 800px) {
+    display: block;
+  }
 
   @media (max-width: 650px) {
     bottom: 1rem;
@@ -882,10 +887,12 @@ hr {
     color: var(--darkgray);
     transition: all var(--transition);
     border: 1px solid transparent;
+    -webkit-tap-highlight-color: transparent;
 
     svg {
       width: 24px;
       height: 24px;
+      pointer-events: none;
     }
 
     &:hover {
@@ -1288,8 +1295,8 @@ article p a:not(.internal):not(.tag-link):not(.footnote-ref):not(.footnote-backr
   }
 }
 
-// 최근글: 하단 고정, 사이드바의 ~45%
-.sidebar.right > .desktop-only:has(.recent-notes) {
+// 최근글: 항상 하단 고정 (TOC 유무와 관계없이 동일 위치)
+.sidebar.right > .recent-notes {
   flex-shrink: 0;
   flex-grow: 0;
   max-height: 45vh;
