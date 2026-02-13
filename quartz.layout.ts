@@ -4,8 +4,9 @@ import * as Component from "./quartz/components"
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [],
+  header: [Component.ReadingProgress()],
   afterBody: [
+    Component.RelatedPosts({ limit: 3 }),
     Component.Comments({
       provider: "giscus",
       options: {
@@ -52,6 +53,10 @@ export const defaultContentPageLayout: PageLayout = {
       component: Component.TagList(),
       condition: (page) => page.fileData.slug !== "index",
     }),
+    Component.ConditionalRender({
+      component: Component.MobileOnly(Component.TableOfContents()),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
   ],
   left: [
     Component.PageTitle(),
@@ -77,6 +82,13 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
+    Component.DesktopOnly(
+      Component.RecentNotes({
+        title: "최근 게시글",
+        limit: 4,
+        showTags: false,
+      }),
+    ),
   ],
 }
 
@@ -104,5 +116,13 @@ export const defaultListPageLayout: PageLayout = {
     }),
     Component.Explorer(),
   ],
-  right: [],
+  right: [
+    Component.DesktopOnly(
+      Component.RecentNotes({
+        title: "최근 게시글",
+        limit: 4,
+        showTags: false,
+      }),
+    ),
+  ],
 }

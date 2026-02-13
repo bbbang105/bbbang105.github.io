@@ -36,18 +36,24 @@ body {
 }
 
 h1 {
+  font-size: clamp(1.65rem, 1.4rem + 1vw, 2rem);
   letter-spacing: -0.03em;
   font-weight: 800;
+  line-height: 1.2;
 }
 
 h2 {
+  font-size: clamp(1.35rem, 1.2rem + 0.6vw, 1.5rem);
   letter-spacing: -0.025em;
   font-weight: 700;
+  line-height: 1.3;
 }
 
 h3 {
+  font-size: clamp(1.1rem, 1rem + 0.4vw, 1.25rem);
   letter-spacing: -0.02em;
   font-weight: 600;
+  line-height: 1.4;
 }
 
 h4, h5, h6 {
@@ -163,11 +169,11 @@ code:not(pre code) {
 
   .post-meta,
   .post-meta time {
-    color: #71717a !important;
+    color: #a1a1aa !important;
   }
 
   .post-description {
-    color: #71717a !important;
+    color: #a1a1aa !important;
   }
 
   .post-thumbnail {
@@ -1010,14 +1016,14 @@ hr {
 
 .post-thumbnail {
   width: 100%;
-  height: 100px;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   border-radius: var(--radius-sm);
   border: 1px solid var(--lightgray);
   transition: all var(--transition);
 
   @media (max-width: 650px) {
-    height: 140px;
+    aspect-ratio: 2 / 1;
     order: -1;
   }
 }
@@ -1172,4 +1178,219 @@ button:focus-visible {
 .section-folder:focus-visible {
   outline: 2px solid var(--secondary);
   outline-offset: 2px;
+}
+
+// ========================================
+// 스킵 링크 (접근성)
+// ========================================
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  padding: 0.75rem 1.5rem;
+  background: var(--secondary);
+  color: var(--light);
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 9999;
+  text-decoration: none;
+  border-radius: 0 0 var(--radius) 0;
+  transition: top 0.2s ease;
+
+  &:focus {
+    top: 0;
+  }
+}
+
+// ========================================
+// 링크 밑줄 애니메이션
+// ========================================
+article p a:not(.internal):not(.tag-link):not(.footnote-ref):not(.footnote-backref) {
+  text-decoration: none;
+  background-image: linear-gradient(var(--secondary), var(--secondary));
+  background-size: 0% 1.5px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: background-size 0.3s ease;
+  padding-bottom: 1px;
+
+  &:hover {
+    background-size: 100% 1.5px;
+  }
+}
+
+// ========================================
+// 모바일 TOC
+// ========================================
+@media (max-width: 800px) {
+  .mobile-toc {
+    margin-bottom: 1rem;
+
+    & > #toc {
+      border: 1px solid var(--lightgray);
+      border-radius: var(--radius);
+      padding: 0.75rem 1rem;
+
+      & > button#toc-toggle {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--darkgray);
+      }
+
+      & ul {
+        max-height: 300px;
+        overflow-y: auto;
+      }
+    }
+  }
+}
+
+// ========================================
+// 우측 사이드바 - TOC 스크롤 + 최근글 하단 고정
+// ========================================
+
+// TOC: 축소 + 스크롤
+.sidebar.right > .toc {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+
+  &:hover {
+    scrollbar-color: var(--lightgray) transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 2px;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background: var(--lightgray);
+  }
+
+  button.toc-header h3 {
+    font-size: 0.85rem;
+  }
+
+  ul.toc-content a {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+}
+
+// 최근글: 하단 고정, 사이드바의 ~45%
+.sidebar.right > .desktop-only:has(.recent-notes) {
+  flex-shrink: 0;
+  flex-grow: 0;
+  max-height: 45vh;
+  margin-top: auto;
+}
+
+// ========================================
+// 최근 게시글 (RecentNotes) - 컴팩트 카드
+// ========================================
+.recent-notes {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--lightgray);
+  border-radius: var(--radius);
+
+  & > h3 {
+    margin: 0 0 0.75rem 0 !important;
+    font-size: 0.82rem !important;
+    font-weight: 700;
+    color: var(--darkgray);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  & > ul.recent-ul {
+    margin-top: 0 !important;
+
+    & > li {
+      margin: 0 !important;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--lightgray);
+
+      &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      &:first-child {
+        padding-top: 0;
+      }
+
+      .section > .desc > h3 {
+        margin: 0;
+        font-size: 0.82rem !important;
+        font-weight: 500;
+        line-height: 1.4;
+
+        a {
+          color: var(--darkgray);
+          text-decoration: none;
+          transition: color var(--transition);
+
+          &:hover {
+            color: var(--secondary);
+          }
+        }
+      }
+
+      .section > .meta {
+        margin: 0.15rem 0 0 0 !important;
+        font-size: 0.72rem;
+        opacity: 0.5;
+      }
+
+    }
+  }
+}
+
+:root[saved-theme="dark"] .recent-notes {
+  border-color: var(--gray);
+  background: rgba(255, 255, 255, 0.02);
+
+  & > h3 {
+    color: #a1a1aa;
+  }
+
+  ul.recent-ul > li {
+    border-bottom-color: var(--gray);
+
+    .section > .desc > h3 a {
+      color: var(--darkgray);
+    }
+  }
+}
+
+// ========================================
+// 연도 구분선 (포스트 그룹화)
+// ========================================
+.year-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+  color: var(--gray);
+
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--lightgray);
+  }
+
+  .year-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
 }

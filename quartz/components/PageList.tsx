@@ -73,6 +73,8 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
     list = list.slice(0, limit)
   }
 
+  let lastYear: number | null = null
+
   return (
     <ul class="section-ul">
       {list.map((page) => {
@@ -83,48 +85,64 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
         const isFolder = isFolderPath(page.slug ?? "")
         const fileCount = (page as any).fileCount
 
+        // 연도별 구분선
+        const date = getDate(cfg, page)
+        const year = date ? new Date(date).getFullYear() : null
+        let yearDivider = null
+        if (year && year !== lastYear && !isFolder) {
+          lastYear = year
+          yearDivider = (
+            <li class="year-divider">
+              <span class="year-label">{year}년</span>
+            </li>
+          )
+        }
+
         return (
-          <li class="section-li">
-            {isFolder ? (
-              <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal section-folder">
-                <h3 class="folder-title">{title}</h3>
-                {fileCount !== undefined && <span class="folder-count">{fileCount}개의 글</span>}
-              </a>
-            ) : (
-            <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal post-card">
-              <div class={coverImage ? "post-card-with-thumb" : ""}>
-                <div class="post-card-content">
-                  <div class="post-meta">
-                    {getDate(cfg, page) && <DateComponent date={getDate(cfg, page)!} locale={cfg.locale} />}
-                    {tags.length > 0 && (
-                      <span class="post-tags">
-                        {tags.slice(0, 3).map((tag) => (
-                          <span class="tag">{tag}</span>
-                        ))}
-                      </span>
+          <>
+            {yearDivider}
+            <li class="section-li">
+              {isFolder ? (
+                <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal section-folder">
+                  <h3 class="folder-title">{title}</h3>
+                  {fileCount !== undefined && <span class="folder-count">{fileCount}개의 글</span>}
+                </a>
+              ) : (
+                <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal post-card">
+                  <div class={coverImage ? "post-card-with-thumb" : ""}>
+                    <div class="post-card-content">
+                      <div class="post-meta">
+                        {date && <DateComponent date={date} locale={cfg.locale} />}
+                        {tags.length > 0 && (
+                          <span class="post-tags">
+                            {tags.slice(0, 3).map((tag) => (
+                              <span class="tag">{tag}</span>
+                            ))}
+                          </span>
+                        )}
+                      </div>
+                      <h3 class="post-title">{title}</h3>
+                      {description && (
+                        <p class="post-description">{
+                          typeof description === 'string' && description.length > 120
+                            ? description.slice(0, 120) + "..."
+                            : description
+                        }</p>
+                      )}
+                    </div>
+                    {coverImage && (
+                      <img
+                        class="post-thumbnail"
+                        src={coverImage}
+                        alt={title ? `${title} 썸네일` : "포스트 썸네일"}
+                        loading="lazy"
+                      />
                     )}
                   </div>
-                  <h3 class="post-title">{title}</h3>
-                  {description && (
-                    <p class="post-description">{
-                      typeof description === 'string' && description.length > 120
-                        ? description.slice(0, 120) + "..."
-                        : description
-                    }</p>
-                  )}
-                </div>
-                {coverImage && (
-                  <img
-                    class="post-thumbnail"
-                    src={coverImage}
-                    alt={title ?? "Post thumbnail"}
-                    loading="lazy"
-                  />
-                )}
-              </div>
-            </a>
-            )}
-          </li>
+                </a>
+              )}
+            </li>
+          </>
         )
       })}
     </ul>

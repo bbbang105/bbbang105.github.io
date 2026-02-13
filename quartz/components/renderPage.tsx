@@ -263,6 +263,7 @@ export function renderPage(
     <html lang={lang} dir={direction}>
       <Head {...componentData} />
       <body data-slug={slug}>
+        <a href="#quartz-body" class="skip-link">본문으로 건너뛰기</a>
         <div id="quartz-root" class="page">
           <Body {...componentData}>
             {LeftComponent}
