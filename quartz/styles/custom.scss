@@ -1073,11 +1073,13 @@ footer {
 }
 
 // ========================================
-// 페이지 타이틀 개선
+// 페이지 타이틀 - 디지털/터미널 느낌
 // ========================================
 .page-title {
   font-weight: 800 !important;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
+  font-family: var(--codeFont) !important;
+  font-size: 1.6rem !important;
 }
 
 // ========================================

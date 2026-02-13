@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1a1d" stroke-width="0.5"/>
+    </pattern>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:0.15"/>
+      <stop offset="50%" style="stop-color:#2563eb;stop-opacity:0.05"/>
+      <stop offset="100%" style="stop-color:#0a0a0b;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="textGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a0a0b"/>
+
+  <!-- Grid pattern -->
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.6"/>
+
+  <!-- Glow effect -->
+  <ellipse cx="500" cy="300" rx="500" ry="300" fill="url(#glow)"/>
+
+  <!-- Terminal window frame -->
+  <rect x="200" y="150" width="800" height="330" rx="12" fill="#111113" stroke="#2a2a2d" stroke-width="1.5"/>
+
+  <!-- Title bar -->
+  <rect x="200" y="150" width="800" height="44" rx="12" fill="#1a1a1d"/>
+  <rect x="200" y="182" width="800" height="12" fill="#1a1a1d"/>
+
+  <!-- Window dots -->
+  <circle cx="228" cy="172" r="6.5" fill="#3f3f46"/>
+  <circle cx="250" cy="172" r="6.5" fill="#3f3f46"/>
+  <circle cx="272" cy="172" r="6.5" fill="#3f3f46"/>
+
+  <!-- Terminal cursor icon >_ -->
+  <text x="390" y="310" font-family="JetBrains Mono, SF Mono, Menlo, monospace" font-size="42" font-weight="600" fill="#60a5fa" filter="url(#textGlow)" opacity="0.9">&gt;_</text>
+
+  <!-- bbang.dev text -->
+  <text x="470" y="310" font-family="JetBrains Mono, SF Mono, Menlo, monospace" font-size="54" font-weight="800" fill="#fafafa" letter-spacing="-1">bbang.dev</text>
+
+  <!-- Subtitle -->
+  <text x="390" y="365" font-family="Pretendard Variable, -apple-system, sans-serif" font-size="20" fill="#71717a" letter-spacing="0.5">developer blog &amp; portfolio</text>
+
+  <!-- Blinking cursor -->
+  <rect x="842" y="280" width="3" height="38" fill="#60a5fa" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Bottom URL -->
+  <text x="600" y="560" font-family="JetBrains Mono, SF Mono, Menlo, monospace" font-size="16" fill="#3f3f46" text-anchor="middle">https://bbbang105.github.io</text>
+</svg>

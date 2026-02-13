@@ -3,8 +3,8 @@ title: Introduction.
 ---
 
 <div class="lang-toggle animate-fade-in">
-  <button class="lang-btn active" onclick="switchLang('en')">EN</button>
   <button class="lang-btn" onclick="switchLang('ko')">한국어</button>
+  <button class="lang-btn active" onclick="switchLang('en')">EN</button>
 </div>
 
 <!-- Contact Modal -->

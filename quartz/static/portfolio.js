@@ -86,7 +86,7 @@ function initScrollAnimations() {
 }
 
 function initLang() {
-  var saved = localStorage.getItem("preferredLang") || "en";
+  var saved = localStorage.getItem("preferredLang") || "ko";
   switchLang(saved);
 }
 
