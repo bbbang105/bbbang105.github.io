@@ -124,7 +124,7 @@ code:not(pre code) {
 
 @media (max-width: 800px) {
   .explorer.collapsed > .explorer-content {
-    transform: translateX(-100vw) !important;
+    transform: translateX(-100%) !important;
     visibility: hidden !important;
     opacity: 0 !important;
   }
@@ -1070,6 +1070,15 @@ footer {
   border-top: 1px solid var(--lightgray);
   padding-top: 2rem;
   margin-top: 3rem;
+}
+
+// ========================================
+// 모바일 검색창 숨김 (450px 이하)
+// ========================================
+@media (max-width: 450px) {
+  .search {
+    display: none !important;
+  }
 }
 
 // ========================================
