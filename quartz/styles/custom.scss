@@ -998,13 +998,14 @@ hr {
   align-items: center;
 
   @media (max-width: 650px) {
-    grid-template-columns: 1fr 100px;
+    grid-template-columns: 1fr;
     gap: 0.75rem;
   }
 }
 
 .post-card-content {
   min-width: 0;
+  overflow: hidden;
 }
 
 .post-thumbnail {
@@ -1016,7 +1017,8 @@ hr {
   transition: all var(--transition);
 
   @media (max-width: 650px) {
-    height: 72px;
+    height: 140px;
+    order: -1;
   }
 }
 
