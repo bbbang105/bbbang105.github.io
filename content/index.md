@@ -1,5 +1,6 @@
 ---
 title: Introduction.
+socialDescription: "안녕하세요, 개발자 한상호입니다."
 ---
 
 <div class="lang-toggle animate-fade-in">
