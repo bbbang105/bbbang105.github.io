@@ -501,4 +501,13 @@ title: Introduction.
 
 </div>
 
-<script src="/static/portfolio.js"></script>
+<script>
+if (typeof switchLang === 'undefined') {
+  var s = document.createElement('script');
+  s.src = '/static/portfolio.js';
+  s.onload = function() { initPage(); };
+  document.head.appendChild(s);
+} else {
+  initPage();
+}
+</script>

@@ -136,6 +136,7 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
                         src={coverImage}
                         alt={title ? `${title} 썸네일` : "포스트 썸네일"}
                         loading="lazy"
+                        decoding="async"
                       />
                     )}
                   </div>

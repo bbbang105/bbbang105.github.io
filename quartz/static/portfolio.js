@@ -74,7 +74,13 @@ function initScrollAnimations() {
 
   document.querySelectorAll(".scroll-fade-in").forEach(function(el) {
     if (!el.classList.contains("visible")) {
-      _scrollObserver.observe(el);
+      // SPA 네비게이션 시 이미 뷰포트에 있는 요소는 즉시 표시
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add("visible");
+      } else {
+        _scrollObserver.observe(el);
+      }
     }
   });
 }
@@ -85,8 +91,11 @@ function initLang() {
 }
 
 function initPage() {
-  initLang();
-  initScrollAnimations();
+  // SPA 네비게이션 후 DOM이 완전히 갱신된 뒤 실행
+  requestAnimationFrame(function() {
+    initLang();
+    initScrollAnimations();
+  });
 }
 
 document.addEventListener("DOMContentLoaded", initPage);
