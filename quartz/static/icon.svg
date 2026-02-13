@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#0a0a0b"/>
+  <rect x="40" y="40" width="432" height="432" rx="64" fill="#111113" stroke="#2a2a2d" stroke-width="4"/>
+  <!-- >_ terminal prompt -->
+  <text x="110" y="300" font-family="SF Mono, Menlo, Consolas, monospace" font-size="200" font-weight="700" fill="#60a5fa">&gt;</text>
+  <text x="260" y="300" font-family="SF Mono, Menlo, Consolas, monospace" font-size="200" font-weight="700" fill="#60a5fa">_</text>
+  <!-- Blinking cursor -->
+  <rect x="380" y="180" width="12" height="130" rx="3" fill="#60a5fa" opacity="0.7"/>
+</svg>
