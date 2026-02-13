@@ -10,7 +10,7 @@ tags:
 
 # 🤖 JVM이란?
 
-JVM(Java Virtual Machine)은 자바 프로그램을 실행하기 위한 **가상 컴퓨터(추상화된 기계)**이다.
+JVM(Java Virtual Machine)은 자바 프로그램을 실행하기 위한 가상 컴퓨터(추상화된 기계)이다.
 
 ## WORA?
 
@@ -190,7 +190,7 @@ GC에 대해서는 [해당 글](https://bbbang105.github.io/Java/GC%EB%9E%80)로
 
 ### Native Method Stack
 
-Native Method Stack은 자바 코드가 아닌, **C/C++ 등 네이티브 언어로 작성된 메서드(native method)**를 실행할 때 사용되는 스레드별 스택 영역이다.
+Native Method Stack은 자바 코드가 아닌, C/C++ 등 네이티브 언어로 작성된 메서드(native method)를 실행할 때 사용되는 스레드별 스택 영역이다.
 
 JVM은 `JNI(Java Native Interface)`를 통해 네이티브 코드를 호출할 수 있으며, 이때 자바 바이트코드가 아닌 기계어 수준의 네이티브 코드 실행을 위한 별도의 호출 스택이 사용된다.
 
