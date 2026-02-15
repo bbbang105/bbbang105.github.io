@@ -11,7 +11,7 @@
 html {
   scroll-behavior: smooth;
   text-size-adjust: none;
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
 
   @media all and ($mobile) {
@@ -21,7 +21,7 @@ html {
 
 body {
   margin: 0;
-  overflow-x: hidden;
+  overflow-x: clip;
   background-color: var(--light);
   font-family: var(--bodyFont);
   color: var(--darkgray);
@@ -239,12 +239,15 @@ a {
       @media all and ($mobile) {
         gap: 0;
         align-items: center;
-        position: initial;
+        position: sticky;
+        top: 0;
+        z-index: 100;
         display: flex;
         height: unset;
         flex-direction: row;
-        padding: 0;
-        padding-top: 2rem;
+        padding: 0.75rem 0;
+        background-color: var(--light);
+        border-bottom: 1px solid var(--lightgray);
       }
     }
 
