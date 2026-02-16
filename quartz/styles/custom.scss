@@ -288,6 +288,10 @@ code:not(pre code) {
 // ========================================
 // 페이지 레이아웃 개선
 // ========================================
+.page {
+  max-width: 1700px;
+}
+
 .page-header {
   margin-bottom: 2rem;
 }
@@ -377,6 +381,34 @@ hr {
       th, td {
         padding: 0.5rem 0.8rem;
         font-size: 0.9rem;
+      }
+    }
+
+    // 이미지만 있는 테이블: 모바일에서 세로 나열
+    &:has(th > img:only-child) > table,
+    &:has(td > img:only-child) > table {
+      min-width: 100%;
+      display: block;
+
+      thead, tbody, tr, th, td {
+        display: block;
+        width: 100%;
+      }
+
+      tr {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      th, td {
+        padding: 0;
+        border: none;
+
+        img {
+          width: 100%;
+          border-radius: var(--radius-sm);
+        }
       }
     }
   }
