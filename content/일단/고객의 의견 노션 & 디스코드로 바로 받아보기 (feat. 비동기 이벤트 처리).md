@@ -57,8 +57,8 @@ tags:
 구체적인 구현 과정은 아래에서 이어지며, 대략적인 로직은 아래와 같다.
 
 >1.	DB 저장 → 트랜잭션 커밋 후 이벤트를 발행한다.
-2.	`@Async` 이벤트 리스너에서 각각 디스코드 웹훅 & 노션 API를 호출한다.
-3. 외부 API 호출에 실패하는 경우를 고려하여 응답에 따라 재시도한다.
+>2.	`@Async` 이벤트 리스너에서 각각 디스코드 웹훅 & 노션 API를 호출한다.
+>3. 외부 API 호출에 실패하는 경우를 고려하여 응답에 따라 재시도한다.
 
 이를 통해 **트랜잭션은 DB 작업에만 집중하고, 외부 API는 비동기 & 독립적으로 처리하도록 분리**하고자 했다.
 
@@ -594,9 +594,9 @@ public void sendCreateUserComment(CreateUserCommentEvent event) {
 위와 같이 적용하고자 하는 메서드에, `@Retryable` 어노테이션을 붙임으로써 간편하게 이용할 수가 있다.
 
 >  - `@Retryable` : 지정된 예외가 발생했을 때 해당 메서드를 재시도하도록 설정
-- `retryFor = { Exception.class }` : Exception이 발생하면 재시도
-- `maxAttempts = 3` : 최대 3번까지 시도 (최초 1회 + 재시도 2회)
-- `backoff = @Backoff(delay = 2000)`: 재시도 간 2초 딜레이
+>- `retryFor = { Exception.class }` : Exception이 발생하면 재시도
+>- `maxAttempts = 3` : 최대 3번까지 시도 (최초 1회 + 재시도 2회)
+>- `backoff = @Backoff(delay = 2000)`: 재시도 간 2초 딜레이
 
 ---
 

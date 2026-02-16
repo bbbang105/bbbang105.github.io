@@ -88,12 +88,12 @@ JIT 컴파일러는 처음부터 있던 요소는 아니다.
 
 JVM은 아래와 같이 구성되어 있다.
 
-> 1. 클래스 로더(Class Loader)
-2. 실행 엔진(Execution Engine)
-2-1. 인터프리터(Interpreter)
-2-2. JIT 컴파일러(Just-In-Time Compiler)
-2-3. 가비지 콜렉터(Garbage Collector)
-3. 런타임 데이터 영역(Runtime Data Area)
+>1. 클래스 로더(Class Loader)
+>2. 실행 엔진(Execution Engine)
+- 인터프리터(Interpreter)
+- JIT 컴파일러(Just-In-Time Compiler)
+- 가비지 콜렉터(Garbage Collecto**r)
+>3. 런타임 데이터 영역(Runtime Data Area)
 
 ## 1. 클래스 로더(Class Loader)
 
@@ -210,7 +210,7 @@ Method Area는 JVM이 클래스 정보를 처음 메모리에 로드할 때, 해
 
 > **Runtime Constant Pool(런타임 상수 풀)**
 >
-클래스 또는 인터페이스가 사용하는 **리터럴(문자열, 숫자 상수 등)**이나 **기호 참조 정보(메서드/필드 참조, 클래스 이름 등)**를 저장하는 구조로,
+클래스 또는 인터페이스가 사용하는 **리터럴(문자열, 숫자 상수 등)** 이나 **기호 참조 정보(메서드/필드 참조, 클래스 이름 등)** 를 저장하는 구조로,
 JVM이 바이트코드를 실행하는 데 필요한 다양한 상수 및 참조 정보를 제공한다.
 
 ### Heap

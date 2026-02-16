@@ -68,7 +68,7 @@ tags:
 **하지만 이번에 감지된 공격은 디렉터리 트래버설처럼 경로를 탈출하려는 시도는 확인되지 않았다.**
 대신 .env, config.sql, backup.tar.gz 등 존재 가능성이 높은 **민감 파일명을 브루트포스 방식으로 요청하는 방식**이었다.
 
-즉, **`파일명 기반 스캐닝 공격`**으로 판단하였다.
+즉, `파일명 기반 스캐닝 공격` 으로 판단하였다.
 
 공격자는 주로 dirsearch, gobuster, nikto 등의 툴을 이용해 수천 개의 경로를 탐색하며,
 응답 코드(200/403/404)나 응답 시간 등을 통해 파일 존재 여부를 유추하는 방식으로 동작한다.
@@ -101,7 +101,7 @@ tags:
 
 ## 📌 1. Fail2Ban
 
-또한 Nginx와 함께 `Fail2Ban`이라는 기술을 활용하기로 결정했다.
+또한 Nginx와 함께 `Fail2Ban` 이라는 기술을 활용하기로 결정했다.
 
 ### Fail2Ban?
 
@@ -243,7 +243,7 @@ cat: nginx.scan: No such file or directory
 
 > **action = iptables[name=NGINX-SCAN, port=http, protocol=tcp]**
 - Fail2Ban이 공격 IP를 차단할 때 사용할 iptables 명령 템플릿을 지정하는 부분이다.
-- 즉, Fail2Ban 내부의 기본 액션 템플릿인 `/etc/fail2ban/action.d/iptables.conf`를 불러와서 아래와 같은 명령을 실행하게 된다.
+- 즉, Fail2Ban 내부의 기본 액션 템플릿인 `/etc/fail2ban/action.d/iptables.conf` 를 불러와서 아래와 같은 명령을 실행하게 된다.
 ```bash
 iptables -I f2b-NGINX-SCAN 1 -s <공격자 IP> -p tcp --dport 80 -j REJECT
 ```
@@ -269,8 +269,8 @@ action = iptables[name=NGINX-SCAN, port=http, protocol=tcp, blocktype=DROP]
 
 > **backend = polling**
 - Fail2Ban이 로그 파일을 감시하는 방식 중 하나이다.
-- 기본 backend는 `auto`로, 로그가 journald에 있으면 사용하기에 nginx의 로그가 제대로 감시되지 않을 수 있다.
-- 때문에 `backend = polling`을 명시함으로써 Fail2Ban이 로그 파일을 직접 감시하도록 강제한다.
+- 기본 backend는 `auto` 로, 로그가 journald에 있으면 사용하기에 nginx의 로그가 제대로 감시되지 않을 수 있다.
+- 때문에 `backend = polling` 을 명시함으로써 Fail2Ban이 로그 파일을 직접 감시하도록 강제한다.
 
 ```bash
 sudo systemctl restart fail2ban
@@ -304,7 +304,7 @@ ignoreregex =
 
 > **failregex**
 - 해당 정규식에 매칭되고, HTTP 403 응답이 발생하면 IP를 추적한다.
-- `<HOST>`는 Fail2Ban이 자동으로 IP 주소로 치환해 사용하게 된다.
+- `<HOST>` 는 Fail2Ban이 자동으로 IP 주소로 치환해 사용하게 된다.
 
 > **ignoreregex**
 - 필요하다면 정규식을 통해서 특정 IP나 요청은 허용해줄 수 있다.
@@ -443,7 +443,7 @@ IP 차단 자체에는 성공이 되었지만, 내가 원하는 것은 요청조
 
 지금부터는 이를 어떻게 해결했는지 과정을 적어보려고 한다.
 
-## 1. REJECT -> DROP
+## 1. REJECT - DROP
 
 `jail.d/nginx-scan.conf` 파일이 기본 설정인 REJECT로 되어있기에 당연하게도 DROP이 되지 않았다.
 

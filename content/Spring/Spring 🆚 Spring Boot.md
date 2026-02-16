@@ -72,7 +72,7 @@ Spring Boot : 톰캣이 내장되어 있어서 main() 메서드만 실행하면 
 
 # 📌 Spring (Boot 이전)에서의 웹 설정 흐름
 
-Spring MVC를 사용할 때는 보통, **web.xml + Java Config (또는 XML)**을 조합해서 DispatcherServlet, ComponentScan, ViewResolver 등등을 전부 수동으로 설정해야만 했다.
+Spring MVC를 사용할 때는 보통, **web.xml + Java Config (또는 XML)** 을 조합해서 DispatcherServlet, ComponentScan, ViewResolver 등등을 전부 수동으로 설정해야만 했다.
 
 ## 예시
 
@@ -206,17 +206,17 @@ dependencies {
 
 - `spring-boot-starter-web` 하나에는 대표적으로 아래의 의존성들이 포함된다.
 
-> **1) Spring MVC**
+> 1) Spring MVC
 - @RestController, @RequestMapping, @GetMapping 등 어노테이션 사용 가능
 
->** 2) Jackson (JSON)**
+> 2) Jackson (JSON)
 - 객체 ↔ JSON 자동 직렬화/역직렬화
 - 컨트롤러에서 객체를 반환하면 자동으로 JSON 변환
 - @RequestBody, @ResponseBody 기반 동작
 
->** 3) Tomcat (내장)**
+>3) Tomcat (내장)
 
-> **4) Validation**
+>4) Validation
 - `@Valid, @NotNull, @Email, @Min, @Max` 등 지원
 - 컨트롤러 파라미터 바인딩 시 자동 검증
 

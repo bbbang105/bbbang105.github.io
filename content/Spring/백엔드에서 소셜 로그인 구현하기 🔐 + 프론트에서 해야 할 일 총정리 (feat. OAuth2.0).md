@@ -155,7 +155,7 @@ https://developers.kakao.com/console/app
 - 나중에 도메인 적용 후, 추가해주면 된다.
 ![](https://velog.velcdn.com/images/kusitms-29th-d/post/f84eaddb-467a-415f-b33b-17ae6024d664/image.png)
 
-**9. 동의항목을 설정해준다. **
+**9. 동의항목을 설정해준다.**
 - 필요한 정보에 대해 설정해주면 되는데, 어차피 닉네임 & 프로필 사진 & 친구 목록만 가져올 수 있다.
 - 원래는 이메일도 가능했었는데.. 어느 순간부터 안되도록 변경된 것 같다.
 ![](https://velog.velcdn.com/images/kusitms-29th-d/post/3b7d8285-b13e-4447-8efe-97f6930b8753/image.png)

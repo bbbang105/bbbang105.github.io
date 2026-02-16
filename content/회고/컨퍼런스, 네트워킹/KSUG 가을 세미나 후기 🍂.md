@@ -6,6 +6,8 @@ tags:
   - conference
   - career
   - springboot
+
+thumbnail: https://velog.velcdn.com/images/hsh111366/post/f837d385-78bb-4397-8397-7af65e660697/image.jpeg
 ---
 
 ---

@@ -23,10 +23,6 @@ tags:
 
 양질의 세션들을 듣기 위함도 있었지만, 이렇게 큰 컨퍼런스를 참여해보는 것은 처음이라 여기서만 얻을 수 있는 각종 굿즈들이 사실 너무 갖고 싶었다..! 그래서 들어가자마자 열심히 줄을 서서 굿즈들을 하나씩 쓸어 모았다. 
 
-<img src = "https://velog.velcdn.com/images/hsh111366/post/3e9f6922-5e84-4af0-90d6-f8bcbf2e83fe/image.png" style= transform:rotate(90deg); width = 90% >
-
-귀여운 인프런 캐릭터 부채...
-
 
 ## 오프닝 🤝
 

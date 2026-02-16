@@ -5,6 +5,8 @@ description: "원티드 2025 커리어 개더링에서 채용 평가 기준과 �
 tags:
   - conference
   - career
+
+thumbnail: https://velog.velcdn.com/images/hsh111366/post/716165a7-3582-4a6a-989e-b52d1d40df2a/image.jpg
 ---
 
 ---

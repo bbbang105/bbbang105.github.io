@@ -321,7 +321,7 @@ PM을 맡아 고민도 많고 힘들었을텐데, 한 번도 내색하지 않고
 
 ![](https://velog.velcdn.com/images/hsh111366/post/5abe3d01-09b5-4fb5-8f77-14e8980d7137/image.jpeg)
 
-<img src=https://velog.velcdn.com/images/hsh111366/post/b1fc178c-ee19-44c5-a379-8c5ec91d55ce/image.jpeg width=50%>
+![](https://velog.velcdn.com/images/hsh111366/post/b1fc178c-ee19-44c5-a379-8c5ec91d55ce/image.jpeg)
 
 ![](https://velog.velcdn.com/images/hsh111366/post/a613790c-c06b-42fa-83ea-9f34f0c12b07/image.jpeg)
 
@@ -331,7 +331,7 @@ PM을 맡아 고민도 많고 힘들었을텐데, 한 번도 내색하지 않고
 
 ![](https://velog.velcdn.com/images/hsh111366/post/5c16d0b2-4b9e-467a-a452-412471688fd2/image.jpeg)
 
-<img src=https://velog.velcdn.com/images/hsh111366/post/502e0697-566a-48ea-b15d-131b78b63923/image.jpeg width=60%>
+![](https://velog.velcdn.com/images/hsh111366/post/502e0697-566a-48ea-b15d-131b78b63923/image.jpeg)
 
 ---
 

@@ -4,6 +4,7 @@ description: 캡스톤 디자인에서 가상화폐 백테스팅 및 자동매�
 tags:
   - project
   - backend
+thumbnail: https://github.com/CSID-DGU/2024-1-SCS4031-01-owl-4/assets/113084292/3604000e-15ca-4bdb-8ff7-46a99155698b
 ---
 
 ---
@@ -1268,7 +1269,7 @@ public class ApiResponse<T> {
 
 우리 서비스는 도메인이 어려워서 설명할 것도 많고, 기능이 많아서 보여주고 싶은 것들도 많았는데 시간이 없어서 엄청나게 빠르게 넘어갔던 것 같다. 그래도 발표 자체는 큰 문제 없이 잘 했던 것 같아서 후련했다!
 
-![](https://velog.velcdn.com/images/hsh111366/post/853c94a8-9df4-430b-84df-68c46b871a52/image.jpeg)
+<img src="https://velog.velcdn.com/images/hsh111366/post/853c94a8-9df4-430b-84df-68c46b871a52/image.jpeg" width=50%>
 
 
 그리고 결과적으로 2등을 했다! 사실 1등을 하고 싶었지만, 1등한 팀이 사업성 까지 고려를 해서 좋은 점수를 받았던 것 같다 ㅎㅎ
