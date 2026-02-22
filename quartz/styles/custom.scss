@@ -745,6 +745,21 @@ hr {
   }
 }
 
+.blog-link {
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-sm);
+  background: var(--secondary);
+  color: #fff !important;
+  text-decoration: none !important;
+  transition: opacity var(--transition);
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: 110px 1fr;

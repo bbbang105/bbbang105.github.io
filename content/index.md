@@ -159,8 +159,8 @@ socialDescription: "안녕하세요, 개발자 한상호입니다."
 
   <div class="subsection-title">Measuring and improving performance</div>
   <ul>
-    <li>Discovered N+1 query in schedule API. Applied QueryDSL fetch join + composite index. <strong>18.38s → 0.35s (98% faster)</strong></li>
-    <li>Identified JPA saveAll individual INSERTs as bottleneck. Applied Bulk INSERT + async QR generation. <strong>16.56s → 0.41s (97.5% faster)</strong></li>
+    <li>Discovered N+1 query in schedule API. Applied QueryDSL fetch join + composite index. <strong>18.38s → 0.35s (98% faster)</strong> <a class="blog-link" href="/OneTime/성능-개선일지-1-(feat.-N+1,-Index)">📝 Read</a></li>
+    <li>Identified JPA saveAll individual INSERTs as bottleneck. Applied Bulk INSERT + async QR generation. <strong>16.56s → 0.41s (97.5% faster)</strong> <a class="blog-link" href="/OneTime/성능-개선일지-2-(feat.-Bulk-Insert)">📝 Read</a></li>
   </ul>
 
   <div class="subsection-title">Solving costs with technology</div>
@@ -283,9 +283,9 @@ socialDescription: "안녕하세요, 개발자 한상호입니다."
   <div class="hero-greeting">안녕하세요, 개발자 한상호입니다.</div>
   <p class="hero-tagline">
     사용자가 겪는 불편함을 이해하고 주도적으로 해결해 나가는 것이 개발의 본질이라고 생각합니다.<br>
-    2만 명 이상이 사용하는 서비스 <a href="https://www.onetime-with-members.com/ko/landing" target="_blank">OneTime</a>을 직접 기획·개발·운영하며 이를 실천하고 있습니다.<br><br>
+    2만 5천명 이상이 사용하는 서비스 <a href="https://www.onetime-with-members.com/ko/landing" target="_blank">OneTime</a>을 직접 기획·개발·운영하며 이를 실천하고 있습니다.<br><br>
     기록과 사람의 힘을 믿습니다.<br>
-    2년간 100개 이상의 기술 블로그 글을 작성하고, 블로그 스터디를 1년 반 이상 운영해왔습니다.
+    2년간 140개 이상의 기술 블로그 글을 작성하고, 블로그 스터디를 1년 반 이상 운영해왔습니다.
   </p>
 </div>
 
@@ -295,7 +295,7 @@ socialDescription: "안녕하세요, 개발자 한상호입니다."
 
 <div class="section-card scroll-fade-in">
   <div class="section-header">
-    <span class="company-name">(주)로고스에이아이 <a href="https://www.logosai.co.kr/" target="_blank" class="company-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></span>
+    <span class="company-name">(주)로고스AI <a href="https://www.logosai.co.kr/" target="_blank" class="company-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></span>
     <span class="period">2025.08 - 현재</span>
   </div>
   <div class="role">Backend Engineer</div>
@@ -329,7 +329,7 @@ socialDescription: "안녕하세요, 개발자 한상호입니다."
     <span class="tag">Spring Security</span>
     <span class="tag">Spring Batch</span>
     <span class="tag">MySQL</span>
-    <span class="tag">NCP</span>
+    <span class="tag">AWS</span>
     <span class="tag">RAG</span>
     <span class="tag">LLM</span>
     <span class="tag">Docker</span>
@@ -386,8 +386,8 @@ socialDescription: "안녕하세요, 개발자 한상호입니다."
 
   <div class="subsection-title">성능을 측정하고 개선합니다</div>
   <ul>
-    <li>전체 스케줄 조회 API에서 N+1 쿼리 문제를 발견. QueryDSL fetch join과 복합 인덱스 적용. <strong>18.38s → 0.35s (98% 개선)</strong></li>
-    <li>이벤트 생성 시 JPA saveAll의 개별 INSERT가 병목임을 확인. Bulk INSERT와 비동기 QR 생성 적용. <strong>16.56s → 0.41s (97.5% 개선)</strong></li>
+    <li>전체 스케줄 조회 API에서 N+1 쿼리 문제를 발견. QueryDSL fetch join과 복합 인덱스 적용. <strong>18.38s → 0.35s (98% 개선)</strong> <a class="blog-link" href="/OneTime/성능-개선일지-1-(feat.-N+1,-Index)">📝 글 보기</a></li>
+    <li>이벤트 생성 시 JPA saveAll의 개별 INSERT가 병목임을 확인. Bulk INSERT와 비동기 QR 생성 적용. <strong>16.56s → 0.41s (97.5% 개선)</strong> <a class="blog-link" href="/OneTime/성능-개선일지-2-(feat.-Bulk-Insert)">📝 글 보기</a></li>
   </ul>
 
   <div class="subsection-title">비용을 기술로 해결합니다</div>
