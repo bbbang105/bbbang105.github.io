@@ -732,12 +732,17 @@ hr {
 
 .tag {
   background: var(--lightgray);
-  padding: 0.1rem 0.4rem;
+  padding: 0.2rem 0.55rem;
   border-radius: var(--radius-sm);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   color: var(--darkgray);
   font-weight: 500;
   transition: all var(--transition);
+}
+
+.section-card .tag {
+  padding: 0.1rem 0.4rem;
+  font-size: 0.65rem;
 
   :root[saved-theme="dark"] & {
     background: #e5e7eb;
