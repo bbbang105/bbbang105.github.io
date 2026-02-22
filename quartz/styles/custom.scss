@@ -765,6 +765,10 @@ hr {
   }
 }
 
+:root:not([saved-theme="dark"]) .blog-link {
+  background: #1d4ed8;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: 110px 1fr;
