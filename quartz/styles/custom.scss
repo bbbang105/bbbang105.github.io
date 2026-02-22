@@ -732,12 +732,17 @@ hr {
 
 .tag {
   background: var(--lightgray);
-  padding: 0.2rem 0.55rem;
+  padding: 0.1rem 0.4rem;
   border-radius: var(--radius-sm);
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   color: var(--darkgray);
   font-weight: 500;
   transition: all var(--transition);
+
+  :root[saved-theme="dark"] & {
+    background: #e5e7eb;
+    color: #18181b;
+  }
 }
 
 .skills-grid {
