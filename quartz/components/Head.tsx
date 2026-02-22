@@ -36,6 +36,14 @@ export default (() => {
     )
     const ogImageDefaultPath = `https://${cfg.baseUrl}/static/og-image.png?v=2`
 
+    // 커버 이미지가 있으면 OG 이미지로 사용
+    const coverImage = fileData.coverImage
+    const ogImagePath = coverImage
+      ? coverImage.startsWith("http")
+        ? coverImage
+        : `https://${cfg.baseUrl}/${coverImage.replace(/^\//, "")}`
+      : ogImageDefaultPath
+
     return (
       <head>
         <title>{title}</title>
@@ -74,14 +82,14 @@ export default (() => {
 
         {!usesCustomOgImage && (
           <>
-            <meta property="og:image" content={ogImageDefaultPath} />
-            <meta property="og:image:url" content={ogImageDefaultPath} />
+            <meta property="og:image" content={ogImagePath} />
+            <meta property="og:image:url" content={ogImagePath} />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="630" />
-            <meta name="twitter:image" content={ogImageDefaultPath} />
+            <meta name="twitter:image" content={ogImagePath} />
             <meta
               property="og:image:type"
-              content={`image/${(getFileExtension(ogImageDefaultPath) ?? ".png").replace(".", "")}`}
+              content={`image/${(getFileExtension(ogImagePath) ?? ".png").replace(".", "")}`}
             />
           </>
         )}
