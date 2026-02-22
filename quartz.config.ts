@@ -90,6 +90,7 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
+      Plugin.PWA(),
       // OG 이미지 플러그인 비활성화 (이모지 폴더명 호환 문제)
       // Plugin.CustomOgImages({
       //   colorScheme: "darkMode",
