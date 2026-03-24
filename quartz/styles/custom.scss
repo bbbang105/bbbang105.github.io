@@ -237,7 +237,12 @@ code:not(pre code) {
 
     &:hover {
       border-color: #52525b !important;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(96, 165, 250, 0.1) !important;
     }
+  }
+
+  .subsection-title {
+    color: var(--dark) !important;
   }
 
   // Featured 카드 다크모드
@@ -480,16 +485,25 @@ hr {
   animation: fadeInUp 0.6s ease-out 0.3s both;
 }
 
-// 스크롤 기반 fade-in
+// 스크롤 기반 fade-in (staggered)
 .scroll-fade-in {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 
   &.visible {
     opacity: 1;
     transform: translateY(0);
   }
+
+  // staggered delays (JS에서 --stagger-delay 커스텀 속성 주입)
+  transition-delay: var(--stagger-delay, 0s);
+}
+
+// 성과 숫자 count-up
+.count-up {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -590,20 +604,40 @@ hr {
 // Hero 섹션 (랜딩 페이지)
 // ========================================
 .hero-section {
-  padding: 1rem 0 2rem;
+  padding: 1.5rem 0 2.5rem;
   margin-bottom: 1rem;
 }
 
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .hero-greeting {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--dark);
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.02em;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--dark) 0%, var(--secondary) 50%, var(--dark) 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 
   @media (max-width: 650px) {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
   }
+}
+
+:root[saved-theme="dark"] .hero-greeting {
+  background: linear-gradient(135deg, #fafafa 0%, #60a5fa 50%, #fafafa 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-tagline {
@@ -625,6 +659,12 @@ hr {
       text-decoration: underline;
     }
   }
+
+  // Hero 내 핵심 키워드 하이라이트
+  strong {
+    color: var(--secondary);
+    font-weight: 700;
+  }
 }
 
 // ========================================
@@ -637,15 +677,179 @@ hr {
   padding: 1.75rem 2rem;
   margin-bottom: 1.25rem;
   overflow: hidden;
-  transition: border-color var(--transition), box-shadow var(--transition);
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+
+  // 좌측 액센트 바
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--secondary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 3px 0 0 3px;
+  }
 
   &:hover {
     border-color: var(--gray);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+
+    &::before {
+      opacity: 1;
+    }
   }
 
   @media (max-width: 450px) {
     padding: 1.25rem 1rem;
+  }
+}
+
+// 섹션별 카드 액센트 색상
+article h2#career + .section-card,
+article h2#경력 + .section-card {
+  &::before { background: #3b82f6; }
+  .role { color: #3b82f6; }
+}
+article h2#career ~ .section-card,
+article h2#경력 ~ .section-card {
+  &::before { background: #3b82f6; }
+}
+article h2#projects + .section-card,
+article h2#프로젝트 + .section-card,
+article h2#projects ~ .section-card,
+article h2#프로젝트 ~ .section-card {
+  &::before { background: #8b5cf6; }
+}
+article h2#activities + .section-card,
+article h2#활동 + .section-card,
+article h2#activities ~ .section-card,
+article h2#활동 ~ .section-card {
+  &::before { background: #22c55e; }
+}
+
+// ========================================
+// 타임라인 (Career / Projects)
+// ========================================
+.timeline-section {
+  position: relative;
+  padding-left: 2rem;
+
+  // 세로 연결선
+  &::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--lightgray);
+  }
+
+  .section-card {
+    position: relative;
+    overflow: visible; // 도트/가로선이 카드 밖에 있으므로 필수
+
+    // 도트
+    &::after {
+      content: '';
+      position: absolute;
+      left: -2rem;
+      top: 1.85rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--light);
+      border: 2px solid var(--gray);
+      transition: all 0.3s ease;
+      z-index: 1;
+    }
+
+    &:hover::after {
+      border-color: var(--secondary);
+      background: var(--secondary);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+    }
+
+    // 도트에서 카드로 연결하는 가로선
+    &::before {
+      left: -1.25rem;
+      top: 2.1rem;
+      bottom: auto;
+      width: 1.25rem;
+      height: 2px;
+      background: var(--lightgray);
+      opacity: 1;
+      border-radius: 0;
+      transition: background 0.3s ease;
+    }
+
+    &:hover::before {
+      background: var(--secondary);
+    }
+  }
+}
+
+// 타임라인 섹션별 도트 색상
+.timeline-section[data-section="career"] .section-card:hover::after,
+.timeline-section[data-section="경력"] .section-card:hover::after {
+  border-color: #3b82f6;
+  background: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+.timeline-section[data-section="career"] .section-card:hover::before,
+.timeline-section[data-section="경력"] .section-card:hover::before {
+  background: #3b82f6;
+}
+
+.timeline-section[data-section="projects"] .section-card:hover::after,
+.timeline-section[data-section="프로젝트"] .section-card:hover::after {
+  border-color: #8b5cf6;
+  background: #8b5cf6;
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15);
+}
+.timeline-section[data-section="projects"] .section-card:hover::before,
+.timeline-section[data-section="프로젝트"] .section-card:hover::before {
+  background: #8b5cf6;
+}
+
+// 다크모드 타임라인
+:root[saved-theme="dark"] {
+  .timeline-section::before {
+    background: var(--gray);
+  }
+  .timeline-section .section-card::after {
+    background: var(--lightgray);
+    border-color: #52525b;
+  }
+  .timeline-section .section-card::before {
+    background: var(--gray);
+  }
+}
+
+// 모바일 타임라인
+@media (max-width: 450px) {
+  .timeline-section {
+    padding-left: 1.5rem;
+
+    &::before {
+      left: 3px;
+    }
+
+    .section-card::after {
+      left: -1.5rem;
+      width: 8px;
+      height: 8px;
+    }
+
+    .section-card::before {
+      left: -0.85rem;
+      width: 0.85rem;
+    }
   }
 }
 
@@ -747,6 +951,25 @@ hr {
   margin-top: 1.25rem;
   margin-bottom: 0.5rem;
   color: var(--dark);
+  padding-left: 0.75rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.2em;
+    bottom: 0.2em;
+    width: 2px;
+    background: var(--secondary);
+    border-radius: 1px;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
 }
 
 .metrics {
@@ -755,12 +978,25 @@ hr {
   gap: 0.4rem;
   color: var(--secondary);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   margin: 0.75rem 0;
-  padding: 0.4rem 0.85rem;
-  background: rgba(37, 99, 235, 0.08);
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(139, 92, 246, 0.06));
   border-radius: var(--radius-sm);
   border: 1px solid rgba(37, 99, 235, 0.15);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--secondary), #8b5cf6);
+    border-radius: 3px 0 0 3px;
+  }
 }
 
 .tags {
@@ -778,13 +1014,57 @@ hr {
   color: var(--darkgray);
   font-weight: 500;
   transition: all var(--transition);
+  border: 1px solid transparent;
+
+  // 카테고리별 색상 (JS에서 data-category 부여)
+  &[data-category="language"] {
+    background: #dbeafe; color: #1e40af; border-color: #93c5fd;
+  }
+  &[data-category="framework"] {
+    background: #ede9fe; color: #5b21b6; border-color: #c4b5fd;
+  }
+  &[data-category="infra"] {
+    background: #dcfce7; color: #166534; border-color: #86efac;
+  }
+  &[data-category="ai"] {
+    background: #fef3c7; color: #92400e; border-color: #fcd34d;
+  }
+  &[data-category="database"] {
+    background: #ffedd5; color: #9a3412; border-color: #fdba74;
+  }
+  &[data-category="tool"] {
+    background: #f0f9ff; color: #075985; border-color: #7dd3fc;
+  }
+}
+
+// 다크모드 태그 컬러
+:root[saved-theme="dark"] .tag {
+  &[data-category="language"] {
+    background: rgba(59, 130, 246, 0.15); color: #93c5fd; border-color: rgba(59, 130, 246, 0.3);
+  }
+  &[data-category="framework"] {
+    background: rgba(139, 92, 246, 0.15); color: #c4b5fd; border-color: rgba(139, 92, 246, 0.3);
+  }
+  &[data-category="infra"] {
+    background: rgba(34, 197, 94, 0.15); color: #86efac; border-color: rgba(34, 197, 94, 0.3);
+  }
+  &[data-category="ai"] {
+    background: rgba(245, 158, 11, 0.15); color: #fcd34d; border-color: rgba(245, 158, 11, 0.3);
+  }
+  &[data-category="database"] {
+    background: rgba(249, 115, 22, 0.15); color: #fdba74; border-color: rgba(249, 115, 22, 0.3);
+  }
+  &[data-category="tool"] {
+    background: rgba(14, 165, 233, 0.15); color: #7dd3fc; border-color: rgba(14, 165, 233, 0.3);
+  }
 }
 
 .section-card .tag {
-  padding: 0.1rem 0.4rem;
-  font-size: 0.65rem;
+  padding: 0.15rem 0.5rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.01em;
 
-  :root[saved-theme="dark"] & {
+  :root[saved-theme="dark"] &:not([data-category]) {
     background: #e5e7eb;
     color: #18181b;
   }
@@ -835,12 +1115,18 @@ hr {
 
 .cert {
   background: var(--lightgray);
-  padding: 0.3rem 0.7rem;
+  padding: 0.35rem 0.75rem;
   border-radius: var(--radius-sm);
   font-size: 0.82rem;
   font-weight: 500;
-  border: 1px solid transparent;
+  border: 1px solid var(--lightgray);
   transition: all var(--transition);
+
+  &:hover {
+    border-color: var(--gray);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+  }
 }
 
 .activity-item {
@@ -917,6 +1203,11 @@ hr {
   }
 }
 
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: var(--shadow-lg), 0 0 0 0 rgba(37, 99, 235, 0.4); }
+  50% { box-shadow: var(--shadow-lg), 0 0 0 8px rgba(37, 99, 235, 0); }
+}
+
 .contact-btn {
   padding: 0.65rem 1.25rem;
   background: var(--secondary);
@@ -929,10 +1220,12 @@ hr {
   cursor: pointer;
   box-shadow: var(--shadow-lg);
   transition: all var(--transition);
+  animation: pulseGlow 3s ease-in-out infinite;
 
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    animation: none;
   }
 }
 
@@ -1252,15 +1545,31 @@ footer {
   padding-left: 1.25rem;
 
   li {
-    margin-bottom: 0.3rem;
-    line-height: 1.6;
+    margin-bottom: 0.4rem;
+    line-height: 1.65;
     font-size: 0.95rem;
 
     strong {
       color: var(--secondary);
       font-weight: 700;
+      // 성과 숫자 강조 (% 또는 → 포함 시)
+      &:has(+ .blog-link), & {
+        position: relative;
+      }
     }
   }
+}
+
+// 성과 숫자가 포함된 strong에 글로우 효과 (JS에서 .stat-highlight 추가)
+.stat-highlight {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(139, 92, 246, 0.08));
+  padding: 0.05rem 0.35rem;
+  border-radius: 0.25rem;
+  margin: 0 0.05rem;
+}
+
+:root[saved-theme="dark"] .stat-highlight {
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.15), rgba(167, 139, 250, 0.12));
 }
 
 // ========================================
