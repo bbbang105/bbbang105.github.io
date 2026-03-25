@@ -173,7 +173,7 @@ socialDescription: "안녕하세요, 개발자 한상호입니다."
   </div>
   <div class="role">Backend & Infrastructure Engineer</div>
   <p>A web service that helps multiple people easily coordinate schedules with a single link share.</p>
-  <div class="metrics">25,000+ users / 2,000+ MAU</div>
+  <div class="metrics">25K+ users / 2K+ MAU</div>
 
   <div class="subsection-title">Measuring and improving performance</div>
   <ul>
@@ -457,7 +457,7 @@ socialDescription: "안녕하세요, 개발자 한상호입니다."
   </div>
   <div class="role">Backend & Infrastructure Engineer</div>
   <p>링크 공유 한 번으로 여러 사람과 쉽게 일정을 맞추도록 돕는 웹 서비스입니다.</p>
-  <div class="metrics">누적 사용자 25,000+명 / MAU 2,000+명</div>
+  <div class="metrics">누적 사용자 25K+명 / MAU 2K+명</div>
 
   <div class="subsection-title">성능을 측정하고 개선합니다</div>
   <ul>

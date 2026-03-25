@@ -1,5 +1,4 @@
 var _scrollObserver = null;
-var _countUpObserver = null;
 
 // ========================================
 // Tag 카테고리 매핑
@@ -90,61 +89,6 @@ function assignStaggerDelays() {
   });
 }
 
-// ========================================
-// Count-up 애니메이션
-// ========================================
-function initCountUp() {
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-  if (_countUpObserver) {
-    _countUpObserver.disconnect();
-    _countUpObserver = null;
-  }
-
-  _countUpObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        animateCountUp(entry.target);
-        _countUpObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  // .metrics 내 숫자 찾기
-  document.querySelectorAll(".metrics").forEach(function(el) {
-    _countUpObserver.observe(el);
-  });
-}
-
-function animateCountUp(el) {
-  var text = el.textContent;
-  // 숫자 추출 (쉼표 포함)
-  var match = text.match(/([\d,]+)/);
-  if (!match) return;
-
-  var numStr = match[1];
-  var target = parseInt(numStr.replace(/,/g, ""), 10);
-  if (isNaN(target) || target === 0) return;
-
-  var duration = 1200;
-  var start = performance.now();
-  var prefix = text.substring(0, text.indexOf(numStr));
-  var suffix = text.substring(text.indexOf(numStr) + numStr.length);
-
-  function frame(now) {
-    var progress = Math.min((now - start) / duration, 1);
-    // easeOutExpo
-    var eased = 1 - Math.pow(2, -10 * progress);
-    var current = Math.round(target * eased);
-    el.textContent = prefix + current.toLocaleString() + suffix;
-
-    if (progress < 1) {
-      requestAnimationFrame(frame);
-    }
-  }
-
-  requestAnimationFrame(frame);
-}
 
 // ========================================
 // 기존 기능
@@ -160,7 +104,7 @@ function switchLang(lang) {
   initScrollAnimations();
   colorizeTags();
   assignStaggerDelays();
-  initCountUp();
+
 }
 
 function updateToc(lang) {
@@ -304,7 +248,7 @@ function initPage() {
     initScrollAnimations();
     colorizeTags();
     assignStaggerDelays();
-    initCountUp();
+  
     highlightStats();
   });
 }
