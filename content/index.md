@@ -377,26 +377,6 @@ socialDescription: "안녕하세요, 개발자 한상호입니다."
 
 <div class="section-card scroll-fade-in">
   <div class="section-header">
-    <span class="company-name">Technical Blog</span>
-    <span class="period">2023 - Present</span>
-  </div>
-  <p>140+ tech posts over 2 years.</p>
-  <div class="skills-grid">
-    <span class="skill-category">Spring</span>
-    <span>Filter vs Interceptor, OAuth2.0, Error Handling</span>
-    <span class="skill-category">Database</span>
-    <span>Index, Transaction Isolation Levels</span>
-    <span class="skill-category">Infra</span>
-    <span>Docker, Load Balancing, Infrastructure Cost Optimization</span>
-    <span class="skill-category">AI</span>
-    <span>RAG Concepts, AGI, AI Regulation</span>
-    <span class="skill-category">Security</span>
-    <span>Web Scanning Attack Analysis, Fail2Ban</span>
-  </div>
-</div>
-
-<div class="section-card scroll-fade-in">
-  <div class="section-header">
     <span class="company-name">Blog Study Group</span>
     <span class="period">2023.06 - Present</span>
   </div>
