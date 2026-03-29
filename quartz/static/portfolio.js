@@ -145,18 +145,24 @@ function openVibeModal(id) {
   document.body.classList.add("modal-open");
 }
 
+function isAnyModalOpen() {
+  var contactOpen = document.getElementById("contact-overlay");
+  return (contactOpen && contactOpen.classList.contains("active"))
+    || document.querySelectorAll(".vibe-overlay.visible").length > 0;
+}
+
 function closeVibeModal(id) {
   var overlay = document.getElementById("vibe-overlay-" + id);
   if (!overlay) return;
   overlay.classList.remove("visible");
-  document.body.classList.remove("modal-open");
+  if (!isAnyModalOpen()) document.body.classList.remove("modal-open");
 }
 
 function closeAllVibeModals() {
   document.querySelectorAll(".vibe-overlay.visible").forEach(function(el) {
     el.classList.remove("visible");
   });
-  document.body.classList.remove("modal-open");
+  if (!isAnyModalOpen()) document.body.classList.remove("modal-open");
 }
 
 document.addEventListener("click", function(e) {
