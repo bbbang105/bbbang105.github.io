@@ -95,10 +95,11 @@ function assignStaggerDelays() {
 // 기존 기능
 // ========================================
 function switchLang(lang) {
+  if (lang !== "ko" && lang !== "en") lang = "ko";
   document.querySelectorAll(".lang-content").forEach(function(el) { el.classList.remove("active") });
   document.querySelectorAll(".lang-btn").forEach(function(el) { el.classList.remove("active") });
   document.getElementById("content-" + lang).classList.add("active");
-  var btn = document.querySelector(".lang-btn[onclick*=" + lang + "]");
+  var btn = document.querySelector('.lang-btn[onclick*="' + lang + '"]');
   if (btn) btn.classList.add("active");
   localStorage.setItem("preferredLang", lang);
   updateToc(lang);
