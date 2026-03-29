@@ -56,7 +56,7 @@ socialDescription: "안녕하세요, 개발자 한상호입니다."
   <div class="hero-greeting">Hello, I'm Sangho Han, a developer.</div>
   <p class="hero-tagline">
     I know how to work with AI.<br>
-    I handle planning, design, and frontend development solo through vibe coding, while designing and building the backend for a RAG-based AICC solution.<br><br>
+    I've <a href="#ai-vibe-coding">built 3 products as a solo full-stack developer</a> through vibe coding, while designing and building the backend for a RAG-based AICC solution.<br><br>
     I believe the essence of development is understanding user pain points and proactively solving them.<br>
     I'm building and operating <a href="https://www.onetime-with-members.com/en/landing" target="_blank">OneTime</a>, a scheduling service with over 25,000 users, putting this belief into practice.<br><br>
     I believe in the power of writing and community.<br>
@@ -219,7 +219,7 @@ socialDescription: "안녕하세요, 개발자 한상호입니다."
 
 <div class="vibe-section scroll-fade-in">
   <div class="vibe-section-header">
-    <h3>AI Vibe Coding</h3>
+    <h3 id="ai-vibe-coding">AI Vibe Coding</h3>
     <p>Projects built solo from planning to deployment, in collaboration with AI</p>
   </div>
   <div class="vibe-grid">
@@ -445,7 +445,7 @@ socialDescription: "안녕하세요, 개발자 한상호입니다."
   <div class="hero-greeting">안녕하세요, 개발자 한상호입니다.</div>
   <p class="hero-tagline">
     AI와 함께 일하는 방법을 압니다.<br>
-    바이브코딩으로 기획·디자인·프론트엔드 개발을 혼자 해내고, RAG 기반 AICC 솔루션의 백엔드를 설계·구현하고 있습니다.<br><br>
+    바이브코딩으로 <a href="#ai-vibe-coding">3개 프로덕트를 1인 풀스택 개발</a>하고, RAG 기반 AICC 솔루션의 백엔드를 설계·구현하고 있습니다.<br><br>
     사용자가 겪는 불편함을 이해하고 주도적으로 해결해 나가는 것이 개발의 본질이라고 생각합니다.<br>
     2만 5천명 이상이 사용하는 서비스 <a href="https://www.onetime-with-members.com/ko/landing" target="_blank">OneTime</a>을 직접 기획·개발·운영하며 이를 실천하고 있습니다.<br><br>
     기록과 사람의 힘을 믿습니다.<br>
@@ -605,7 +605,7 @@ socialDescription: "안녕하세요, 개발자 한상호입니다."
 
 <div class="vibe-section scroll-fade-in">
   <div class="vibe-section-header">
-    <h3>AI Vibe Coding</h3>
+    <h3 id="ai-vibe-coding">AI Vibe Coding</h3>
     <p>AI와 협업하여 기획부터 배포까지 1인 풀스택으로 구축한 프로젝트들</p>
   </div>
   <div class="vibe-grid">
