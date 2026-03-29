@@ -80,7 +80,7 @@ socialDescription: "안녕하세요, 개발자 한상호입니다."
   <ul>
     <li>Built LLM streaming response with <strong>RestClient + SseEmitter</strong> (Java 21 Virtual Thread async processing)</li>
     <li>Chose RestClient+SseEmitter over WebFlux — streaming while maintaining MVC compatibility</li>
-    <li>Enabled <strong>TTFB measurement</strong> and response time statistics (P50/P75/P95) through Delta/Final event separation</li>
+    <li>Enabled <strong>TTFT measurement</strong> and response time statistics (P50/P75/P95) through Delta/Final event separation</li>
     <li>LLM performance monitoring with period-over-period comparison (month-over-month change rate)</li>
   </ul>
 
@@ -217,52 +217,157 @@ socialDescription: "안녕하세요, 개발자 한상호입니다."
   </div>
 </div>
 
-<div class="section-card scroll-fade-in">
-  <div class="section-header">
-    <span class="company-name">Hazel</span>
-    <span class="period"><a href="https://github.com/bbbang105/flowershop-admin" target="_blank" class="github-link" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a> 2025.01 - Present</span>
+<div class="vibe-section scroll-fade-in">
+  <div class="vibe-section-header">
+    <h3>AI Vibe Coding</h3>
+    <p>Projects built solo from planning to deployment, in collaboration with AI</p>
   </div>
-  <div class="role">Full-Stack (AI Vibe Coding)</div>
-  <p>A sales, customer, and reservation management SaaS for flower shop owners. Building the entire product solo through vibe coding with AI (Claude) — from planning and design to frontend/backend development and deployment.</p>
+  <div class="vibe-grid">
+    <div class="vibe-card" onclick="openVibeModal('custing-en')">
+      <div class="vibe-card-emoji">📝</div>
+      <div class="vibe-card-name">Custing</div>
+      <div class="vibe-card-desc">Blog study group automation platform with Discord bot & web dashboard</div>
+      <div class="vibe-card-highlight">Automated 30+ member study operations end-to-end</div>
+      <div class="vibe-card-tags">
+        <span class="vibe-card-tag">Next.js</span>
+        <span class="vibe-card-tag">discord.js</span>
+        <span class="vibe-card-tag">Monorepo</span>
+      </div>
+      <div class="vibe-card-hint">See details →</div>
+    </div>
+    <div class="vibe-card" onclick="openVibeModal('forme-en')">
+      <div class="vibe-card-emoji">🧰</div>
+      <div class="vibe-card-name">ForMe</div>
+      <div class="vibe-card-desc">All-in-one productivity PWA I built for myself — and keep expanding</div>
+      <div class="vibe-card-highlight">Scattered tools unified into one PWA</div>
+      <div class="vibe-card-tags">
+        <span class="vibe-card-tag">Next.js</span>
+        <span class="vibe-card-tag">TipTap</span>
+        <span class="vibe-card-tag">Gemini</span>
+      </div>
+      <div class="vibe-card-hint">See details →</div>
+    </div>
+    <div class="vibe-card" onclick="openVibeModal('hazel-en')">
+      <div class="vibe-card-emoji">🌸</div>
+      <div class="vibe-card-name">Hazel</div>
+      <div class="vibe-card-desc">Sales, customer & reservation management SaaS for flower shops</div>
+      <div class="vibe-card-highlight">Paper ledgers → digital transformation</div>
+      <div class="vibe-card-tags">
+        <span class="vibe-card-tag">Next.js</span>
+        <span class="vibe-card-tag">Supabase</span>
+        <span class="vibe-card-tag">PWA</span>
+      </div>
+      <div class="vibe-card-hint">See details →</div>
+    </div>
+  </div>
+</div>
 
-  <div class="subsection-title">Building production-grade SaaS with AI vibe coding</div>
-  <ul>
-    <li>Solo development across requirements → UI/UX design → implementation → testing → deployment, <strong>all in collaboration with AI</strong></li>
-    <li>Designed AI collaboration guides (<strong>ARCHITECTURE.md, FRONTEND_GUIDE.md</strong>) → consistent code patterns</li>
-  </ul>
+<!-- Vibe Modals (EN) -->
+<div class="vibe-overlay" id="vibe-overlay-hazel-en">
+  <div class="vibe-modal">
+    <button class="vibe-modal-close" onclick="closeVibeModal('hazel-en')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="section-header">
+      <span class="company-name">🌸 Hazel</span>
+      <span class="period"><a href="https://github.com/bbbang105/flowershop-admin" target="_blank" class="github-link" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a> 2026.01 - Present</span>
+    </div>
+    <div class="role">Full-Stack (AI Vibe Coding)</div>
+    <p>Built this SaaS after seeing my sister manage her flower shop with paper ledgers and KakaoTalk. Developing solo through vibe coding with AI (Claude).</p>
+    <div class="subsection-title">Starting from real flower shop problems</div>
+    <ul>
+      <li>Sales, customers, reservations, and photos scattered across paper + Excel + KakaoTalk → unified SaaS</li>
+      <li>Flower shops need multiple pickup dates per order → designed <strong>1:N multi-pickup reservation system</strong></li>
+    </ul>
+    <div class="subsection-title">Making it actually usable</div>
+    <ul>
+      <li>No app install needed → <strong>PWA + Bottom Navigation Bar</strong> for native app experience</li>
+      <li>Preventing missed reservations → <strong>Web Push notifications</strong> for daily/individual reminders</li>
+      <li>No way to track unpaid sales → built <strong>accounts receivable management system</strong></li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Next.js</span>
+      <span class="tag">React 19</span>
+      <span class="tag">TypeScript</span>
+      <span class="tag">Supabase</span>
+      <span class="tag">PostgreSQL</span>
+      <span class="tag">Cloudflare R2</span>
+      <span class="tag">Vercel</span>
+      <span class="tag">PWA</span>
+      <span class="tag">Web Push</span>
+      <span class="tag">shadcn/ui</span>
+      <span class="tag">Zod</span>
+      <span class="tag">AI Vibe Coding</span>
+    </div>
+  </div>
+</div>
 
-  <div class="subsection-title">Designing server component-centric architecture</div>
-  <ul>
-    <li>Designed <strong>Next.js 16 + React 19 Server Components</strong> as single data source</li>
-    <li>Applied <strong>Supabase RLS</strong> with 44 policies across 11 tables for per-user data isolation</li>
-    <li>Migrated from Supabase Storage to <strong>Cloudflare R2</strong> — eliminated image transfer costs, <strong>4x TTFB improvement</strong></li>
-  </ul>
+<div class="vibe-overlay" id="vibe-overlay-custing-en">
+  <div class="vibe-modal">
+    <button class="vibe-modal-close" onclick="closeVibeModal('custing-en')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="section-header">
+      <span class="company-name">📝 Custing</span>
+      <span class="period"><a href="https://github.com/bbbang105/study-admin" target="_blank" class="github-link" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a> 2026.02 - Present</span>
+    </div>
+    <div class="role">Full-Stack (AI Vibe Coding)</div>
+    <p>Automated a 30-35 member blog study group previously managed via Notion + KakaoTalk, replacing manual workflows with Discord bot + custom web dashboard.</p>
+    <div class="subsection-title">Replacing manual operations with automation</div>
+    <ul>
+      <li>Manual post checking every round (2 weeks) → <strong>RSS auto-collection every 5 min → attendance → late/absent fine auto-assignment → Discord alerts</strong></li>
+      <li>Declining participation → activity score gamification with podium/weekly rankings</li>
+      <li>Notion-based member management chaos → 6-state management system (pending, active, dormant, OB, etc.)</li>
+    </ul>
+    <div class="subsection-title">Features planned and built from real needs</div>
+    <ul>
+      <li>No decision-making tool → designed <strong>board voting</strong> with 4 types (single/multiple/date/anonymous) + anonymous privacy separation</li>
+      <li>Discord alone insufficient for announcements → introduced <strong>FCM web push notifications</strong>, 5 types with individual on/off</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Next.js</span>
+      <span class="tag">React 19</span>
+      <span class="tag">TypeScript</span>
+      <span class="tag">Drizzle ORM</span>
+      <span class="tag">Supabase</span>
+      <span class="tag">PostgreSQL</span>
+      <span class="tag">discord.js</span>
+      <span class="tag">pg-boss</span>
+      <span class="tag">pnpm Monorepo</span>
+      <span class="tag">Vercel</span>
+      <span class="tag">PWA</span>
+      <span class="tag">FCM</span>
+      <span class="tag">Sentry</span>
+      <span class="tag">AI Vibe Coding</span>
+    </div>
+  </div>
+</div>
 
-  <div class="subsection-title">Delivering native app experience with PWA</div>
-  <ul>
-    <li>Implemented PWA push notifications with <strong>Web Push API + Service Worker</strong></li>
-    <li>Scheduled daily reminders + individual reservation reminders with pg_cron</li>
-    <li>Resolved Safari VAPID compatibility, <strong>prevented multi-tenancy data leaks with per-user reservation isolation</strong></li>
-  </ul>
-
-  <div class="subsection-title">Running production at $0 operating cost</div>
-  <ul>
-    <li>Achieved <strong>$0 monthly operating cost</strong> with Vercel + Supabase + Cloudflare R2</li>
-  </ul>
-
-  <div class="tags">
-    <span class="tag">Next.js</span>
-    <span class="tag">React 19</span>
-    <span class="tag">TypeScript</span>
-    <span class="tag">Supabase</span>
-    <span class="tag">PostgreSQL</span>
-    <span class="tag">Cloudflare R2</span>
-    <span class="tag">Vercel</span>
-    <span class="tag">PWA</span>
-    <span class="tag">Web Push</span>
-    <span class="tag">shadcn/ui</span>
-    <span class="tag">Zod</span>
-    <span class="tag">AI Vibe Coding</span>
+<div class="vibe-overlay" id="vibe-overlay-forme-en">
+  <div class="vibe-modal">
+    <button class="vibe-modal-close" onclick="closeVibeModal('forme-en')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="section-header">
+      <span class="company-name">🧰 ForMe</span>
+      <span class="period"><a href="https://github.com/bbbang105/forme" target="_blank" class="github-link" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a> 2026.02 - Present</span>
+    </div>
+    <div class="role">Full-Stack (AI Vibe Coding)</div>
+    <p>All-in-one personal productivity PWA integrating curation, calendar, notes, and YouTube summaries. Built for myself and continuously expanding.</p>
+    <div class="subsection-title">Building features I actually need</div>
+    <ul>
+      <li>Can't watch every YouTube video → RSS collection + <strong>Gemini 2.5 Flash</strong> auto-summarization with length-based prompt tiers</li>
+      <li>Limitations of existing memo/calendar apps → built TipTap editor + recurring schedule calendar from scratch</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Next.js</span>
+      <span class="tag">React 19</span>
+      <span class="tag">TypeScript</span>
+      <span class="tag">Drizzle ORM</span>
+      <span class="tag">Supabase</span>
+      <span class="tag">PostgreSQL</span>
+      <span class="tag">Cloudflare R2</span>
+      <span class="tag">Vercel</span>
+      <span class="tag">PWA</span>
+      <span class="tag">TipTap</span>
+      <span class="tag">Service Worker</span>
+      <span class="tag">Gemini</span>
+      <span class="tag">AI Vibe Coding</span>
+    </div>
   </div>
 </div>
 
@@ -362,35 +467,31 @@ socialDescription: "안녕하세요, 개발자 한상호입니다."
 
   <div class="subsection-title">LLM 스트리밍 API를 구현합니다</div>
   <ul>
-    <li><strong>RestClient + SseEmitter</strong> 기반 LLM 스트리밍 응답 구현 (Java 21 Virtual Thread 비동기 처리)</li>
-    <li>WebFlux 대신 RestClient+SseEmitter 선택 — 기존 MVC 호환 유지하며 스트리밍 구현</li>
-    <li>Delta/Final 이벤트 분리로 <strong>TTFB 측정</strong> 및 응답 시간 통계(P50/P75/P95) 제공</li>
-    <li>기간별 비교(전월 대비 변화율) 기능으로 LLM 성능 모니터링</li>
-  </ul>
-
-  <div class="subsection-title">보이스봇 시스템 API를 설계·구현합니다</div>
-  <ul>
-    <li>VG(Voice Gateway)에서 전송하는 <strong>음성 녹음 데이터(Base64) 수신 → Storage 업로드 → 메타데이터 관리</strong> 파이프라인 구축</li>
-    <li>LG-POC 시스템 API(대화 로깅, RAG 참조 문서 추적) 구현으로 외부 고객사 연동 완료</li>
+    <li><strong>RestClient + SseEmitter</strong> 기반 LLM 스트리밍 응답 구현</li>
+    <li>Delta/Final 이벤트 분리로 <strong>TTFT 측정</strong> 및 응답 시간 통계 제공</li>
   </ul>
 
   <div class="subsection-title">대용량 문서 처리를 위한 배치 시스템을 구축합니다</div>
   <ul>
-    <li><strong>Spring Batch 기반 RAG 청킹 배치 서비스</strong> 구현 (멀티스레드 5 threads 병렬 처리)</li>
-    <li>좀비 프로세스 자동 리셋(1시간 타임아웃) 로직으로 무중단 운영 안정성 확보</li>
+    <li><strong>Spring Batch 기반 RAG 청킹 배치 서비스</strong> 구현</li>
     <li>채팅 파일 정리 배치 구현으로 S3 스토리지 자동 관리</li>
+  </ul>
+
+  <div class="subsection-title">RAG 파이프라인을 위한 문서 처리 도구를 개발합니다</div>
+  <ul>
+    <li><strong>FastAPI + Docling + MarkItDown</strong> 이중 파싱 엔진으로 PDF/DOCX/PPTX/XLSX → 마크다운 변환</li>
   </ul>
 
   <div class="subsection-title">멀티테넌트 환경에서 보안을 고려합니다</div>
   <ul>
     <li>@PreAuthorize 기반 조직별 접근 제어로 멀티테넌트 보안 강화</li>
-    <li><strong>Apache Tika Magic Byte 검증</strong>으로 파일 확장자 위조 방지, 비회원 업로드 제한(10개/20MB)</li>
+    <li><strong>Apache Tika Magic Byte 검증</strong>으로 파일 확장자 위조 방지, 비회원 업로드 제한</li>
   </ul>
 
   <div class="subsection-title">AWS 인프라를 설계하고 CI/CD·Observability를 구축합니다</div>
   <ul>
-    <li><strong>SOLUM POC AWS 인프라 설계·구축</strong>: VPC(2개 AZ) + ALB + Aurora MySQL + EFS + ECR</li>
-    <li><strong>Graviton(ARM64) 기반 EC2 3대</strong> 구성으로 x86 대비 약 20% 비용 절감</li>
+    <li><strong>POC 환경 AWS 인프라 설계·구축</strong>: VPC(2개 AZ) + ALB + Aurora MySQL + EFS + ECR</li>
+    <li><strong>GPU 인스턴스에서 오픈소스 LLM 모델 서빙</strong> 경험 (vLLM 기반 추론 서버 구성)</li>
     <li><strong>GitHub Actions 기반 자동 배포</strong> 파이프라인 4개 서비스(API/Chat/Batch/AI)에 구축</li>
     <li><strong>Datadog APM/Logs/RUM</strong> 연동으로 3개 서버(API/AI/Batch) 전 구간 모니터링</li>
     <li><strong>LLM Observability</strong> 구축: LiteLLM + Datadog으로 토큰 사용량, 모델별 비용, P50/P95/P99 레이턴시, 에러율 자동 추적</li>
@@ -410,6 +511,8 @@ socialDescription: "안녕하세요, 개발자 한상호입니다."
     <span class="tag">LiteLLM</span>
     <span class="tag">Qdrant</span>
     <span class="tag">Asterisk</span>
+    <span class="tag">Python</span>
+    <span class="tag">FastAPI</span>
   </div>
 </div>
 
@@ -465,22 +568,21 @@ socialDescription: "안녕하세요, 개발자 한상호입니다."
     <li>이벤트 생성 시 JPA saveAll의 개별 INSERT가 병목임을 확인. Bulk INSERT와 비동기 QR 생성 적용. <strong>16.56s → 0.41s (97.5% 개선)</strong> <a class="blog-link" href="/OneTime/성능-개선일지-2-(feat.-Bulk-Insert)">📝 글 보기</a></li>
   </ul>
 
-  <div class="subsection-title">보안을 고려합니다</div>
+  <div class="subsection-title">실서비스 환경에서 보안 위협에 직접 대응합니다</div>
   <ul>
     <li>Fail2ban 기반 비정상 HTTP 요청 탐지 및 차단. <strong>9개월간 425개 IP에서 675건 공격 차단</strong> <a class="blog-link" href="/OneTime/웹-스캐닝-공격:-9개월간의-Fail2ban-로그-분석">📝 글 보기</a></li>
     <li>URL 패턴 기반 인가를 메서드 레벨 @PreAuthorize 커스텀 어노테이션으로 이관</li>
     <li><strong>Safety-Net 테스트로 보안 어노테이션 누락 자동 검사</strong></li>
-    <li>MySQL 기반 <strong>Refresh Token Rotation</strong> + 3초 Grace Period로 토큰 탈취 감지</li>
   </ul>
 
   <div class="subsection-title">데이터 기반으로 서비스를 운영합니다</div>
   <ul>
-    <li><strong>7개 통계 도메인, 26개 API</strong>로 구성된 어드민 대시보드 설계 및 구현</li>
+    <li><strong>7개 통계 도메인, 26개 API</strong>로 구성된 어드민 대시보드를 단독 설계·구현</li>
+    <li><strong>SQS 기반 이메일 시스템</strong> (그룹/개별 발송, 템플릿 CRUD)</li>
     <li>유저 유입, 이벤트 패턴, Retention(MAU/휴면율) 등 핵심 지표 시각화</li>
-    <li>Caffeine 캐시 + QueryDSL + Native SQL로 복잡한 집계 쿼리 최적화</li>
   </ul>
 
-  <div class="subsection-title">비용 문제를 기술로 해결합니다</div>
+  <div class="subsection-title">지속 가능한 서비스 운영을 위해 비용을 최적화합니다</div>
   <ul>
     <li><strong>AWS 월 비용 $83 → $50 미만 (40% 절감)</strong> <a class="blog-link" href="/OneTime/원타임-인프라-개선-도전기">📝 글 보기</a></li>
     <li>EC2 t2 → t4g 마이그레이션으로 가격 대비 성능 개선</li>
@@ -501,78 +603,149 @@ socialDescription: "안녕하세요, 개발자 한상호입니다."
   </div>
 </div>
 
-<div class="section-card scroll-fade-in">
-  <div class="section-header">
-    <span class="company-name">Hazel</span>
-    <span class="period"><a href="https://github.com/bbbang105/flowershop-admin" target="_blank" class="github-link" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a> 2025.01 - 현재</span>
+<div class="vibe-section scroll-fade-in">
+  <div class="vibe-section-header">
+    <h3>AI Vibe Coding</h3>
+    <p>AI와 협업하여 기획부터 배포까지 1인 풀스택으로 구축한 프로젝트들</p>
   </div>
-  <div class="role">Full-Stack (AI Vibe Coding)</div>
-  <p>꽃집 사장님을 위한 매출·고객·예약 관리 SaaS입니다. 기획부터 디자인, 프론트엔드·백엔드 개발, 배포까지 AI(Claude)와의 바이브코딩으로 1인 풀스택 개발을 진행하고 있습니다.</p>
+  <div class="vibe-grid">
+    <div class="vibe-card" onclick="openVibeModal('custing-ko')">
+      <div class="vibe-card-emoji">📝</div>
+      <div class="vibe-card-name">큐스팅</div>
+      <div class="vibe-card-desc">블로그 스터디 운영 자동화 플랫폼</div>
+      <div class="vibe-card-highlight">30명+ 스터디 수동 운영을 전 과정 자동화</div>
+      <div class="vibe-card-hint">자세히 보기 →</div>
+    </div>
+    <div class="vibe-card" onclick="openVibeModal('forme-ko')">
+      <div class="vibe-card-emoji">🧰</div>
+      <div class="vibe-card-name">ForMe</div>
+      <div class="vibe-card-desc">내가 쓰려고 만든 올인원 생산성 앱</div>
+      <div class="vibe-card-highlight">흩어진 생산성 도구를 하나로 통합</div>
+      <div class="vibe-card-hint">자세히 보기 →</div>
+    </div>
+    <div class="vibe-card" onclick="openVibeModal('hazel-ko')">
+      <div class="vibe-card-emoji">🌸</div>
+      <div class="vibe-card-name">Hazel</div>
+      <div class="vibe-card-desc">꽃집 매출·고객·예약 관리 SaaS</div>
+      <div class="vibe-card-highlight">종이 장부 → 디지털 전환</div>
+      <div class="vibe-card-hint">자세히 보기 →</div>
+    </div>
+  </div>
+</div>
 
-  <div class="subsection-title">AI 바이브코딩으로 프로덕션 수준의 SaaS를 구축합니다</div>
-  <ul>
-    <li>요구사항 분석 → UI/UX 디자인 → 구현 → 테스트 → 배포 <strong>전 과정을 AI와 협력하여 1인 개발</strong></li>
-    <li><strong>ARCHITECTURE.md, FRONTEND_GUIDE.md</strong> 등 AI 협업용 가이드 문서 설계 → 일관된 코드 패턴 유도</li>
-  </ul>
+<!-- Vibe Modals (KO) -->
+<div class="vibe-overlay" id="vibe-overlay-hazel-ko">
+  <div class="vibe-modal">
+    <button class="vibe-modal-close" onclick="closeVibeModal('hazel-ko')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="section-header">
+      <span class="company-name">🌸 Hazel</span>
+      <span class="period"><a href="https://github.com/bbbang105/flowershop-admin" target="_blank" class="github-link" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a> 2026.01 - 현재</span>
+    </div>
+    <div class="role">Full-Stack (AI Vibe Coding)</div>
+    <p>친누나가 운영하는 꽃집에서 수기로 매출과 예약을 관리하는 걸 보고, 디지털 전환을 위해 직접 기획·개발한 SaaS입니다.</p>
+    <div class="subsection-title">실제 꽃집 운영 문제에서 출발</div>
+    <ul>
+      <li>종이 장부 + 엑셀 + 카카오톡에 분산된 업무 → 매출·고객·예약·사진을 하나로 통합하는 SaaS 기획</li>
+      <li>1건 주문에 여러 수령일이 있는 꽃집 특성 → <strong>1:N 멀티 픽업 예약 시스템</strong> 설계 (예: 2/14 결제, 2/14·2/20 각각 수령)</li>
+    </ul>
+    <div class="subsection-title">사장님이 실제로 쓸 수 있도록</div>
+    <ul>
+      <li>앱 설치 없이 모바일에서 바로 사용 → <strong>PWA + Bottom Navigation Bar</strong>로 네이티브 앱 경험</li>
+      <li>예약 누락 방지 → <strong>Web Push 알림</strong>으로 일일/개별 예약 리마인더 자동화</li>
+      <li>외상 매출을 별도로 추적할 수단이 없던 문제 → <strong>미수 매출 관리 체계</strong> 구축</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Next.js</span>
+      <span class="tag">React 19</span>
+      <span class="tag">TypeScript</span>
+      <span class="tag">Supabase</span>
+      <span class="tag">PostgreSQL</span>
+      <span class="tag">Cloudflare R2</span>
+      <span class="tag">Vercel</span>
+      <span class="tag">PWA</span>
+      <span class="tag">Web Push</span>
+      <span class="tag">shadcn/ui</span>
+      <span class="tag">Zod</span>
+      <span class="tag">AI Vibe Coding</span>
+    </div>
+  </div>
+</div>
 
-  <div class="subsection-title">서버 컴포넌트 중심 아키텍처를 설계합니다</div>
-  <ul>
-    <li><strong>Next.js 16 + React 19 Server Components</strong>를 단일 데이터 소스로 설계</li>
-    <li><strong>Supabase RLS</strong>로 11개 테이블에 44개 정책 적용, 유저별 데이터 격리</li>
-    <li>Supabase Storage → <strong>Cloudflare R2 마이그레이션</strong>으로 이미지 전송 비용 제거, <strong>TTFB 4배 개선</strong></li>
-  </ul>
+<div class="vibe-overlay" id="vibe-overlay-custing-ko">
+  <div class="vibe-modal">
+    <button class="vibe-modal-close" onclick="closeVibeModal('custing-ko')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="section-header">
+      <span class="company-name">📝 큐스팅</span>
+      <span class="period"><a href="https://github.com/bbbang105/study-admin" target="_blank" class="github-link" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a> 2026.02 - 현재</span>
+    </div>
+    <div class="role">Full-Stack (AI Vibe Coding)</div>
+    <p>30~35명 규모 블로그 스터디를 노션+카카오톡으로 관리하다 한계를 느끼고, Discord 봇 + 자체 웹 대시보드로 전 과정을 자동화한 플랫폼입니다.</p>
+    <div class="subsection-title">수동 운영을 자동화로 전환</div>
+    <ul>
+      <li>매 라운드(2주) 멤버별 글 작성 여부를 수동 확인하던 문제 → <strong>RSS 5분 주기 자동 수집 → 출석 처리 → 지각/결석 벌금 자동 부과 → Discord 알림</strong></li>
+      <li>참여율 저하 → 활동 점수 게이미피케이션 도입, 포디움/주간 랭킹으로 동기 부여</li>
+      <li>노션 기반 멤버 관리 혼선 → 6단계 상태 기반 관리 체계 설계 (승인 대기, 활동, 휴면, OB 등)</li>
+    </ul>
+    <div class="subsection-title">운영하면서 필요한 기능을 직접 기획</div>
+    <ul>
+      <li>스터디 의사결정 수단 부재 → <strong>게시판 투표</strong> 기획, 4종(단일/복수/날짜/익명) + 익명 투표 개인정보 분리</li>
+      <li>Discord만으로는 공지 전달 한계 → <strong>FCM 웹 푸시 알림</strong> 도입, 5종 알림 타입별 on/off</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Next.js</span>
+      <span class="tag">React 19</span>
+      <span class="tag">TypeScript</span>
+      <span class="tag">Drizzle ORM</span>
+      <span class="tag">Supabase</span>
+      <span class="tag">PostgreSQL</span>
+      <span class="tag">discord.js</span>
+      <span class="tag">pg-boss</span>
+      <span class="tag">pnpm Monorepo</span>
+      <span class="tag">Vercel</span>
+      <span class="tag">PWA</span>
+      <span class="tag">FCM</span>
+      <span class="tag">Sentry</span>
+      <span class="tag">Docker</span>
+      <span class="tag">AI Vibe Coding</span>
+    </div>
+  </div>
+</div>
 
-  <div class="subsection-title">PWA로 네이티브 앱 경험을 제공합니다</div>
-  <ul>
-    <li><strong>Web Push API + Service Worker</strong> 기반 PWA 푸시 알림 구현</li>
-    <li>pg_cron으로 일일 리마인더 + 개별 예약 리마인더 스케줄링</li>
-    <li>Safari VAPID 호환성 해결, <strong>유저별 예약 격리로 멀티테넌시 데이터 누출 방지</strong></li>
-  </ul>
-
-  <div class="subsection-title">운영 비용 $0으로 프로덕션을 운영합니다</div>
-  <ul>
-    <li>Vercel + Supabase + Cloudflare R2 조합으로 <strong>월 운영 비용 $0</strong> 달성</li>
-  </ul>
-
-  <div class="tags">
-    <span class="tag">Next.js</span>
-    <span class="tag">React 19</span>
-    <span class="tag">TypeScript</span>
-    <span class="tag">Supabase</span>
-    <span class="tag">PostgreSQL</span>
-    <span class="tag">Cloudflare R2</span>
-    <span class="tag">Vercel</span>
-    <span class="tag">PWA</span>
-    <span class="tag">Web Push</span>
-    <span class="tag">shadcn/ui</span>
-    <span class="tag">Zod</span>
-    <span class="tag">AI Vibe Coding</span>
+<div class="vibe-overlay" id="vibe-overlay-forme-ko">
+  <div class="vibe-modal">
+    <button class="vibe-modal-close" onclick="closeVibeModal('forme-ko')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="section-header">
+      <span class="company-name">🧰 ForMe</span>
+      <span class="period"><a href="https://github.com/bbbang105/forme" target="_blank" class="github-link" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a> 2026.02 - 현재</span>
+    </div>
+    <div class="role">Full-Stack (AI Vibe Coding)</div>
+    <p>큐레이션·캘린더·메모·유튜브 요약이 여러 앱에 흩어져 있어 하나로 통합한 개인 올인원 PWA. 직접 쓰면서 계속 확장하고 있습니다.</p>
+    <div class="subsection-title">필요한 기능을 직접 구현</div>
+    <ul>
+      <li>유튜브 영상을 매번 전부 시청할 수 없는 문제 → RSS 수집 + <strong>Gemini 2.5 Flash</strong> 자동 요약, 영상 길이별 프롬프트 분기</li>
+      <li>기존 메모/캘린더 앱의 한계 → TipTap 에디터 + 반복 일정 지원 캘린더를 직접 구현</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Next.js</span>
+      <span class="tag">React 19</span>
+      <span class="tag">TypeScript</span>
+      <span class="tag">Drizzle ORM</span>
+      <span class="tag">Supabase</span>
+      <span class="tag">PostgreSQL</span>
+      <span class="tag">Cloudflare R2</span>
+      <span class="tag">Vercel</span>
+      <span class="tag">PWA</span>
+      <span class="tag">TipTap</span>
+      <span class="tag">Service Worker</span>
+      <span class="tag">Gemini</span>
+      <span class="tag">AI Vibe Coding</span>
+    </div>
   </div>
 </div>
 
 ---
 
 ## 활동
-
-<div class="section-card scroll-fade-in">
-  <div class="section-header">
-    <span class="company-name">기술 블로그</span>
-    <span class="period">2023 - 현재</span>
-  </div>
-  <p>2년간 140개 이상의 기술 포스트를 작성했습니다.</p>
-  <div class="skills-grid">
-    <span class="skill-category">Spring</span>
-    <span>Filter vs Interceptor, OAuth2.0, Error Handling</span>
-    <span class="skill-category">Database</span>
-    <span>Index, Transaction Isolation Levels</span>
-    <span class="skill-category">Infra</span>
-    <span>Docker, Load Balancing, 인프라 비용 절감</span>
-    <span class="skill-category">AI</span>
-    <span>RAG 개념, AGI, AI 기본법</span>
-    <span class="skill-category">Security</span>
-    <span>웹 스캐닝 공격 분석, Fail2Ban</span>
-  </div>
-</div>
 
 <div class="section-card scroll-fade-in">
   <div class="section-header">

@@ -10,7 +10,8 @@ var TAG_CATEGORIES = {
   "Spring Boot": "framework", "Spring Batch": "framework", "Spring Security": "framework",
   "Next.js": "framework", "React": "framework", "React 19": "framework", "FastAPI": "framework",
   "shadcn/ui": "framework", "Zod": "framework", "QueryDSL": "framework", "MyBatis": "framework",
-  "Next.js 16": "framework",
+  "Next.js 16": "framework", "discord.js": "framework", "Drizzle ORM": "framework", "TipTap": "framework",
+  "pg-boss": "infra", "pnpm Monorepo": "infra", "FCM": "infra", "Service Worker": "infra", "Gemini": "ai", "Docling": "ai",
   // Infra
   "AWS": "infra", "Docker": "infra", "Docker Swarm": "infra", "Vercel": "infra",
   "GitHub Actions": "infra", "GitLab CI": "infra", "Nginx": "infra", "Linux": "infra",
@@ -133,12 +134,41 @@ function closeContact() {
   document.body.classList.remove("modal-open");
 }
 
+// ========================================
+// Vibe Modal (AI Vibe Coding 프로젝트)
+// ========================================
+function openVibeModal(id) {
+  var overlay = document.getElementById("vibe-overlay-" + id);
+  if (!overlay) return;
+  overlay.classList.add("visible");
+  document.body.classList.add("modal-open");
+}
+
+function closeVibeModal(id) {
+  var overlay = document.getElementById("vibe-overlay-" + id);
+  if (!overlay) return;
+  overlay.classList.remove("visible");
+  document.body.classList.remove("modal-open");
+}
+
+function closeAllVibeModals() {
+  document.querySelectorAll(".vibe-overlay.visible").forEach(function(el) {
+    el.classList.remove("visible");
+  });
+  document.body.classList.remove("modal-open");
+}
+
 document.addEventListener("click", function(e) {
   if (e.target === document.getElementById("contact-overlay")) closeContact();
+  // Vibe 모달 배경 클릭으로 닫기
+  if (e.target.classList.contains("vibe-overlay") && e.target.classList.contains("visible")) closeAllVibeModals();
 });
 
 document.addEventListener("keydown", function(e) {
-  if (e.key === "Escape") closeContact();
+  if (e.key === "Escape") {
+    closeContact();
+    closeAllVibeModals();
+  }
 });
 
 function initScrollAnimations() {
