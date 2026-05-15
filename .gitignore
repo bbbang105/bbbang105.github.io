@@ -14,3 +14,9 @@ replit.nix
 /*.yaml
 /*.yml
 /*.md
+
+# MoAI-ADK runtime artifacts
+.moai/cache/
+.moai/logs/
+.moai/reports/
+.moai/state/
