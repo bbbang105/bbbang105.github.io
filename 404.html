@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>bbang.dev로 이전했습니다</title>
+    <meta name="robots" content="noindex" />
+    <script>
+      // Best-effort map of old Quartz URLs (/<Category>/<Slug>) to the new
+      // site (/posts/<category>/<slug>/): lowercase, punctuation stripped,
+      // spaces collapsed to dashes. Unknown paths fall through to bbang.dev's
+      // own 404, which links home.
+      (function () {
+        var p = decodeURIComponent(location.pathname).replace(/\/+$/, "");
+        var segs = p.split("/").filter(Boolean);
+        var target = "https://bbang.dev/";
+        if (segs.length && segs[0].toLowerCase() !== "tags") {
+          segs = segs.map(function (s) {
+            return s
+              .toLowerCase()
+              .replace(/-and-/g, "-")
+              .replace(/[&,?#'"!():.]/g, "")
+              .replace(/\s+/g, "-")
+              .replace(/-{2,}/g, "-")
+              .replace(/^-|-$/g, "");
+          });
+          target =
+            "https://bbang.dev/posts/" +
+            segs.map(encodeURIComponent).join("/") +
+            "/";
+        }
+        location.replace(target);
+      })();
+    </script>
+    <meta http-equiv="refresh" content="1;url=https://bbang.dev/" />
+  </head>
+  <body>
+    <p>이 블로그는 <a href="https://bbang.dev/">bbang.dev</a>로 이전했습니다.</p>
+  </body>
+</html>
